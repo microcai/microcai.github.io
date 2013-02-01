@@ -1,5 +1,9 @@
 # standard jekyll configuration
 
+name: 菜菜博士
+url: http://microcai.org
+description: 博士在网络的家
+
 permalink: date
 pygments: true
 markdown: rdiscount
@@ -28,4 +32,4 @@ github:
    username: microcai
 
 disqus:
-   id: eahydra
+   id: drcai
