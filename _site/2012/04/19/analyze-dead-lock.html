@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>一次死锁的分析 - Litao.Me</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" media="screen" href="/stylesheets/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/embed.css"/>
+    
+    
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <a href="/"><h1>Litao.Me</h1></a>
+      </div>
+      <div id="body">
+        <h1>一次死锁的分析</h1>
+        <div class="postdate">Posted on 19 Apr 2012</div>
+<div class="post">
+<p>做了半年的产品最近在实测阶段，QC报告有些用户出现升级版本后，CPU高占，一直不出现界面的问题。因为出现的比例很小，很难排查。昨天又出现一次这样的问题，远程抓取DUMP到本地分析。
+抓DUMP的方法比较简单，用WINDBG里的脚本<strong>ADPLUS.VBS -hang -o c:\123 -pn 进程名</strong>，即可抓取。前后抓两次，可以相互比较。</p>
+
+<p>先后加载两个DUMP文件，调用!runaway命令查看哪个时间最长，如下所示:</p>
+
+<pre><code> 
+0:000> !runaway  
+ User Mode Time  
+  Thread       Time  
+  14:1e0       0 days 0:14:14.859  
+  23:584       0 days 0:00:00.296  
+  22:24c       0 days 0:00:00.171  
+   0:708       0 days 0:00:00.078  
+  27:280       0 days 0:00:00.046  
+  21:4d8       0 days 0:00:00.046  
+  28:35c       0 days 0:00:00.031  
+  19:200       0 days 0:00:00.015  
+  15:1cc       0 days 0:00:00.015  
+  26:1a8       0 days 0:00:00.000  
+  25:738       0 days 0:00:00.000  
+  24:550       0 days 0:00:00.000  
+</code></pre>
+
+
+<p></p>
+
+<br/>
+
+
+<pre><code>  
+0:000> !runaway
+ User Mode Time
+  Thread       Time
+  14:1e0       0 days 0:14:14.859
+  23:584       0 days 0:00:00.296
+  22:24c       0 days 0:00:00.171
+   0:708       0 days 0:00:00.078
+  27:280       0 days 0:00:00.046
+  21:4d8       0 days 0:00:00.046
+  28:35c       0 days 0:00:00.031
+  19:200       0 days 0:00:00.015
+  15:1cc       0 days 0:00:00.015
+  26:1a8       0 days 0:00:00.000
+  25:738       0 days 0:00:00.000
+  24:550       0 days 0:00:00.000
+</code></pre>
+
+
+<p>分析发现，是线程1E0跑的时间最长，切到线程1E0后，栈上下文如下，以最后DUMP为准：<br/>
+<img src="/images/1e0-stack.png" alt="" /><br/>
+其中TAMInstance!CTestAliveMgr::NotifyEvent函数是负责检查进程内运行的线程是否死锁或者运行时间过长，如果时间过长，最终会调用CTestAliveMgr::ProcessExpireMgr处理线程超时，内部会调用CTestAliveMgr::DumpRunningStatus处理。观察这个上下文，发下OpenThread失败，一般来说，这个API失败，一般是目标线程不存在了。我观察线程列表发现，这个线程还活着，当时认为是内核出问题了。因为这个产品有一些安全相关的驱动模块，打开用户的任务管理器，查看CPU使用情况，发现CPU高占的同时，内核时间也占了一个很大的比例，以为是内核出了问题，后来找相关驱动开发人员询问得知这种问题应该也不存在，所以忍不住想看下OpenThread要打开的目标线程是什么情况。从栈的上下文里可以知道是要打开1A8这个线程。
+切换到线程1A8，栈的上下文如下：<br/>
+<img src="/images/1a8-stack.png" alt="" /><br/>
+这个线程要去用ShellExecute去调用Regsvr32.exe去注册一个COM组件，然后发现内部最终会触发一个动态库加载动作，栈的最顶端有一个临界区等待的动作。按照微软的文档<a href="http://download.microsoft.com/download/a/f/7/af7777e5-7dcd-4800-8a0a-b18336565f5b/dll_bestprac.doc">《Best Practices for Creating DLLs》</a>中的说法，一个DllMain内部是不可以有加锁动作的，但是在这个例子中加载了shdocvw.dll，进入DllMain，最终却引发了锁动作，应该提高警惕。
+用!cs指令查看这个临界区被线程0×738拿到，切换到线程0×738，上下文如下：<br/>
+<img src="/images/738-stack.png" alt="" /><br/>
+可以看到，这个线程想获取某个DLL的导出函数指针，GetProcAddress内部会调用ntdll!LdrpGetProcedureAddress,这个函数内部会拿一个全局锁，用于保证DLL加载数据同步用的，这个锁已经被线程1A8拿到了.而且分析这个上下文，可以知道，这个线程内部调用了shlwapi.dll中的函数，这个函数内部已经拿到了线程1A8想拿的锁，这样就造成了死循环，两个线程始终都拿不到这个各自想要的锁，也就是死锁。</p>
+
+<p>解决方法是避免在进程运行中途加载shdocvw.dll，所以我在进程初始化时就把这个DLL给加载进来，这样就避免shdocvw.dll!DllMain函数内部拿锁的动作。<br/>
+另外就是，分析整个DUMP下来，最终都是因为ShellExecute函数导致，这个接口虽然很强大，但是做了太多的事情，而且机制也够复杂.最近碰到的几个问题都与这个有关。建议不要使用。shell api本身是给EXPLORER使用的，里面的很多机制都是为了EXPLORER准备的，贸然使用可能会有很多问题。<br/>
+关于ShellExecute的问题，还有一个例子，在《WINDOWS高效排错》一书里，提到打开一个东西，却打开UE编辑器两次.更神奇的是，这种问题我们这边遇到过.在我们自己的程序里需要打开IE展现指定的搜索页，结果QC报告，出现过点击一次展示，却出现两个相同搜索页的问题。后来调试的时候，发现只要在运行ShellExecute的地方，单步跟踪，就可能打开两个页面。</p>
+
+</div>
+ 
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>27 Sep 2012</span> - <a href="/2012/09/27/iocp.html">IOCP Internals</a></li>
+    
+      <li><span>16 Sep 2012</span> - <a href="/2012/09/16/begin.html">新的开始</a></li>
+    
+      <li><span>25 Apr 2012</span> - <a href="/2012/04/25/open-registry-key-in-regedit-exe.html">Open registry key in regedit.exe</a></li>
+    
+      <li><span>23 Apr 2012</span> - <a href="/2012/04/23/How-to-Get-Network-Change-automation.html">如何自动获取网络变化通知</a></li>
+    
+      <li><span>05 Mar 2012</span> - <a href="/2012/03/05/use_declspec_thread_in_dll.html">Use __declspec(thread) in dll occured Exception</a></li>
+    
+  </ul>
+</div>
+
+
+<br />
+<br />
+<hr />
+<div id="comments">
+  <h2>Comments</h2>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_identifier = "/2012/04/19/analyze-dead-lock.html";
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'http://eahydra.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=eahydra">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nginx 1.0.5 in windows heap corruption - Litao.Me</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" media="screen" href="/stylesheets/screen.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/embed.css"/>
+    
+    
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <a href="/"><h1>Litao.Me</h1></a>
+      </div>
+      <div id="body">
+        <h1>Nginx 1.0.5 in windows heap corruption</h1>
+        <div class="postdate">Posted on 22 Aug 2011</div>
+<div class="post">
+<p>昨晚测试Nginx 1.0.5 For Windows版本，开启代理缓存功能后发现了一个堆溢出BUG。</p>
+
+<p>问题发生在src/os/win32/ngx_file.c line 224 ngx_win32_rename_file()处。原有的申请内存代码如下：<br/>
+Liquid error: No such file or directory - pygmentize</p>
+
+<br/>
+
+
+<p>因为长度计算错误，少算一个字节，导致在后面调用
+Liquid error: No such file or directory - pygmentize</p>
+
+<br/> 
+
+
+<p>内存越界，观察内存发现，覆盖了一个字节。在原有代码基础上多加一个字节，之后测试OK。提交给Nginx官方后，得到了响应，修补的方法如下：<br/>
+Liquid error: No such file or directory - pygmentize</p>
+
+</div>
+ 
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+      <li><span>27 Sep 2012</span> - <a href="/2012/09/27/iocp.html">IOCP Internals</a></li>
+    
+      <li><span>16 Sep 2012</span> - <a href="/2012/09/16/begin.html">新的开始</a></li>
+    
+      <li><span>25 Apr 2012</span> - <a href="/2012/04/25/open-registry-key-in-regedit-exe.html">Open registry key in regedit.exe</a></li>
+    
+      <li><span>23 Apr 2012</span> - <a href="/2012/04/23/How-to-Get-Network-Change-automation.html">如何自动获取网络变化通知</a></li>
+    
+      <li><span>19 Apr 2012</span> - <a href="/2012/04/19/analyze-dead-lock.html">一次死锁的分析</a></li>
+    
+  </ul>
+</div>
+
+
+<br />
+<br />
+<hr />
+<div id="comments">
+  <h2>Comments</h2>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_identifier = "/2011/08/22/nginx-1.0.5-in-windows-heap-corruption.html";
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'http://eahydra.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=eahydra">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>
