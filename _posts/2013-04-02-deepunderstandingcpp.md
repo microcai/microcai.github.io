@@ -135,7 +135,7 @@ but , 一个功能缺失, 导致的结果不是程序拒绝启动, or 崩溃
 
 这就是一个没有 *工程实践* 的程序语言
 
-# 所以 python 是一门很烂很烂的语言
+# [所以 python 是一门很烂很烂的语言](https://avlog.avplayer.org/3597082/python%E6%98%AF%E4%B8%AA%E7%83%82%E8%AF%AD%E8%A8%80.html)
 
 烂就烂在没有工程性。
 
