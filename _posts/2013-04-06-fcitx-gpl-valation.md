@@ -1,6 +1,6 @@
 ---
 layout: post
-title: fcitx 违反了 GPL2 ?
+title: fcitx 违反了 GPL2 ? (更新, 已解决)
 ---
 
 fcitx 是 yuking 的作品。 一直以来都是以 GPL2 协议发布。
@@ -15,6 +15,15 @@ yuking 后来将维护权交给了 csslayer. csslayer 开始了 fcitx 4.X 系列
 那就要看 fcitx 是不是 csslayer 的个人作品了。如果 fcitx 包含了许多人的工作，那么 csslayer 要更改 fcitx 的协议就必须获得所有 fcitx 贡献者的首肯。
 
 明显 fcitx 4 更改协议的时候并没有获得yuking 和其他贡献者的同意。如果确实获得了他们的同意，我希望 csslayer 能公开声明获得了他们的同意。
+
+
+---
+
+# 更新
+
+傲慢的 csslayer 承认了错误，向 yuking 获得了同意。参考 [这个邮件](http://uploads.csslayer.info/uploads/mail/mail.mbox)
+
+现在 fcitx 应该没什么大问题了。
 
 
 
