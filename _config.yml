@@ -6,7 +6,7 @@ description: 博士在网络的家
 
 permalink: date
 pygments: true
-markdown: rdiscount
+markdown: redcarpet
 baseurl: /
 
 source: .

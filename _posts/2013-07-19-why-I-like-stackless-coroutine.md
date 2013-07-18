@@ -16,7 +16,7 @@ asio的无栈协程通过 **闭包** 的形式, 将异步过程所要操作的�
 
 下面这个是 QQ 登陆过程的一个协程代码
 
-{% highlight cpp %}
+```C++
 // qq 登录办法-验证码登录
 class login_vc_op : boost::asio::coroutine{
 public:
@@ -124,8 +124,7 @@ private:
 	boost::shared_ptr<boost::asio::streambuf> m_buffer;
 	std::string vccode;
 };
-
-{% endhighlight %}
+```
 
 在这个协程里, 有的**闭包**成员被 shared_ptr 管理, 有的没有. 
 这些资源, 统统都没有使用显式的内存管理, 而是让这些对象随着闭包的撤销被自动的析构.
