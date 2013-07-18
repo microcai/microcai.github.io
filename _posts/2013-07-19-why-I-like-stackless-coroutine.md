@@ -16,7 +16,7 @@ asio的无栈协程通过 **闭包** 的形式, 将异步过程所要操作的�
 
 下面这个是 QQ 登陆过程的一个协程代码
 
-```C++
+```c++
 // qq 登录办法-验证码登录
 class login_vc_op : boost::asio::coroutine{
 public:
