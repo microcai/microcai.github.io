@@ -7,13 +7,13 @@ C++ 的 bind 非常方便! 但是如果你不得不处理一些 C 接口, 情况
 
 用法很简单, 看下面的例子
 
-
-```C++
+```c++
 static void * my_thread_func(int a, int b,  int c)
 {
 	std::cout <<  a <<  b <<  c <<  std::endl;
 	return NULL;
 }
+
 int main(int, char*[])
 {
 	c_func_wraper<void *(*) (void *),  void*()> func;
@@ -23,14 +23,13 @@ int main(int, char*[])
 	pthread_join(new_thread, NULL);
         return 0;
 }
+
 ```
+pthread 是一个典型的 C 接口,  需要传递给线程的参数通过 void* 传递进来.  c\_func\_wraper 则将 bind 和 C 接口的回调给整合起来了!
 
-pthread 是一个典型的 C 接口,  需要传递给线程的参数通过 void* 传递进来.  	c_func_wraper 则将 bind 和 C 接口的回调给整合起来了!
+c\_func\_wraper 接受2个模板参数, 一个是 C 接口需要的 **函数指针**类型, 另一个是 类似 boost::function 所接受的函数原型声明. 注意, C 类型的声明和 boost::function 风格的声明的区别. 另外就是当前 C  类型必须是 void\* 在最后一个参数. 以后可以添加出更多位置支持 :)  如第一个参数是 void\* user_data 的 C 回调.
 
-
-	c_func_wraper 接受2个模板参数, 一个是 C 接口需要的 **函数指针**类型, 另一个是 类似 boost::function 所接受的函数原型声明. 注意, C 类型的声明和 boost::function 风格的声明的区别. 另外就是当前 C  类型必须是 void* 在最后一个参数. 以后可以添加出更多位置支持 :)  如第一个参数是 void* user_data 的 C 回调.
-
-接着为其 使用 bind 赋值. 赋值完毕, 就可以通过 c_func_ptr 和 c_void_ptr 两个对象获取到兼容的 C 版本了, 然后传递给 pthread_create. 就大公告成了. :) 
+接着为其 使用 bind 赋值. 赋值完毕, 就可以通过 c\_func\_ptr 和 c\_void\_ptr 两个对象获取到兼容的 C 版本了, 然后传递给 pthread_create. 就大公告成了. :) 
 
 
 下面是 实现 
