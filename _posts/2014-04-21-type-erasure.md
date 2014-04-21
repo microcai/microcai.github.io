@@ -24,7 +24,7 @@ std::function 在一定程度上，抹去了函数的类型。不论来的类型
 
 模板靠编译期自动生成一个类型兼容的函数来做到弱类型，而  type erasure则能实现在运行期弱类型。
 
-```C++
+```c++
 template<class Callback>
 void somefunc( int  somearg, Callback  callback); 
 ```
@@ -32,7 +32,7 @@ void somefunc( int  somearg, Callback  callback);
 这个是弱类型了吧，但是是靠编译期实现的。如果有100 个类型的回调，就会生成 100 份代码，去适应 100 个类型的回调函数。
 但是如果是这样的代码
 
-```
+```c++
 void somefunc( int somearg, std::function<void> callback); 
 ```
 
@@ -44,7 +44,7 @@ void somefunc( int somearg, std::function<void> callback);
 那么模板就无能为力了。因为创建一个容器的时候，已经要把所有的元素的类型都固定为一个了。 
 这个时候你必须借助 type erasure 
 
-```
+```c++
 std::vector<std::function<void()>> function_container;
 ```
 
@@ -67,7 +67,7 @@ type erasure 的实现通常包含3 个部分: 接口适配器部分、类型基
 内部实现上呢，是通过包含一个基类指针，指向分配出来的 模板派生类实现的 
 这样
 
-```
+```c++
 class interface
 {
   Base ＊ ptr; 
