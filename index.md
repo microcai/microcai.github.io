@@ -19,6 +19,7 @@ Hello, I am 菜菜博士. I am co-founder of avplayer.org. This blog is mostly a
   </ul>
 </div>
 <div id="pages">
+  <div>
   <h2>Pages</h2>
   <ul>
     {% for page in site.html_pages %}
@@ -27,14 +28,16 @@ Hello, I am 菜菜博士. I am co-founder of avplayer.org. This blog is mostly a
       {% endif %}
     {% endfor %}
   </ul>
+  </div>
+  <aside id="exchangelink">
+  <div>
+  <h2> 其他博客链接 </h2>
+  <h4><a href="http://kiki.microcai.org/"> 老婆的博客 </a></h4>
+  <h4><a href="http://xrain.simcu.com/"> 静默 – 华丽之作,一切从简 </a></h4>
+  </div>
+  </aside>
+
 </div>
-<aside id="exchangelink">
- <div>
- <h2> 其他博客链接 </h2>
- <h4><a href="http://kiki.microcai.org/"> 老婆的博客 </a></h4>
- <h4><a href="http://xrain.simcu.com/"> 静默 – 华丽之作,一切从简 </a></h4>
- </div>
-</aside>
 <div>
   <iframe width="100%" height="400" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=400&fansRow=2&ptype=1&speed=100&skin=5&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1292997095&verifier=b5a9690c&dpc=1"></iframe>
 </div>
