@@ -10,6 +10,12 @@ Hello, I am 菜菜博士. I am co-founder of avplayer.org. This blog is mostly a
 </div>
 
 <div>
+  <aside id="exchangelink">
+  <h2> 其他博客链接 </h2>
+  <h4><a href="http://kiki.microcai.org/"> 老婆的博客 </a></h4>
+  <h4><a href="http://xrain.simcu.com/"> 静默 – 华丽之作,一切从简 </a></h4>
+  </aside>
+  
   <div id="posts">
     <h3><a href="/feed">RSS feed</a></h3>
     <h2>日志</h2>
@@ -19,12 +25,6 @@ Hello, I am 菜菜博士. I am co-founder of avplayer.org. This blog is mostly a
       {% endfor %}
     </ul>
   </div>
-
-  <aside id="exchangelink">
-  <h2> 其他博客链接 </h2>
-  <h4><a href="http://kiki.microcai.org/"> 老婆的博客 </a></h4>
-  <h4><a href="http://xrain.simcu.com/"> 静默 – 华丽之作,一切从简 </a></h4>
-  </aside>
 
 </div>
 
