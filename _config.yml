@@ -5,7 +5,6 @@ url: http://microcai.org
 description: 博士在网络的家
 
 permalink: date
-pygments: true
 markdown: redcarpet
 baseurl: /
 
