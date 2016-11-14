@@ -5,12 +5,12 @@ url: http://microcai.org
 description: 博士在网络的家
 
 permalink: date
-markdown: redcarpet
+#markdown: redcarpet
 baseurl: /
 
 source: .
 destination: ./_site
-plugins: ./_plugins
+plugins_dir: ./_plugins
 
 # configuration required for some pages
 
