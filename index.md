@@ -5,7 +5,7 @@ description: A description about my blog homepage
 
 <div id="About">
 
-Hello, I am 菜菜博士. I am co-founder of avplayer.org. This blog is mostly about technology, though you will find some random musings about pop, politics and culture. <a href="/about.html">More...</a>
+Hello, I am 菜菜博士. I am co-founder of <a href="http://avplayer.org" >avplayer.org</a> This blog is mostly about technology, though you will find some random musings about pop, politics and culture. <a href="/about.html">More...</a>
 
 </div>
 
