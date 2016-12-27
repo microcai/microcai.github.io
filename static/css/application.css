@@ -318,3 +318,7 @@ h3 {
     margin: 0 auto;
   }
 }
+
+body .post-entry img {
+   width: 95%;
+}
