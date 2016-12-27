@@ -1,34 +1,31 @@
-# standard jekyll configuration
-
-name: 菜菜博士
+# Setup
+title: "菜菜博士"
+tagline: "博士在网络的家"
+name: "菜菜博士"
 url: http://microcai.org
-description: 博士在网络的家
+description: "博士在网络的家"
 
 permalink: date
-#markdown: redcarpet
-baseurl: /
-
-source: .
-destination: ./_site
-plugins_dir: ./_plugins
-
-# configuration required for some pages
+#permalink: /:year-:month/:title/
+paginate: 10
 
 domain: microcai.org
 title: 菜菜博士 - 博士在网络的家
 author: microcai
 email: microcaicai@gmail.com
 
-# configuration for ehancements, uncomment to enable
-
-# feedburner:
-#   id: feedburnerid
-
-# google_analytics:
-#   account: UA-XXXXX-X
-
 github:
    username: microcai
 
 disqus:
    id: drcai
+
+# Parser
+markdown: kramdown
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables" ]
+
+# Code highlight
+highlighter: rouge
+
+gems: [jekyll-paginate]
