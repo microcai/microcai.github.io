@@ -320,5 +320,6 @@ h3 {
 }
 
 body .post-entry img {
-   width: 95%;
+   width: 75%;
+   padding: 3ex;
 }
