@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 通知到轮询线程
-tags:   [ ]
+tags:   [asio]
 ---
 
 在腐都工作也有大半个月了。工作过程中，遇到了一个轮询+通知的消息模式。所以要轮询，是因为通知是不可靠的。
@@ -36,6 +36,10 @@ void operator()(boost::system::error_code ec, some_type_of_pull pulled_message)
 			if (!ec)
 			{
 				yield async_pull_message(object_id, *this);
+			}else if(ec == boost::asio::error::opertion_aborted)
+			{
+				// 强行没错误！
+				ec = boost::system::error_code();
 			}
 		
 			if (ec)
