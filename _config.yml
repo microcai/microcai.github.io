@@ -5,6 +5,15 @@ name: "菜菜博士"
 url: http://microcai.org
 description: "博士在网络的家"
 
+
+# SNS settings
+RSS: true
+weibo_username:     microcai
+#zhihu_username:     domchen
+github_username:    micricai
+#twitter_username:  microcai
+#facebook_username:  microcai
+
 permalink: date
 #permalink: /:year-:month/:title/
 paginate: 10
@@ -20,12 +29,47 @@ github:
 disqus:
    id: drcai
 
-# Parser
-markdown: kramdown
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables" ]
 
-# Code highlight
-highlighter: rouge
-
+# Build settings
 gems: [jekyll-paginate]
+highlighter: rouge
+permalink: /articles/:title.html
+paginate: 20
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","LICENSE","Gemfile","Gemfile.lock"]
+anchorjs: true      # if you want to customize anchor. check out line:129 of `post.html`
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM        # use Github Flavored Markdown !important
+
+
+# Duoshuo settings
+# please set your own DuoShuo account in `post.html` and `about.html`
+useDuoshuo: false    # use both Comment and Share
+useShare: false      # use Comment only. seeing the Share component is depend on Comment so we can NOT use share only.
+
+
+# Todo: Analysis settings
+# Please set your own analysis account in `head.html`(Baidu) and `default.html`(QQ)
+useBaiduAnalysis: false
+useTencentAnalysis: false
+useGoogleAnalysis: false     # TODO
+
+
+# Sidebar settings
+sidebar: true
+sidebar-featured-tags: true
+sidebar-about-description: "博士在网络的家"
+sidebar-avatar: /img/avatar-me.jpg     # use absolute URL.
+
+# Friends
+friends: [
+    {
+        title: "静默 – 华丽之作,一切从简",
+        href: "http://blog.simcu.com/xrain"
+    }
+]
