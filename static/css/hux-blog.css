@@ -307,7 +307,7 @@ pre,
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0;
+    padding: 30px 0;
   }
 }
 .intro-header .site-heading {
@@ -315,7 +315,7 @@ pre,
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading {
-    padding: 150px 0;
+    padding: 50px 0;
   }
 }
 .intro-header .site-heading,

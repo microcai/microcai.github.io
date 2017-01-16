@@ -44,12 +44,17 @@ layout: default
 
 				{{ content }}
 
-                <hr>
-                
-                
+								        
 				<span>
 					<a class="pull-right" href="{{ page.url }}#disqus_thread"> Comments </a>
 				</span>
+
+				{% include disqus.html %}
+				{% include disqus_cnt.html %}
+				
+                <hr>
+                
+                
 
                 {% if site.useDuoshuo && site.useShare %}
                 <!-- 多说 Share start -->
@@ -117,9 +122,6 @@ layout: default
     </div>
 </article>
 
-        
-{% include disqus.html %}
-{% include disqus_cnt.html %}
 
 {% if site.useDuoshuo %}
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
