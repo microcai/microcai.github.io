@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 使用邻居的CMCC宽带加速
+tags: [network, ERX]
 ---
 
 基于某些特殊原因，我知道邻居家的wifi密码。

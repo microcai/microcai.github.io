@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 中国电信原生IPv6配置
+tags: [network, ipv6]
 ---
 
 目前电信已经商用 ipv6 网络了，ipv6 的好处你懂得。

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 折腾了一下GPG和智能卡
+tags: [crypto]
 ---
 
 GPG支持使用智能卡设备存储密钥。

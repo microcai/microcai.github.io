@@ -1,6 +1,7 @@
 ---
 layout: post
 title : ASIO协程的思维转变
+tags: [asio]
 ---
 
 avbot 是一个纯粹的单线程程序。在设计 avbot 最初的时候，我就给自己下了一个明确的目标：必须单线程。

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GC是错误的内存管理模式
+tags: [c++, memory]
 ---
 
 

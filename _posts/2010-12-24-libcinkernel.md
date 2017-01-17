@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 内核要集成glibc么
+tags: [kernel]
 ---
 
 往往内核添加了一个功能， glibc 要花很久才会用上。本来linux 那边为这个功能是否进入内核已经吵半天了，glibc

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: avbot 结构解释
+tags: [avbot]
 ---
 
 avbot 由 4 大部分构成 libavbot libavlog botctl avbotrpc

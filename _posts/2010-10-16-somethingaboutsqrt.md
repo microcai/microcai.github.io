@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 一个Sqrt函数再次引发的血案
+tags: [history]
 ---
 
 这些神人啊，开平方居然有这么快的算法！！！

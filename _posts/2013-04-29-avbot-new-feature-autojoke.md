@@ -1,6 +1,7 @@
 ---
 layout: post
 title: avbot 4.2 新功能解释和实现
+tags: [avbot]
 ---
 # 新功能 - 讲笑话
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: C++ 王者归来
+tags: [c++]
 ---
 
 

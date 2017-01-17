@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 聊聊  type  erasure
+tags: [c++]
 ---
 
 # 什么是类型橡皮擦? 

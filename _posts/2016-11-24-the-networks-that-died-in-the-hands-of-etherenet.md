@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 死在以太网发展道路上的网们
+tags: [history, network]
 ---
 
 记得 Robert Metcalf（以太网的发明者）说过如果有技术最终替代了以太网，那么它还是会被叫做“以太网” ，所以以太网永远不会消亡。

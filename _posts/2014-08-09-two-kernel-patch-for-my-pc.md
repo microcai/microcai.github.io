@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 使用自己硬件的时候写的两个补丁
+tags: [kernel]
 ---
 
 # 键盘问题

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 让 C 回调支持 boost::bind
+tags: [c++]
 ---
 
 C++ 的 bind 非常方便! 但是如果你不得不处理一些 C 接口, 情况就会变得很糟糕, 你不得不处理一堆的 void\* , 

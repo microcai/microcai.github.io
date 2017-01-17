@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 模板多态
+tags: [c++]
 ---
 
 # 需求

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 新的路由器
+tags: [network, ERX]
 ---
 
 上文说到，我使用无线网桥衔接了2个家庭，组成了一个局域网，共享了宽带。

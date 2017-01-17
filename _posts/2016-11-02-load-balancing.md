@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Linux多WAN负载均衡原理
+tags: [network]
 ---
 
 

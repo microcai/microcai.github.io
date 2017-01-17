@@ -1,7 +1,7 @@
 ---
 layout: post
-
 title: 我为什么喜欢用协程
+tags: [c++, asio]
 ---
 
 查看过 avbot 代码的人都知道, avbot 到处都是协程. 用句 ACG 的话来说,  *博士是**协程控***

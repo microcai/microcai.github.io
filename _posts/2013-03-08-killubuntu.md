@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why ubuntu sucks and everyone should not use it
+tags: [os]
 ---
 
 这篇文章早就应该发了，但是我太自私，只管自己躲在Gentoo的树阴下乘凉，不为那些在ubuntu的刀山祸害里挣扎的人提供援助。
