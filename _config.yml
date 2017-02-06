@@ -68,7 +68,12 @@ sidebar-avatar: /img/avatar-me.jpg     # use absolute URL.
 # Friends
 friends: [
     {
-        title: "静默 – 华丽之作,一切从简",
+        title: "静默 – 华丽之作,一切从简" ,
         href: "http://blog.simcu.com/xrain"
+    }
+    ,
+    {
+        title: "pacman" ,
+        href : "https://ohmyarch.github.io/"
     }
 ]
