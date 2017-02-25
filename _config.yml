@@ -76,4 +76,9 @@ friends: [
         title: "pacman" ,
         href : "https://ohmyarch.github.io/"
     }
+    ,
+    {
+        title: "静静's Blog",
+        href : "https://xing-zhi-love.com"
+    }
 ]
