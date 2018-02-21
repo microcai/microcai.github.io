@@ -28,7 +28,7 @@ chinaroute 这个, 任何路由器都能用, 这里讲下 ipset 和 policy route
 
 <code>
 set protocols static table 10 description "route to VPN"
-set protocols static table 10 interface-route 0.0.0.0/0 next-hop-interface vtun0
+<br>set protocols static table 10 interface-route 0.0.0.0/0 next-hop-interface vtun0
 </code>
 
 注意, 因为使用的是 tun 模式, 所以是 interface-route, 如果是 tap 模式,则是 ```set protocols static table 10 route 0.0.0.0/0 next-hop 10.8.0.1```
@@ -42,11 +42,10 @@ set protocols static table 10 interface-route 0.0.0.0/0 next-hop-interface vtun0
 接着, 设定防火墙, 让 匹配某个 ipset 的包都通过 10 号路由表出去. 如果在 Wizard 向导里, 启用了 2WAN 负载均衡的话, 这个时候会已经创建好一个叫 balance 的 防火墙规则.
 规则的rule xx 之类的, 都是负载均衡的规则. 执行次序是数字从小到大. 这里我插入了个编号 60  的规则
 
-
 <code>
-set firewall modify balance rule 60 action modify
-set firewall modify balance rule 60 modify table 10
-set firewall modify balance rule 60 destination group address-group gfwlist
+set firewall modify balance rule 60 action modify<br>
+set firewall modify balance rule 60 modify table 10<br>
+set firewall modify balance rule 60 destination group address-group gfwlist<br>
 set firewall modify balance rule 60 description "use vtun0 to route gfwlist"
 </code>
 
