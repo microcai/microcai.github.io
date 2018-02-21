@@ -42,6 +42,7 @@ set protocols static table 10 interface-route 0.0.0.0/0 next-hop-interface vtun0
 接着, 设定防火墙, 让 匹配某个 ipset 的包都通过 10 号路由表出去. 如果在 Wizard 向导里, 启用了 2WAN 负载均衡的话, 这个时候会已经创建好一个叫 balance 的 防火墙规则.
 规则的rule xx 之类的, 都是负载均衡的规则. 执行次序是数字从小到大. 这里我插入了个编号 60  的规则
 
+
 <code>
 set firewall modify balance rule 60 action modify
 set firewall modify balance rule 60 modify table 10
