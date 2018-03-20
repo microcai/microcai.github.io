@@ -4,10 +4,10 @@ title: 换用wireguard
 tags: [VPN, wireguard, wg, network]
 ---
 
-之前把家里网络 [/2018/02/22/network-reworked.html 重新折腾] 了一下, 用的是 走socks5 代理的 tcp 协议 openvpn. socks5 代理由 shadowsocks 提供.
+之前把家里网络 [重新折腾](/2018/02/22/network-reworked.html) 了一下, 用的是 走socks5 代理的 tcp 协议 openvpn. socks5 代理由 shadowsocks 提供.
 
 不过, 最近偶然在 LWN 发现了 wireguard 这个新型 VPN, 于是盘算着用起来看看效果.
-结果一不小心, 发现了[https://github.com/Lochnair/vyatta-wireguard], 这个可以让我的路由器也能用 wireguard!
+结果一不小心, 发现了[vyatta-wireguard](https://github.com/Lochnair/vyatta-wireguard), 这个可以让我的路由器也能用 wireguard!
 
 
 于是按照它的文档配置到了路由器上, 然后VPS那边也配置下.
