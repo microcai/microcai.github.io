@@ -5,7 +5,7 @@ title: Peering on DN42
 
 # Peering Information
 
-* AS4242426502
+* AS4242420571
 * Email: microcaicai@gmail.com
 * Hackint: DR
 * PGP: FAA0 9BD7 1698 4B6F 3569 83EC A38D 353F 6534 230D
