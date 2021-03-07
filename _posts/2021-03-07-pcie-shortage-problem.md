@@ -4,7 +4,7 @@ title: ATX 机箱明明有7个pcie槽位
 tags: [PCIe, pcie, PCIE]
 ---
 
-去年的 [这篇文章](2020/12/18/nas-upgraded.html) 里我受够了嵌入式 ATOM 处理器羸弱的性能而斥巨资购买了 锐龙 5600X 作为新的NAS机器的处理器。
+去年的 [这篇文章](/2020/12/18/nas-upgraded.html) 里我受够了嵌入式 ATOM 处理器羸弱的性能而斥巨资购买了 锐龙 5600X 作为新的NAS机器的处理器。
 通过 PCIe 拆分卡<img src="/images/pcie_bifurcation.jpg" height="30px">实现了 HBA 和 10G 网卡同时接入。把主板的 pcie x16 的显卡槽给利用上了。
 
 但是，近期发现了一些好东西，就琢磨着给NAS插上。但是想到这些好东西都需要占用主板的 PCIe 槽的时候就犯难了。
