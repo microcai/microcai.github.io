@@ -333,3 +333,8 @@ img {
   height: 8em;
   display: inline-flex;
 }
+
+.container em {
+  font-style: italic;
+  color: blueviolet;
+}
