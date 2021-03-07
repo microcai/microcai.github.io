@@ -329,7 +329,7 @@ img {
   margin: 0 auto;
 }
 
-.inline-img {
+body .inline-img img{
   height: 8em;
   display: inline-flex;
 }
