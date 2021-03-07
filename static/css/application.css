@@ -328,3 +328,8 @@ img {
   width: 75%;
   margin: 0 auto;
 }
+
+.inline-img {
+  height: 8em;
+  display: inline-flex;
+}
