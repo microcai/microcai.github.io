@@ -42,7 +42,7 @@ void operator()(boost::system::error_code ec, some_type_of_pull pulled_message)
 				ec = boost::system::error_code();
 			}
 		
-			if (ec)
+			if (!ec)
 			{
 				// 处理轮询消息
 			}		
