@@ -26,7 +26,7 @@ tags: [NAS, EPYC]
 除了内存不足，还有一个窘境是 pcie 通道不足。目前我已经把 5600X 的全部 pcie 通道都利用上了，可是有好几个淘汰下来的 120G 的 NVMe 我也想插上发挥余热！
 
 一不做二不休，干脆就上 epyc 平台把！7条满血的 PCIe 插槽！8条支持 RECC 的 DIMM！而且这些 pcie 槽还都支持拆分！
-意味着买几个廉价的 <img src="/images/hyper_m2_x4.jpg" class="inline-img" style="height: 28em; display:inline-flex; width: auto; "> 转接卡就能插上4 7 28个 nvme 盘！
+意味着买几个廉价的 <img src="/images/hyper_m2_x4.jpg" class="inline-img" style="height: 8em; display:inline-flex; width: auto; "> 转接卡就能插上4 7 28个 nvme 盘！
 
 经过2周的采购和等待，最后组装完成了第三台 NAS
 
@@ -34,10 +34,14 @@ tags: [NAS, EPYC]
 
 配置清单为 
 
-主板: ASRock EYCD8T
-CPU: EPYC 7282 ( 7302P 赶上缺货，改用 7282 )
-内存：三星 RECC DDR4-2933 64G * 4 条
-散热器：普通的 SP3 散热器，暴力风扇拆掉丢垃圾桶，换猫头鹰 NF-A9
+|       |                                                          |
+|---------|--------------------------------------------------------|
+|主板    | ASRock EYCD8T                                             |
+|CPU     | EPYC 7282 ( 7302P 赶上缺货，改用 7282 )                   |
+|内存     | 三星 RECC DDR4-2933 64G * 4 条                           |
+|散热器   | 普通的 SP3 散热器，暴力风扇拆掉丢垃圾桶，换猫头鹰 NF-A9      |
+|---------|--------------------------------------------------------|
+
 
 内存之所以上4条，没有插满8通道，一来是因为 7282 毕竟才区区 16核，用不到8通道的带宽。而来未来可以再买4条 64G 升级成 512G 内存。
 
