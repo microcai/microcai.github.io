@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 增城式电车真香
+title: 增程式电车真香
 tags: [增程, 电动车]
 ---
 
