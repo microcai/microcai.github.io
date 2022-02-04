@@ -113,7 +113,7 @@ for (; sync_height < await rpc.get_blockheight();)
 // NOTE rpc_get_block_data 还是并发的 get_transactionreceipt 哈
 [fetch_ok, data] = rpc_get_block_data(sync_height， yield); // yield 说明上下文是在 asio::spawn 开启的协程里
 
-for (; sync_height < await rpc.get_blockheight();)
+for (; sync_height < rpc.get_blockheight(yield);)
 {
     // 马上获取下一个块, 后台获取，不等待结果, 注意这里的 use_promise 替代了 yield
     next_block_data_promise =  rpc_get_block_data(sync_height + 1, asio::experimental::use_promise); 
