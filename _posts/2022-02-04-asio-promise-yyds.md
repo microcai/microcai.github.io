@@ -135,3 +135,8 @@ for (; sync_height < await rpc.get_blockheight();)
 
 promise/await 永远的神！
 
+PS: 我运行在家nas上的巧克力浏览器，虽然还在同步，但是可以使用了 [geth.home.microcai.org:3586](http://geth.home.microcai.org:3586/)
+
+当然，因为是家里的 nas，so 只能用 ipv6 访问。不开放 ipv4 访问，免得麻烦。
+
+稳定性不保证哈！随时调试。
