@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Future 和 Promise 的区别
-tags: [Promise, Future, C++]
+tags: [promise, future, c++]
 ---
 
 promise 和 yield 的区别是什么？
