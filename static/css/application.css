@@ -13,3 +13,8 @@ body .inline-img img{
   font-style: italic;
   color: blueviolet;
 }
+
+p {
+  text-align: justify;
+  font-family: monospace;
+}
