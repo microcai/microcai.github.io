@@ -63,7 +63,7 @@ useGoogleAnalysis: false     # TODO
 sidebar: true
 sidebar-featured-tags: true
 sidebar-about-description: "博士在网络的家"
-sidebar-avatar: /img/avatar-me.jpg     # use absolute URL.
+sidebar-avatar: https://avatars.githubusercontent.com/u/172208?v=4     # use absolute URL.
 
 # Friends
 friends: [
