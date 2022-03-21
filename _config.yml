@@ -8,7 +8,6 @@ future: true
 
 # SNS settings
 RSS: true
-weibo_username:     microcai
 #zhihu_username:     domchen
 github_username:    micricai
 #twitter_username:  microcai
