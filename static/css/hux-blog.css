@@ -282,7 +282,7 @@ pre,
 }
 .intro-header {
   background: no-repeat center center;
-  background-color: #808080;
+  background-color: #2a96ee;
   background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -382,12 +382,13 @@ pre,
   }
 }
 .post-preview > a {
-  color: #404040;
+  color: #4f116e;
 }
 .post-preview > a:hover,
-.post-preview > a:focus {
+.post-preview > a:focus,
+.post-content-preview:hover {
   text-decoration: none;
-  color: #0085a1;
+  color: #e68516;
 }
 .post-preview > a > .post-title {
   font-size: 21px;
@@ -435,9 +436,7 @@ pre,
   font-style: italic;
   color: #a3a3a3;
 }
-.post-content-preview:hover {
-  color: #0085a1;
-}
+
 @media only screen and (min-width: 768px) {
   .post-content-preview {
     font-size: 14px;
