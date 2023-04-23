@@ -795,3 +795,9 @@ body {
   font-size: smaller;
   color: #7a7a7a;
 }
+
+.site-heading h1 {
+  background: linear-gradient(to right, #c26929, blue);
+  -webkit-background-clip: text;
+  color: transparent;
+}
