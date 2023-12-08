@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="7in"
+   height="7in"
+   viewBox="0 0 177.8 177.8"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="vvvf_block_diagram.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0179639"
+     inkscape:cx="451.39124"
+     inkscape:cy="389.01182"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g12"
+       transform="translate(-1.039657,-8.5771703)" />
+    <g
+       id="g15"
+       transform="translate(-23.094112,-47.784653)">
+      <rect
+         style="fill:#a02c2c;stroke-width:0.264583"
+         id="rect4"
+         width="35.348339"
+         height="32.749195"
+         x="30.150055"
+         y="52.242764" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="36.907825"
+         y="65.498383"
+         id="text6"><tspan
+           sodipodi:role="line"
+           id="tspan6"
+           style="stroke-width:0.264583"
+           x="36.907825"
+           y="65.498383">遥控</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="36.907825"
+           y="78.727509"
+           id="tspan7">接收</tspan></text>
+    </g>
+    <g
+       id="g13"
+       transform="translate(-21.534627,-46.744996)">
+      <rect
+         style="fill:#a02c2c;stroke-width:0.264583"
+         id="rect5"
+         width="34.568592"
+         height="31.969452"
+         x="76.934624"
+         y="52.502678" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="79.53376"
+         y="64.978561"
+         id="text8"><tspan
+           sodipodi:role="line"
+           id="tspan8"
+           style="stroke-width:0.264583"
+           x="79.53376"
+           y="64.978561">  旋转</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="79.53376"
+           y="78.207687"
+           id="tspan9">编码器</tspan></text>
+    </g>
+    <g
+       id="g14"
+       transform="translate(-22.574284,-41.806626)">
+      <rect
+         style="fill:#a02c2c;stroke-width:0.294426"
+         id="rect6"
+         width="55.881561"
+         height="26.251343"
+         x="132.81619"
+         y="50.683281" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="138.27438"
+         y="67.317795"
+         id="text10"><tspan
+           sodipodi:role="line"
+           id="tspan10"
+           style="stroke-width:0.264583"
+           x="138.27438"
+           y="67.317795">MODBUS</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="138.27438"
+           y="80.970665"
+           id="tspan11" /></text>
+    </g>
+    <g
+       id="g19">
+      <rect
+         style="fill:#ffdd55;stroke-width:0.264583"
+         id="rect15"
+         width="172.58305"
+         height="100.84673"
+         x="1.5977396"
+         y="47.084045" />
+      <g
+         id="g2"
+         transform="translate(-31.151454,-63.639422)">
+        <rect
+           style="fill:#a02c2c;stroke-width:0.188027"
+           id="rect1"
+           width="74.855286"
+           height="17.67417"
+           x="38.987137"
+           y="180.6404" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="46.004814"
+           y="193.37621"
+           id="text1"><tspan
+             sodipodi:role="line"
+             id="tspan1"
+             style="stroke-width:0.264583"
+             x="46.004814"
+             y="193.37621">SVPWM生成</tspan></text>
+      </g>
+      <g
+         id="g11"
+         transform="translate(-23.094112,-55.582081)">
+        <rect
+           style="fill:#a02c2c;stroke-width:0.226162"
+           id="rect2"
+           width="66.27813"
+           height="17.67417"
+           x="31.189709"
+           y="139.31404" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="42.885853"
+           y="151.78992"
+           id="text2"><tspan
+             sodipodi:role="line"
+             id="tspan2"
+             style="stroke-width:0.264583"
+             x="42.885853"
+             y="151.78992">V/F 控制</tspan></text>
+      </g>
+      <rect
+         style="fill:#a02c2c;stroke-width:0.264583"
+         id="rect3"
+         width="153.34941"
+         height="16.374598"
+         x="8.615428"
+         y="62.418991"
+         transform="translate(-1.039657,-8.5771704)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="40.584877"
+         y="74.634956"
+         id="text3"
+         transform="translate(-1.039657,-8.5771704)"><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="40.584877"
+           y="74.634956"
+           id="tspan17">控制接口</tspan></text>
+      <g
+         id="g18"
+         transform="translate(-1.039657,-8.5771704)">
+        <rect
+           style="fill:#800080;stroke-width:0.264583"
+           id="rect18"
+           width="37.860149"
+           height="11.762377"
+           x="101.67423"
+           y="128.90959" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+           x="108.76581"
+           y="139.01248"
+           id="text18"><tspan
+             sodipodi:role="line"
+             id="tspan18"
+             style="stroke-width:0.264583"
+             x="108.76581"
+             y="139.01248">HAL</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="120.63847"
+         y="108.42381"
+         id="text15"><tspan
+           sodipodi:role="line"
+           id="tspan15"
+           style="stroke-width:0.264583"
+           x="120.63847"
+           y="108.42381">libvfd</tspan><tspan
+           sodipodi:role="line"
+           style="stroke-width:0.264583"
+           x="120.63847"
+           y="122.07668"
+           id="tspan16" /></text>
+    </g>
+  </g>
+</svg>
