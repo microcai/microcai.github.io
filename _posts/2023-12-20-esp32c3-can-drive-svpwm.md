@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ESP32C3 也能输出svpwm
+title: 变频器制作-第九部分之ESP32C3 也能输出svpwm
 tags: [变频器, ESP32C3, ESP32]
 ---
 
