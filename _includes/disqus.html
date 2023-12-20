@@ -1,18 +1,19 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" />
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
 <div id="gitalk-container"></div>
 
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script>
-
-var gitalk = new Gitalk({
-  clientID: 'c974f297478bbdd002a7', //上面申请的Client ID
-  clientSecret: '9c92982c6959747721a9721b75933eb40642ffc0', //上面申请的Client Secret
-  repo: 'microcai.github.io', //GitHub仓库，评论可以在里面查询
-  owner: 'microcai', //GitHub的用户名
-  admin: ['microcai'], //这里也是填GitHub的用户名，不过是数组形式，如['user1','user2']
-  id: location.pathname,      // Ensure uniqueness and length less than 50 唯一值，如果和其他页面一样，则两个页面显示的评论都一样
-  distractionFreeMode: true  // Facebook-like distraction free mode})gitalk.render('gitalk-container') 这里具体功能我还不清楚，到时候懂了再告诉大家，不如我天true
-})
-
-  </script>
-
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'c974f297478bbdd002a7', //上面申请的Client ID
+        clientSecret: '9c92982c6959747721a9721b75933eb40642ffc0', //上面申请的Client Secret
+        repo: 'microcai.github.io', //GitHub仓库，评论可以在里面查询
+        owner: 'microcai', //GitHub的用户名
+        admin: ['microcai'], //这里也是填GitHub的用户名，不过是数组形式，如['user1','user2']
+        id: location.pathname,      // Ensure uniqueness and length less than 50 唯一值，如果和其他页面一样，则两个页面显示的评论都一样
+        distractionFreeMode: true,  // Facebook-like distraction free mode})gitalk.render('gitalk-container') 这里具体功能我还不清楚，到时候懂了再告诉大家，不如我天true
+        title: "{{page.title}}",
+        body: "🚀 " + location.href + "\n\n欢迎通过 issues 留言 ，互相交流学习😊", // 初始化后，issues 的内容
+    });
+    gitalk.render("gitalk-container");
+</script>
