@@ -81,4 +81,9 @@ friends: [
         title: "静静's Blog",
         href : "https://xing-zhi-love.com"
     }
+    ,
+    {
+        title: "老中医的 blog",
+        href: "https://www.jackarain.org/"
+    }
 ]
