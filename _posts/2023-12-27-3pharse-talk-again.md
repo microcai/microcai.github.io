@@ -31,3 +31,10 @@ tags: [三相电]
 比如，开关电源不再需要一个巨大的储能电容。
 当然，一个小容量的滤波电容还是必要的。毕竟需要滤除 pwm 导致的高频谐波。
 
+
+-- 更新
+
+弄了个视频来展示三相恒功率和单相脉动功率导致的电机扭矩差异
+
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Fc4118794&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
