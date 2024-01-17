@@ -179,7 +179,7 @@ SECTIONS
 
 ```C
 /* Vector table */
-__attribute__((section(".vector_table")))
+__attribute__((section(".isr_vector")))
 const FUNC_IRQ __vector_handlers[] = {
 
     _estack,
