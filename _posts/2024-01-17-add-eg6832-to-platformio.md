@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 让 PlatformIO 支持 EG6832（其一）
+title: 让 PlatformIO 支持 EG6832
 tags: [PIO, PlatformIO, EG6832, EGmicro]
 ---
 
