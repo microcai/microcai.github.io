@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 编译期对象构造
+title: 编译期对象构造优化 .bss 为 .rodata
 tags: [constexpr, construct, c++]
 ---
 
