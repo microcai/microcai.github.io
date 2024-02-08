@@ -34,7 +34,7 @@ http://update.cz88.net/ip/qqwry.rar
 
 ghex copywrite.rar
 
-[![copywrite.png](/images/copywrite_rar.png)](/images/copywrite_rar.png)
+![copywrite.png](/images/copywrite_rar.png)
 
 好吧,老实说, 根本看不明白嘛!
 
