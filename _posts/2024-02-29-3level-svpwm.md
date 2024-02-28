@@ -37,9 +37,9 @@ void set_pwm(float duty_A, float duty_B, float duty_C)
 {
     if (mode == TWO_LEVEL_SVPWM)
     {
-        driver_set_pwm(TIM1, channel1, duty_A * period);
-        driver_set_pwm(TIM1, channel2, duty_B * period);
-        driver_set_pwm(TIM1, channel3, duty_C * period);
+        driver_set_pwm(TIM1, channel1, duty_A * perid_count);
+        driver_set_pwm(TIM1, channel2, duty_B * perid_count);
+        driver_set_pwm(TIM1, channel3, duty_C * perid_count);
     }
     else if (mode == THREE_LEVEL_SVPWM)
     {
