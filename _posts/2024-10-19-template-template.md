@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 模板的模板
+title: 从模板的模板论程序员的美学
 tags: [template, c++]
 ---
 
