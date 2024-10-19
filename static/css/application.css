@@ -23,3 +23,7 @@ body {
   text-indent: 2em;
   caret-color: #00000000;
 }
+
+code {
+  text-indent: 0px;
+}
