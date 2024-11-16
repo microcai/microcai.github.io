@@ -37,12 +37,12 @@ aarch64-unknow-linux-gnu-g++ 就是 C++ 的交叉编译器。还有 aarch64-unkn
 而 gcc 的体内，一次只能含有一个平台的机器码生成能力，其他架构的机器码生成功能会通过条件编译排除。这是 gcc 需要专门构建交叉编译器的原因。
 
 
-在任何平台上，你都可以使用 clang 生成 任意平台的代码。方法是传递 --target 参数。
+在任何平台上，你都可以使用 clang 生成 任意平台的代码。方法是传递 -target 参数。
 
 比如
 
 ```bash
-clang++ --target aarch64-unknow-linux-gnu main.cpp
+clang++ -target aarch64-unknow-linux-gnu main.cpp
 ```
 
 不出任何意外的，意外发生了。
@@ -64,26 +64,26 @@ sudo tar -xvf ArchLinuxARM-aarch64-latest.tar.gz -C /usr/gnemul/qemu-aarch64/
 然后使用这个命令编译
 
 ```bash
-clang++ --target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/ main.cpp
+clang++ -target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/ main.cpp
 ```
 
 恭喜你，这次成功编译了。（截至今日， archlinuxarm 上带的 STL 是个有 bug 的版本，导致它的头文件有错误。见 [bug](https://github.com/llvm/llvm-project/issues/92586), 如果遇到了，请相信我，不是我教的方法的问题，是真的系统带的头文件有 bug。自己按bug汇报修下吧。）
 
 
-对于支持将 “clang++ --target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/” 作为编译器的 autotools 工具来说，这个教程已经结束了。
+对于支持将 “clang++ -target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/” 作为编译器的 autotools 工具来说，这个教程已经结束了。
 
 因为只要配置环境变量
 
 ```bash
-export CC="clang --target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/"
-export CXX="clang++ --target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/"
+export CC="clang -target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/"
+export CXX="clang++ -target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/"
 ```
 
 autotools 系列工具就能正常运行了。
 
 但是，同样的方法在 cmake 上会失效。
-因为 cmake 会把 “clang++ --target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/” 作为一个整体去调用可执行文件。
-当然，系统里并不存在一个名为 “clang++ --target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/” 的可执行文件。。。。
+因为 cmake 会把 “clang++ -target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/” 作为一个整体去调用可执行文件。
+当然，系统里并不存在一个名为 “clang++ -target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/” 的可执行文件。。。。
 
 对 cmake 来说，还得多做一个工作，就是建立一个 wrapper。
 
@@ -91,14 +91,14 @@ autotools 系列工具就能正常运行了。
 
 ```bash
 #!/bin/bash
-exec clang --target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/ $*
+exec clang -target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/ $*
 ```
 
 还有写一个 aarch64-unknow-linux-gnu-clang++ 的脚本，脚本里面这么写
 
 ```bash
 #!/bin/bash
-exec clang++ --target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/ $*
+exec clang++ -target aarch64-unknow-linux-gnu --sysroot=/usr/gnemul/qemu-aarch64/ $*
 ```
 
 这样，就可以如传统的交叉编译器做法一样，让 cmake 使用 aarch64-unknow-linux-gnu-clang 和 aarch64-unknow-linux-gnu-clang++ 作为编译器进行交叉。
