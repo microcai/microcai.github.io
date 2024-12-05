@@ -45,3 +45,9 @@ tags: [quotes]
 
 暂时就收集这么多，以后再加。
 
+
+12 月 5 日添加
+
+- 国内关于网络编程领域，就连陈硕的muduo的send设计有问题都没人能指出来，疯狂膜拜reactor，就这种平均水平之下，冒出来一些装模作样支持p2300的sender/receiver模型的人，真的是很奇葩。
+- 一些人 asio 都用不利索，又TM的会 p2300 的 sender/receiver 了，张口结构化并发，真的是张口就来。
+- 学了大硕思想，proactor都给你折腾回reactor
