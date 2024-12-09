@@ -77,5 +77,19 @@ awaitable_overlapped 可以隐式转换为 `WSAOVERLAPPED*` 从而被 AcceptEx �
 这个协程他只有一个 awaitable_overlapped 对象，但是 WSARecv 和 WSASend 都可以复用它。
 
 
-这个库太好用了，其实就一个头文件。他就在 iocp4linux 的仓库里。名为 `#include "universal_async.hpp"`
+对了，如果用在文件 IO 上，则需要不断调整文件的偏移量。这个是用 add_offset 实现的。如下图：
+
+
+![img](/images/awaitable_overlapped4.png)
+
+需要使用  set_offset 将读写指针移动到文件开头。
+然后每次读取后，将返回的读取结果通过 add_offset 更新。
+
+此时由于这个overlapped 要携带 offset 状态了，于是 WSASend 就不和共用一个 awaitable_overlapped 对象了。
+毕竟 WSASend 可不支持传入 offset 偏移量。
+
+
+这个库太好用了，其实就一个头文件。他就在 iocp4linux 的仓库里。名为 `universal_async.hpp`
+
+只要包含这个头文件即可立即享受。
 
