@@ -122,25 +122,25 @@ io_uring_get_sqe 获取到 一个 SEQ 表项后，调用 io_uring_prepXXX 将这
 
 如此修改后，果然性能提高了！！
 
-![img](/images/iocp4linux_perf_2.jpg)
+![img](/images/iocp4linux_perf_4.jpg)
 
 
 然后，通过 strace 检查
 
-![img](/images/iocp4linux_perf_3.jpg)
+![img](/images/iocp4linux_perf_5.jpg)
 
 由于每次接受连接，都会调用 setsockopt 设置  TCP_NODELAY 参数。
 因此这个 setsockopt 的调用数，就表示这段时间内接受了的连接数。
 
-而图中一共接受了两万四千多个连接。但是，与此同时，却只调用了 io_uring_enter 七千多次。
+而图中一共接受了两万九千多个连接。但是，与此同时，却只调用了 io_uring_enter 一千多次。
 
-说明每次 io_uring_enter （ io_uring_submit 和  io_uring_wait_cqe 都会导致一次 io_uring_enter系统调用）都批量提交了 IO。因此系统调用数七千多，就完成了普通（epoll 模式）模式下一共 epoll_wait + accept + recv + send + close 多个组合预计超过二十万个 系统调用才能处理的 “两万多个请求”。
+说明每次 io_uring_enter （ io_uring_submit 和  io_uring_wait_cqe 都会导致一次 io_uring_enter系统调用）都批量提交了 IO。因此系统调用数七千多，就完成了普通（epoll 模式）模式下一共 epoll_wait + accept + recv + send + close 多个组合预计超过三十万个 系统调用才能处理的 “两万多个请求”。
 
-将处理两万多个 http 请求所需要的系统调用数量从二十多万缩减到七千多个。
+将处理两万多个 http 请求所需要的系统调用数量从二十多万缩减到一千多个。
 
 于是获得了巨大的性能提升。
 
-当然，最终一万一的处理数，还是败给一万六的 asio 。。。。
+当然，最终一万三的处理数，还是败给一万六的 asio 。。。。不过有点欣慰的是超过了 epoll 模式的 asio 了。
 
 ASIO 你大爷还是你大爷。
 
