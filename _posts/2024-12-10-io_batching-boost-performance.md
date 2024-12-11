@@ -129,8 +129,8 @@ io_uring_get_sqe 获取到 一个 SEQ 表项后，调用 io_uring_prepXXX 将这
 
 ![img](/images/iocp4linux_perf_5.jpg)
 
-由于每次接受连接，都会调用 setsockopt 设置  TCP_NODELAY 参数。
-因此这个 setsockopt 的调用数，就表示这段时间内接受了的连接数。
+由于每次接受连接，都会调用 getsockname 获取对方 socket 地址。
+因此这个 getsockname 的调用数，就表示这段时间内接受了的连接数。
 
 而图中一共接受了两万九千多个连接。但是，与此同时，却只调用了 io_uring_enter 一千多次。
 
