@@ -55,13 +55,13 @@ asio 简直就是个“宇宙级” 的异步库。
 在获取 OVERLAPPED* 对象然后派发他的完成事件时，
 
 OVERLAPPED\*被强转为 FiberOVERLAPPED\* 对象。
-然后调用 swapcontext 切换到里面存在的 target 
+然后调用 swapcontext 切换到里面存在的 target
  就把 overlapped 对象绑定的协程给复活了。
 
 没有其他代码了，异常的简单。
 
 但是，在 swapcontext 的时候，为何要 使用一个 self 对象，然后又把 __current_yield_ctx 指向 self. 完事后，又为何恢复回去呢？
-这个 __current_yield_ctx 是一个 全局变量，目的是方便 
+这个 __current_yield_ctx 是一个 全局变量，目的是方便
 
 ![img](/images/ucontext_code2.png)
 
