@@ -33,7 +33,7 @@ libco 是 腾讯开源的一个协程库。噱头很大，动不动就是承载�
 算了，还是直接给个对比吧。
 
 
-![alt text](../images/compare_libco_uasync.png)
+![alt text](/images/compare_libco_uasync.png)
 
 图片里两端代码，下面的是正统协程库写的 echo server 里的 accept 循环。
 而上面那段则是 libco 里的例子。
