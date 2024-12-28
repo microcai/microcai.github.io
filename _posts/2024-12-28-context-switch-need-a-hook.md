@@ -62,7 +62,7 @@ free 本身运行也依赖栈。free 不能把自己正在使用的栈给释放�
 其实还是会在发起的线程里处理后续。
 
 我们主要考虑的是竞争事件2：就是协程C,检查发现事件没有完成，于是就使用 zcontext_swap 将自己换出。
-后面线程B获得完成事件通知后，就可以将 overlapped 上存储的 zcontext_t 对象进行幻想。也就是调用 zcontext_swap 切入协程C。
+后面线程B获得完成事件通知后，就可以将 overlapped 上存储的 zcontext_t 对象进行唤醒。也就是调用 zcontext_swap 切入协程C。
 在这里，如果 线程A实际上尚处于 zcontext_swap 将协程C换出的过程中，线程B就调用 zcontext_swap 要切入协程C。
 
 于是竞争发生了，发生了永远无法预测的行为。
