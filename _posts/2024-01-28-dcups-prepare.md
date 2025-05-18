@@ -74,3 +74,12 @@ POE 的供电电压，54v，就是48v蓄电池的浮充电压。
 让高侧的 NMOS 管 100% 占空比导通，并不是一件容易的事情。
 
 诶，找了许久也没找到合适的 dcdc芯片。
+
+# 更新
+
+[直流UPS大功告成](https://www.bilibili.com/video/BV1WrESzVEAx)
+
+一年多后，我总算有了足够的知识，把这个心心念念的 UPS 制作完成了。
+
+过程看 [参加星火计划2025](https://microcai.org/2025/04/24/ups-flyback.html)
+
