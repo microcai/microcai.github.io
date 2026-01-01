@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 运算放大器运算了什么
-tags: [运算放大器, 闭环控制]
+title: Clarke-park 变换毫无意义
+tags: [foc, clarke,park]
 ---
 
 电机领域有个很神奇的现象：人云亦云，不会思考。
