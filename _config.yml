@@ -44,7 +44,7 @@ future: true
 markdown: kramdown
 kramdown:
   input: GFM        # use Github Flavored Markdown !important
-
+  math_engine: mathjax
 
 # Duoshuo settings
 # please set your own DuoShuo account in `post.html` and `about.html`
@@ -64,6 +64,7 @@ sidebar: true
 sidebar-featured-tags: true
 sidebar-about-description: "博士在网络的家"
 sidebar-avatar: https://avatars.githubusercontent.com/u/172208?v=4     # use absolute URL.
+
 
 # Friends
 friends: [
