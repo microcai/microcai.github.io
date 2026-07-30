@@ -14,11 +14,11 @@ Let me explain step by step.
 
 # 1. Syllable Structure: The Starting Point of Voice Decoding in the Human Brain
 
-The sounds of human speech are not continuous streams, but rather divided by rhythmic intervals into discrete syllables. Acoustically, the basic structure of each syllable is uniform: a syllable begins with a consonant (or semi-vowel) and ends with a vowel or semi-vowel. A lone vowel or semi-vowel can also form a complete syllable.
+The sounds of human speech are not continuous streams, but rather divided by rhythmic intervals into discrete syllables. Acoustically, the basic structure of each syllable is uniform: a syllable begins with a consonant (or semivowel) and ends with a vowel or semivowel. A lone vowel or semivowel can also form a complete syllable.
 
 However, what the ear hears is not the true syllable structure. The brain must perform a secondary split based on semantics.
 
-Take the example of **thank you**. The ear hears two syllables—**"thang" "Q"** (三 Q in Chinese transliteration). But the brain needs to split them into two independent meaning units: *thank* and *you*.
+Take the example of **thank you**. The ear hears two syllables—"san Q" (三 Q in Chinese transliteration). But the brain needs to split them into two independent meaning units: *thank* and *you*.
 
 When the syllables are re-split by meaning boundaries, the syllable structure begins to diverge—into **open syllables** and **closed syllables**:
 
@@ -26,15 +26,15 @@ When the syllables are re-split by meaning boundaries, the syllable structure be
 - *you* ends with a vowel, a typical **open syllable** (the ending is open).
 
 
-There are languages that do not allow closed syllables to exist at all. Chinese, Japanese, and Italian are typical examples—all syllables must end with a vowel or semi-vowel.
+There are languages that do not allow closed syllables to exist at all. Chinese, Japanese, and Italian are typical examples—all syllables must end with a vowel or semivowel.
 
 Other languages, on the other hand, are full of closed-syllable words. English, German, Arabic, and Slavic languages are representative.
 
 Here lies a crucial physical fact: the human mouth cannot produce a pure consonant alone. The acoustic information of a consonant is encoded in the **sudden changes** of the sound wave—frequency mutations. And "mutation" is fundamentally a transient phenomenon—an instantaneous event that cannot be sustained. By contrast, a vowel's information is encoded in the sound wave's **fundamental frequency and harmonic structure**, which is a sustainable waveform.
 
-Thus, sounds produced by the mouth must end with a vowel (or semi-vowel). Consonant clusters can appear at the beginning of a syllable, but the syllable's end must be a vowel that can be voiced.
+Thus, sounds produced by the mouth must end with a vowel (or semivowel). Consonant clusters can appear at the beginning of a syllable, but the syllable's end must be a vowel that can be voiced.
 
-> **Supplementary note**: In my theoretical framework, anything that can be sustained vocally is a vowel—those that cannot be sustained and thus are produced in a fleeting manner are consonants. Anything else that doesn't neatly fit into pure consonants or vowels also falls into the vowel family. The ones that can freely combine with any consonant are **pure vowels** (like *a*, which can form *ta*, *fa*, *ma*, *la*, *sa*, etc.). The ones that cannot combine freely are **semi-vowels** (e.g., *s*—*ts* is very natural, but *fs*, *ks*, *ls* are highly unnatural).
+> **Supplementary note**: In my theoretical framework, anything that can be sustained vocally is a vowel—those that cannot be sustained and thus are produced in a fleeting manner are consonants. Anything else that doesn't neatly fit into pure consonants or vowels also falls into the vowel family. The ones that can freely combine with any consonant are **pure vowels** (like *a*, which can form *ta*, *fa*, *ma*, *la*, *sa*, etc.). The ones that cannot combine freely are **semivowels** (e.g., *s*—*ts* is very natural, but *fs*, *ks*, *ls* are highly unnatural).
 
 Now let's re-examine the *thank you* (三 Q) example. Physically, it is pronounced as two open syllables (each ending with a vowel), but in terms of meaning boundaries, the brain cuts it into a closed syllable *thank* (ending with consonant k) and an open syllable *you*.
 
@@ -125,7 +125,7 @@ In fact, we no longer use the phonetic translation "声呐" (sonar) but uniforml
 Behind all this is the operation of **morphology**. Morphology pieces together vocabulary; vocabulary forms sentences through grammar. Linear output defines open-syllable languages, while reorganized output defines closed-syllable languages.
 
 
-# 4. Open-Syllablization and Isolationism — The Future Direction of Language
+# 4. Open-syllabification and Isolating Morphology — The Future Direction of Language
 
 In fact, all of humanity is now in an era of information explosion, and languages are rapidly evolving toward **isolationist** morphology. The operating principle of isolationism fundamentally requires open syllables.
 
@@ -136,13 +136,13 @@ The essence of isolationist morphology is "LEGO bricks"—every root used in com
 
 Why can closed syllables (consonant endings, consonant clusters) not perform this high-frequency block-style construction?
 
-Because closed syllables have terrifying **"chemical adhesive power"** in acoustic physics. If you force two closed-syllable words together like LEGO bricks—for example, forcibly joining two roots in English—the dense consonant clusters at the seam will unleash a disastrous **"acoustic catastrophe"**:
+Because closed syllables have strong **"acoustic adhesion"** in acoustic physics. If you force two closed-syllable words together like LEGO bricks—for example, forcibly joining two roots in English—the dense consonant clusters at the seam will unleash a disastrous **"acoustic catastrophe"**:
 
 1. **Assimilation swallowing**: The final consonant of the first word will snatch away the initial vowel of the second word, causing the semantic boundary to melt away.
 2. **Phonetic deformation**: To make the tongue emit four consonants in a row within one second, the brain must activate "assimilation," "dissimilation," or "reduction" algorithms, completely warping the pronunciation of two originally independent roots until they become unrecognizable.
 
 This directly undermines the entire purpose of isolationism! If two LEGO bricks, once combined, distort each other's shape (pronunciation and meaning), how can the brain still perform efficient, linear "frame-synchronized" decoding? The brain is forced to open extra memory buffers to execute "backtracking correction algorithms," entirely increasing cognitive load.
 
-The ultimate expression of open-syllablization and isolationism is precisely **Chinese**. Chinese is the highest form of isolationist word formation—every character is an independent syllable, with no root deformation, no assimilation-induced sound changes, and every root maintains absolute boundary insulation.
+The ultimate expression of open-syllabification and isolating morphology is precisely **Chinese**. Chinese is the highest form of isolating morphology—every character is an independent syllable, with no root deformation, no assimilation-induced sound changes, and every root maintains absolute boundary insulation.
 
 Thus, Chinese is not only a paradigm among existing languages, but also the future direction of the evolution of human language.
