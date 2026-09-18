@@ -62,6 +62,13 @@ tags: [lang]
 2. 大脑检索上下文：已知 *ten* 是数词，*apples* 是名词。
 3. 大脑执行重组：把 *n* 从后一个帧“夺回”，归还给前一个帧，最终还原为 *"ten apples"*。
 
+<iframe
+  src="/assets/animations/syllable-recombination.html"
+  style="width: 100%; height: 560px; border: none; border-radius: 16px; overflow: hidden;"
+  loading="lazy"
+  title="英语音节回溯重组机制动画">
+</iframe>
+
 这种**“回溯—修正—重组”**的操作链，需要额外占用前额叶的工作记忆缓存，并完全不同于开音节语言的线性解码策略。两种解码策略之间，存在着本质的计算鸿沟。
 
 这两种截然不同的语音解码策略，会在人类发育的最早期就产生分野。

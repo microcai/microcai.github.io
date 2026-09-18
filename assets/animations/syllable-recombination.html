@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语音节回溯重组机制 · 动画演示</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #0f1419;
+    color: #e6e6e6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  .container {
+    width: 100%;
+    max-width: 880px;
+    background: #1a1f2e;
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.4);
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 13px;
+    color: #8892a8;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .stage {
+    position: relative;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 0;
+    overflow: hidden;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    height: 80px;
+  }
+  .row-label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #6b7390;
+    width: 90px;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+  .row-content {
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 1;
+    height: 100%;
+  }
+  .syl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    padding: 0 16px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "SF Mono", Consolas, monospace;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 2px solid transparent;
+  }
+  .syl.te { background: rgba(99,179,237,0.15); color: #63b3ed; border-color: rgba(99,179,237,0.4); }
+  .syl.nap { background: rgba(237,137,54,0.15); color: #ed8936; border-color: rgba(237,137,54,0.4); }
+  .syl.ples { background: rgba(237,137,54,0.15); color: #ed8936; border-color: rgba(237,137,54,0.4); }
+  .syl.ten { background: rgba(99,179,237,0.2); color: #63b3ed; border-color: rgba(99,179,237,0.6); }
+  .syl.apples { background: rgba(237,137,54,0.2); color: #ed8936; border-color: rgba(237,137,54,0.6); }
+  .n-mover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f56565, #e53e3e);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+    font-family: "SF Mono", Consolas, monospace;
+    position: absolute;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 16px rgba(245,101,101,0.4);
+    z-index: 10;
+  }
+  .boundary {
+    width: 2px;
+    height: 70px;
+    background: repeating-linear-gradient(to bottom, #6b7390 0, #6b7390 4px, transparent 4px, transparent 8px);
+    margin: 0 4px;
+    transition: all 0.6s ease;
+  }
+  .boundary.meaning { background: repeating-linear-gradient(to bottom, #68d391 0, #68d391 4px, transparent 4px, transparent 8px); }
+  .boundary.physical { background: repeating-linear-gradient(to bottom, #fbb6ce 0, #fbb6ce 4px, transparent 4px, transparent 8px); }
+  .arrow {
+    font-size: 18px;
+    color: #6b7390;
+  }
+  .status {
+    text-align: center;
+    min-height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    padding: 12px 20px;
+    background: rgba(0,0,0,0.25);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+  }
+  .status-step {
+    font-size: 13px;
+    color: #8892a8;
+    margin-bottom: 4px;
+  }
+  .status-msg {
+    font-size: 15px;
+    color: #e6e6e6;
+    font-weight: 500;
+  }
+  .status.warn { background: rgba(245,101,101,0.12); }
+  .status.warn .status-msg { color: #fc8181; }
+  .status.info { background: rgba(99,179,237,0.1); }
+  .status.info .status-msg { color: #63b3ed; }
+  .status.success { background: rgba(104,211,145,0.12); }
+  .status.success .status-msg { color: #68d391; }
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+  .btn-replay {
+    background: linear-gradient(135deg, #63b3ed, #4299e1);
+    color: #fff;
+  }
+  .btn-replay:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(99,179,237,0.3); }
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #6b7390;
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-bar { width: 14px; height: 2px; }
+  .legend-bar.meaning { background: #68d391; }
+  .legend-bar.physical { background: #fbb6ce; }
+  .legend-bar.n { background: #f56565; }
+  .step-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 16px;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2d3748;
+    transition: all 0.3s ease;
+  }
+  .dot.active { background: #63b3ed; transform: scale(1.3); }
+  .dot.done { background: #68d391; }
+  .hidden { opacity: 0; pointer-events: none; }
+  .brain-icon {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>英语音节回溯重组机制</h1>
+  <div class="subtitle">物理发音帧边界 ≠ 语义边界 · 大脑如何"夺回"被侵吞的辅音</div>
+
+  <div class="stage">
+    <!-- 语义层：说话者想表达的意思 -->
+    <div class="row" id="meaningRow">
+      <div class="row-label">语义层<br><small>(说话意图)</small></div>
+      <div class="row-content">
+        <div class="syl ten" id="m-ten">ten</div>
+        <div class="boundary meaning" id="m-boundary"></div>
+        <div class="syl apples" id="m-apples">apples</div>
+      </div>
+    </div>
+
+    <!-- 物理发音层：实际发出的声学帧 -->
+    <div class="row" id="physicalRow">
+      <div class="row-label">声学层<br><small>(物理帧)</small></div>
+      <div class="row-content">
+        <div class="syl te" id="p-te">te</div>
+        <div class="n-mover" id="nMover" style="left: 0px;">n</div>
+        <div class="boundary physical" id="p-boundary" style="margin-left: 8px;"></div>
+        <div class="syl nap" id="p-nap" style="margin-left: 8px;">ap</div>
+        <div class="syl ples" id="p-ples">ples</div>
+      </div>
+    </div>
+
+    <!-- 解析层：大脑解码结果 -->
+    <div class="row" id="parseRow">
+      <div class="row-label">解析层<br><small>(大脑解码)</small></div>
+      <div class="row-content" id="parseContent">
+        <span class="arrow">⏳</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="status" id="status">
+    <div class="status-step">准备中</div>
+    <div class="status-msg">点击"重新播放"开始演示</div>
+  </div>
+
+  <div class="step-indicator" id="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <div class="controls">
+    <button class="btn-replay" onclick="playAnimation()">▶ 重新播放</button>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><span class="legend-bar meaning"></span>语义边界</div>
+    <div class="legend-item"><span class="legend-bar physical"></span>物理帧边界</div>
+    <div class="legend-item"><span class="legend-bar n"></span>被侵吞的辅音 n</div>
+  </div>
+</div>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  function setStatus(step, msg, type='') {
+    const s = $('status');
+    s.className = 'status ' + type;
+    s.querySelector('.status-step').textContent = step;
+    s.querySelector('.status-msg').textContent = msg;
+  }
+
+  function setDot(i, state) {
+    const dots = $('dots').children;
+    if (dots[i]) dots[i].className = 'dot ' + state;
+  }
+
+  function resetDots() {
+    [...$('dots').children].forEach(d => d.className = 'dot');
+  }
+
+  // 计算需要移动的距离：从 nap 块左侧移到 te 块右侧
+  function getMoveDistance() {
+    const te = $('p-te');
+    const nap = $('p-nap');
+    const container = te.parentElement;
+    const teRect = te.getBoundingClientRect();
+    const napRect = nap.getBoundingClientRect();
+    const conRect = container.getBoundingClientRect();
+    // n 的目标位置：te 块的右边缘
+    const targetX = teRect.right - conRect.left;
+    // n 的起始位置：nap 块的左边缘附近
+    const startX = napRect.left - conRect.left;
+    return { targetX, startX };
+  }
+
+  async function playAnimation() {
+    // 重置
+    resetDots();
+    $('parseContent').innerHTML = '<span class="arrow">⏳</span>';
+    $('nMover').style.left = '0px';
+    $('nMover').style.opacity = '1';
+
+    // 第 0 步：说话者想表达 "ten apples"
+    setDot(0, 'active');
+    setStatus('第 0 步', '说话者想表达：ten（数词）+ apples（名词）', 'info');
+    await sleep(1500);
+
+    // 第 1 步：物理发音 - 连读侵吞
+    setDot(0, 'done');
+    setDot(1, 'active');
+    setStatus('第 1 步', '物理发音连读：尾辅音 n 抢走下一个词的元音 → "te-napples"', 'warn');
+    
+    // 显示 n 被吞到第二个帧里
+    const { startX, targetX } = getMoveDistance();
+    $('nMover').style.left = startX + 'px';
+    await sleep(100);
+    // 让 n 移到 nap 那一侧（显示侵吞）
+    // 实际上 n 已经在 nap 侧，这里用动画强调
+    $('p-boundary').style.opacity = '0.3';
+    await sleep(1800);
+
+    // 第 2 步：大脑检测到边界不匹配
+    setDot(1, 'done');
+    setDot(2, 'active');
+    setStatus('第 2 步', '大脑检测异常：物理帧边界(te|napples) ≠ 语义边界(ten|apples)', 'warn');
+    // 高亮两个边界
+    $('p-boundary').style.opacity = '1';
+    $('p-boundary').style.background = 'repeating-linear-gradient(to bottom, #f56565 0, #f56565 4px, transparent 4px, transparent 8px)';
+    $('m-boundary').style.background = 'repeating-linear-gradient(to bottom, #68d391 0, #68d391 4px, transparent 4px, transparent 8px)';
+    await sleep(2000);
+
+    // 第 3 步：回溯重组 - 把 n 从第二个帧夺回
+    setDot(2, 'done');
+    setDot(3, 'active');
+    setStatus('第 3 步', '执行回溯重组：将辅音 n 从后帧"夺回"，归还给前帧', 'info');
+    // 移动 n 到 te 的右侧
+    $('nMover').style.left = targetX + 'px';
+    // 恢复物理边界颜色
+    $('p-boundary').style.background = 'repeating-linear-gradient(to bottom, #fbb6ce 0, #fbb6ce 4px, transparent 4px, transparent 8px)';
+    await sleep(1200);
+
+    // 第 4 步：成功还原
+    setDot(3, 'done');
+    setDot(4, 'active');
+    setStatus('第 4 步', '解码成功：ten | apples — 语义边界与发音帧重新对齐', 'success');
+    $('parseContent').innerHTML = 
+      '<div class="syl ten" style="font-size:20px;">ten</div>' +
+      '<div class="boundary meaning"></div>' +
+      '<div class="syl apples" style="font-size:20px;">apples</div>' +
+      '<span style="margin-left:12px;font-size:20px;">✅</span>';
+    await sleep(1200);
+    setDot(4, 'done');
+    setStatus('完成', '这就是闭音节语言的"回溯—修正—重组"算法 · 占用前额叶工作记忆缓存', 'success');
+  }
+
+  // 自动播放一次
+  window.addEventListener('load', () => {
+    setTimeout(playAnimation, 600);
+  });
+</script>
+</body>
+</html>
