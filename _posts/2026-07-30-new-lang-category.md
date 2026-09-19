@@ -58,9 +58,13 @@ tags: [lang]
 
 听到 *"te-napples"* 这个声学序列（物理帧边界在 *te* 和 *napples* 之间）。
 
+![发音连读：ten apples 重组为 te na ples 三个音节](/assets/images/syllable-connected-speech.jpg)
+
 1. 大脑判断：当前的物理帧切分位置似乎不对，需要调整。
 2. 大脑检索上下文：已知 *ten* 是数词，*apples* 是名词。
 3. 大脑执行重组：把 *n* 从后一个帧“夺回”，归还给前一个帧，最终还原为 *"ten apples"*。
+
+![听觉重组：大脑将 te na ples 回溯还原为 ten apples](/assets/images/syllable-auditory-recombination.jpg)
 
 <video
   src="/assets/animations/syllable-recombination-video.mp4"
