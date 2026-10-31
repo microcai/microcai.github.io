@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 学习型残差实验观测器：基于机器学习和主动实验的电机参数观测器
-tags: [foc, sensorless, observer, HFI, EKF]
+tags: [foc, sensorless, observer, HFI, EKF, machine-learning]
 ---
 
 <!-- ============================================================
@@ -123,7 +123,7 @@ $$
  \text{注入电压} \approx \text{增量电感矩阵}\times\frac{d\,\text{高频电流}}{dt} \tag{2}
 $$
 
-其中各轴的**增量电感**定义为磁链对该轴电流的偏导数。关键在于：增量电感不是常数——凸极使其随转子位置变化，磁饱和使其随电流工作点变化。变换到静止 αβ 坐标系，记平均电感（两轴增量电感之均值）与半凸极差（两轴增量电感之差的一半），得
+其中各轴的**增量电感**定义为磁链对该轴电流的偏导数。关键在于：增量电感不是常数——凸极使其随转子位置变化，磁饱和使其随电流工作点变化。变换到静止 αβ 坐标系，记平均电感（两轴增量电感之均值）与半凸极差（两轴增量电感之差的一半）——内嵌式磁路直轴电感较小，半凸极差取负值，其符号在解调与锁相中统一吸收，不影响后续推导——得
 
 $$
  \text{电感矩阵}\big(\text{转子角度}\big)=\text{平均电感}\times\text{单位阵}+\text{半凸极差}\times\begin{bmatrix}\cos\big(2\times\text{转子角度}\big) & \sin\big(2\times\text{转子角度}\big)\\ \sin\big(2\times\text{转子角度}\big) & -\cos\big(2\times\text{转子角度}\big)\end{bmatrix} \tag{3}
