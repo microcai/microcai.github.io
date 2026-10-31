@@ -11,7 +11,8 @@ tags: [foc, sensorless, observer, HFI, EKF]
   2) 删除「附录 C：APO 思想脉络」整节；
   3) 删除文末「修订记录」；
   4) 补全参考文献中标注 ⟨待核实⟩ 的条目；
-  5) 用真实仿真/实验数据填充第 VII 节的占位表格。
+  5) 用真实仿真/实验数据填充第 VII 节的占位表格；
+  6) 「记号约定与替换表」改为标准符号表（Nomenclature），各「全称：」行整体删除，删除对《新数学语言倡议》的引用。
   其余正文即为论文格式。
 ============================================================ -->
 
@@ -33,7 +34,7 @@ tags: [foc, sensorless, observer, HFI, EKF]
 
 # 主动感知观测器：面向永磁同步电机无传感器驱动的不确定性触发高频注入联合状态—参数估计
 
-**作者：** （略）
+**作者：DR （略）
 **单位：** （略）
 
 ## 摘要
@@ -75,6 +76,34 @@ tags: [foc, sensorless, observer, HFI, EKF]
 
 ---
 
+## 记号约定与替换表
+
+本文记号遵循本站《新数学语言倡议》的两层分工：**描述层**以与正文一致的全称书写关键公式（各方程后以「全称：」行给出，乘号显式写出）；**演算层**（推导与附录）使用下表短符号，作用域限于该推导段，结论回译为全称。任何符号不跨节重载；单字母仅在表内有定义时使用。
+
+| 短符号 | 全称 | 说明 |
+|---|---|---|
+| θ, ω | 转子电角度, 电角速度 | 快变状态；k 为离散时间下标 |
+| Δt | 采样周期 | 一个控制周期 |
+| R<sub>s</sub>, ψ<sub>f</sub> | 定子电阻, 永磁磁链 | 慢变参数 |
+| L<sub>d</sub>, L<sub>q</sub>, L̄, ΔL | 直轴电感, 交轴电感, 平均电感, 半凸极差 | ΔL=(L<sub>d</sub>−L<sub>q</sub>)/2 |
+| L<sup>inc</sup> | 增量电感 | 工作点小信号电感 |
+| u, i, e<sub>emf</sub> | 电压向量, 电流向量, 反电势向量 | 静止 αβ 系；下标 h 表示高频分量 |
+| U<sub>h</sub>, ω<sub>h</sub> | 注入电压幅值, 注入角频率 | 高频激励 |
+| T(θ) | 坐标旋转矩阵 | 转子系 ↔ 静止系 |
+| g<sub>r</sub>, g | 旋转注入解调增益, 脉振误差信号灵敏度 | 式 (6), 式 (8) |
+| ε<sub>p</sub>, ε | 解调位置相量, 解调误差信号 | 式 (6), 式 (8) |
+| x, φ | 联合状态向量, 参数向量 | φ=[R<sub>s</sub>, ψ<sub>f</sub>, L<sub>d</sub>, L<sub>q</sub>]ᵀ |
+| F, Q | 状态转移矩阵, 过程噪声协方差 | 式 (11) |
+| P, K, r<sub>k</sub> | 联合协方差, 卡尔曼增益, 残差（新息） | EKF 量 |
+| H<sup>b</sup>, R<sub>b</sub>, S | 基波观测雅可比, 基波量测噪声协方差, 新息协方差 | 式 (16), (18) |
+| I, γ | 累积信息矩阵, 遗忘因子 | 式 (20) |
+| V, Λ | 特征向量矩阵, 特征值矩阵 | I 的特征分解 |
+| ε<sub>P</sub>, ε<sub>I</sub>, ρ, C<sub>inj</sub> | 协方差门限, 信息门限, 代价门限, 注入代价 | 触发与门控 |
+| h, σ² | 注入观测行向量, 标量噪声方差 | 式 (24), (25), 附录 B |
+| J | 批量信息矩阵 | 式 (19) 中间量 |
+
+---
+
 ## II. 高频注入的信号模型
 
 本节从增量电感出发，推导高频响应电流中位置信息的来源、解调误差信号的形式，以及磁极极性的饱和不对称机制。这些推导同时给出第 IV 节注入实验的观测方程。
@@ -84,10 +113,10 @@ tags: [foc, sensorless, observer, HFI, EKF]
 转子坐标系下 PMSM 定子电压方程为
 
 $$
- u_{dq}=R_s i_{dq}+\frac{d\psi_{dq}}{dt}+\omega_e J\psi_{dq},\qquad J=\begin{bmatrix}0&-1\\1&0\end{bmatrix} \tag{1} 
+ u_{dq}=R_s\, i_{dq}+\frac{d\psi_{dq}}{dt}+\omega\begin{bmatrix}0&-1\\1&0\end{bmatrix}\psi_{dq} \tag{1}
 $$
 
-其中 \\(\theta\\) 为转子电角度，\\(\omega_e\\) 为电角速度，\\(\psi_d=L_d i_d+\psi_f\\)，\\(\psi_q=L_q i_q\\)。注入信号幅值小、频率高（典型 \\(\omega_h\\) 为基波的几十倍），在该频段做小信号分析时，电阻项与随基波频率变化的反电势项均可忽略，电压方程退化为
+其中 \\(\theta\\) 为转子电角度，\\(\omega\\) 为电角速度，\\(\psi_d=L_d i_d+\psi_f\\)，\\(\psi_q=L_q i_q\\)。注入信号幅值小、频率高（典型 \\(\omega_h\\) 为基波的几十倍），在该频段做小信号分析时，电阻项与随基波频率变化的反电势项均可忽略，电压方程退化为
 
 $$
  u_h \approx L^{\mathrm{inc}}\,\frac{di_h}{dt},\qquad L^{\mathrm{inc}}=\operatorname{diag}\!\big(L_d^{\mathrm{inc}},\,L_q^{\mathrm{inc}}\big) \tag{2} 
@@ -99,17 +128,19 @@ $$
  L_{\alpha\beta}(\theta)=T(\theta)\,L^{\mathrm{inc}}\,T(\theta)^{\top} =\bar L I+\Delta L\begin{bmatrix}\cos 2\theta & \sin 2\theta\\ \sin 2\theta & -\cos 2\theta\end{bmatrix} \tag{3} 
 $$
 
+> 全称：定子高频电感矩阵（静止两相系）= 平均增量电感 × 单位矩阵 + 半凸极差 × 二倍角调制矩阵（随 2θ 周期变化）
+
 其中 \\(T(\theta)\\) 为旋转矩阵。电感矩阵以 \\(2\theta\\) 周期变化——这就是「电流响应可以编码转子位置」的全部物理内容。
 
 ### B. 旋转注入的响应与解调
 
-采用复数记号 \\(x=x_\alpha+j x_\beta\\)，式 (3) 的矩阵作用等价于 \\(L_{\alpha\beta}x \leftrightarrow \bar L x+\Delta L e^{j2\theta}\overline{x}\\)，其逆为
+采用复数记号 \\(i=i_\alpha+j i_\beta\\)（高频电流的复数形式，勿与状态向量 x 混淆），式 (3) 的矩阵作用等价于 \\(L_{\alpha\beta}\,i \leftrightarrow \bar L\, i+\Delta L\, e^{j2\theta}\overline{i}\\)，其逆为
 
 $$
- L_{\alpha\beta}^{-1}x \leftrightarrow \frac{\bar L x-\Delta L\, e^{j2\theta}\overline{x}}{\bar L^2-\Delta L^2} \tag{4} 
+ L_{\alpha\beta}^{-1}i \leftrightarrow \frac{\bar L\, i-\Delta L\, e^{j2\theta}\,\overline{i}}{\bar L^2-\Delta L^2} \tag{4}
 $$
 
-注入旋转电压 \\(u_h=U_h e^{j\omega_h t}\\)。由于 \\(\omega_h\gg\omega_e\\)，一个高频周期内 \\(\theta\\) 近似不变，对 \\(di_h/dt=L_{\alpha\beta}^{-1}u_h\\) 积分得稳态响应
+注入旋转电压 \\(u_h=U_h e^{j\omega_h t}\\)。由于 \\(\omega_h\gg\omega\\)，一个高频周期内 \\(\theta\\) 近似不变，对 \\(di_h/dt=L_{\alpha\beta}^{-1}u_h\\) 积分得稳态响应
 
 $$
  i_h(t)=\frac{U_h}{j\omega_h(\bar L^2-\Delta L^2)}\Big(\bar L\, e^{j\omega_h t}+\Delta L\, e^{j2\theta}\, e^{-j\omega_h t}\Big) \tag{5} 
@@ -118,7 +149,7 @@ $$
 响应由两个序列构成：**正序分量**幅值 \\(\propto U_h/\omega_h\bar L\\)，只含平均电感信息；**负序分量**幅值 \\(\propto U_h\Delta L/(\omega_h L_d^{\mathrm{inc}}L_q^{\mathrm{inc}})\\)（注意 \\(\bar L^2-\Delta L^2=L_d^{\mathrm{inc}}L_q^{\mathrm{inc}}\\)），相位含 \\(2\theta\\)。用 \\(e^{j\omega_h t}\\) 同步解调并低通滤波，正序被搬到 \\(2\omega_h\\) 滤除，负序被搬到直流：
 
 $$
- \varepsilon_p \triangleq \operatorname{LPF}\!\big\{i_h(t)\, e^{j\omega_h t}\big\} = k_h\, e^{j2\theta},\qquad k_h=\frac{U_h\,\Delta L}{\omega_h L_d^{\mathrm{inc}} L_q^{\mathrm{inc}}}\, e^{-j\pi/2} \tag{6} 
+ \varepsilon_p \triangleq \operatorname{LPF}\!\big\{i_h(t)\, e^{j\omega_h t}\big\} = g_r\, e^{j2\theta},\qquad g_r=\frac{U_h\,\Delta L}{\omega_h L_d^{\mathrm{inc}} L_q^{\mathrm{inc}}}\, e^{-j\pi/2} \tag{6} 
 $$
 
 即解调相量的辐角直接给出 \\(2\theta\\)。相对估计角 \\(\hat\theta\\) 归一化，得标量误差信号 \\(\varepsilon=\sin\big(2(\theta-\hat\theta)\big)\approx 2\Delta\theta\\)（小误差时），供锁相环或观测器压零。
@@ -134,8 +165,10 @@ $$
 将 \\(i_{\hat q}^{h}\\) 与响应同相的 \\(\sin\omega_h t\\) 相乘后低通，得误差信号
 
 $$
- \varepsilon=-\frac{U_h\,\Delta L}{2\omega_h L_d^{\mathrm{inc}}L_q^{\mathrm{inc}}}\,\sin 2\Delta\theta \;\approx\; -\frac{U_h\,\Delta L}{\omega_h L_d^{\mathrm{inc}}L_q^{\mathrm{inc}}}\,\Delta\theta \tag{8} 
+ \varepsilon=-\frac{U_h\,\Delta L}{2\omega_h L_d^{\mathrm{inc}}L_q^{\mathrm{inc}}}\,\sin 2\Delta\theta \;\approx\; -\frac{U_h\,\Delta L}{\omega_h L_d^{\mathrm{inc}}L_q^{\mathrm{inc}}}\,\Delta\theta \tag{8}
 $$
+
+> 全称：解调误差信号 ≈ −注入电压幅值 × 半凸极差 ÷ (注入角频率 × 直轴增量电感 × 交轴增量电感) × sin(2 × 角度误差) ≈ −误差灵敏度 × 角度误差
 
 误差信号对位置误差的灵敏度 \\(g\triangleq U_h\Delta L/(\omega_h L_d^{\mathrm{inc}}L_q^{\mathrm{inc}})\\) 由注入幅值、频率与电机凸极共同决定——这就是第 IV 节注入实验观测方程的增益来源。
 
@@ -160,13 +193,15 @@ $$
 注意此处 \\(L_d,L_q\\) 指基波工作点的电感（平均意义），与第 II 节的增量电感 \\(L_d^{\mathrm{inc}},L_q^{\mathrm{inc}}\\) 通过饱和曲线相联系：APO 用离线饱和 map 约束二者的关系（第 IV-E 节）。过程模型取最简形式：
 
 $$
- \theta_{k+1}=\theta_k+T_s\omega_k+w_\theta,\quad \omega_{k+1}=\omega_k+w_\omega,\quad p_{k+1}=p_k+w_p \tag{10} 
+ \theta_{k+1}=\theta_k+\Delta t\,\omega_k+w_\theta,\quad \omega_{k+1}=\omega_k+w_\omega,\quad \varphi_{k+1}=\varphi_k+w_\varphi \tag{10} 
 $$
 
-其中 \\(p=[R_s,\psi_f,L_d,L_q]^{\top}\\) 为参数块，各 \\(w\sim\mathcal N(0,q)\\) 独立。转移矩阵与过程噪声为
+> 全称：下一时刻转子角度 = 本时刻角度 + 采样周期 × 角速度；下一时刻角速度 = 本时刻角速度；下一时刻参数向量 = 本时刻参数向量（漂移计入噪声）
+
+其中 \\(\varphi=[R_s,\psi_f,L_d,L_q]^{\top}\\) 为参数向量，各 \\(w\sim\mathcal N(0,q)\\) 独立。转移矩阵与过程噪声为
 
 $$
- F=\begin{bmatrix}1&T_s&\mathbf 0\\ 0&1&\mathbf 0\\ \mathbf 0&\mathbf 0&I_4\end{bmatrix},\qquad Q=\operatorname{diag}\big(q_\theta,q_\omega,q_{R_s},q_{\psi_f},q_{L_d},q_{L_q}\big) \tag{11} 
+ F=\begin{bmatrix}1&\Delta t&\mathbf 0\\ 0&1&\mathbf 0\\ \mathbf 0&\mathbf 0&I_4\end{bmatrix},\qquad Q=\operatorname{diag}\big(q_\theta,q_\omega,q_{R_s},q_{\psi_f},q_{L_d},q_{L_q}\big) \tag{11} 
 $$
 
 状态块 \\(q_\theta,q_\omega\\) 较大以跟踪快变；参数块极小以体现慢变（\\(q_{R_s}\\) 可按热时间常数整定）。APO 不依赖机械方程：转速作为慢变状态被估计。若机械模型可得，可替换 \\(F\\) 的对应块，与本框架正交。**与 DEKF 不同，本文保留完整的联合协方差 \\(P_k\\)，状态—参数互协方差块不置零**——这是「诚实记录耦合」的结构保证。
@@ -176,14 +211,16 @@ $$
 基波频段采用反电势模型（αβ 坐标系，平均电感 \\(\bar L=(L_d+L_q)/2\\)，忽略凸极交叉项的基波影响）：
 
 $$
- u=R_s i+\bar L\,\frac{di}{dt}+e,\qquad e=\omega\psi_f\begin{bmatrix}-\sin\theta\\ \cos\theta\end{bmatrix} \tag{12} 
+ u=R_s\, i+\bar L\,\frac{di}{dt}+e_{\mathrm{emf}},\qquad e_{\mathrm{emf}}=\omega\psi_f\begin{bmatrix}-\sin\theta\\ \cos\theta\end{bmatrix} \tag{12}
 $$
 
 前向欧拉离散化，得单步电流预测作为观测函数：
 
 $$
- h_b(x_k)=\hat i_{k-1}+\frac{T_s}{\bar L}\Big(u_{k-1}-R_s\hat i_{k-1}-e(\theta_k,\omega_k,\psi_f)\Big) \tag{13} 
+ h_b(x_k)=\hat i_{k-1}+\frac{\Delta t}{\bar L}\Big(u_{k-1}-R_s\,\hat i_{k-1}-e_{\mathrm{emf}}(\theta_k,\omega_k,\psi_f)\Big) \tag{13}
 $$
+
+> 全称：预测电流 = 上一步电流估计 + 采样周期 ÷ 平均电感 × (上一步电压 − 定子电阻 × 上一步电流估计 − 反电势(角度, 角速度, 磁链))
 
 其中 \\(\hat i_{k-1}\\) 为上一步的（修正后）电流估计，\\(u_{k-1}\\) 为上一步施加的电压（指令值减去死区补偿）。量测为实测电流 \\(z_k=i_k\\)，残差（新息）
 
@@ -191,7 +228,9 @@ $$
  r_k=z_k-h_b\big(\hat x_{k|k-1}\big) \tag{14} 
 $$
 
-雅可比 \\(H_k^b=\partial h_b/\partial x\\) 的显式表达见**附录 A**。这里指出其决定性特征：\\(H_k^b\\) 中位置与速度相关的行均含因子 \\(\omega_e\psi_f\\)——**当 \\(\omega_e\to 0\\) 时基波模型对 \\(\theta,\omega\\) 方向的照明趋于零**。低速下「黑」的不是整个状态空间，而正是 \\(\theta,\omega\\) 张成的子空间。传统转速阈值开关，本质上是对这一信息结构塌缩的粗糙查表近似；APO 用累积信息矩阵把它变成在线可计算的量（第 IV-A 节）。
+> 全称：残差 = 实测电流 − 预测电流
+
+雅可比 \\(H_k^b=\partial h_b/\partial x\\) 的显式表达见**附录 A**。这里指出其决定性特征：\\(H_k^b\\) 中位置与速度相关的行均含因子 \\(\omega\psi_f\\)——**当 \\(\omega\to 0\\) 时基波模型对 \\(\theta,\omega\\) 方向的照明趋于零**。低速下「黑」的不是整个状态空间，而正是 \\(\theta,\omega\\) 张成的子空间。传统转速阈值开关，本质上是对这一信息结构塌缩的粗糙查表近似；APO 用累积信息矩阵把它变成在线可计算的量（第 IV-A 节）。
 
 ### C. EKF 预测—更新与数值细节
 
@@ -201,15 +240,22 @@ $$
  \hat x_{k|k-1}=F\hat x_{k-1|k-1},\qquad P_{k|k-1}=FP_{k-1|k-1}F^{\top}+Q \tag{15} 
 $$
 
+> 全称：先验均值 = 状态转移矩阵 × 后验均值；先验协方差 = 状态转移矩阵 × 后验协方差 × 状态转移矩阵ᵀ + 过程噪声协方差
+
 更新（增益、均值与 Joseph 形式协方差）：
 
 $$
  K_k=P_{k|k-1}H^{b\top}\big(H^bP_{k|k-1}H^{b\top}+R_b\big)^{-1} \tag{16} 
 $$
 
+> 全称：卡尔曼增益 = 先验协方差 × 基波观测雅可比ᵀ × (基波观测雅可比 × 先验协方差 × 基波观测雅可比ᵀ + 基波量测噪声协方差)⁻¹
+
 $$
  \hat x_{k|k}=\hat x_{k|k-1}+K_k r_k,\qquad P_{k|k}=(I-K_kH^b)\,P_{k|k-1}\,(I-K_kH^b)^{\top}+K_kR_bK_k^{\top} \tag{17} 
 $$
+
+> 全称：后验均值 = 先验均值 + 卡尔曼增益 × 残差；后验协方差 = (单位阵 − 卡尔曼增益 × 基波观测雅可比) × 先验协方差 × (单位阵 − 卡尔曼增益 × 基波观测雅可比)ᵀ + 卡尔曼增益 × 基波量测噪声协方差 × 卡尔曼增益ᵀ
+
 低维残差（2 维电流）更新 6 维状态看似维度不匹配，实则正是卡尔曼增益的设计意图：残差信息沿当前协方差允许的方向投影回状态空间，不可观测方向上增益趋零，滤波器不会虚假收窄。工程细节有三：
 
 1. **角度缠绕**：位置更新按 \\(\hat\theta\leftarrow\operatorname{wrap}(\hat\theta+K_\theta r)\\) 归一到 \\((-\pi,\pi]\\)；更严格的做法是对误差角 \\(\sin(\theta-\hat\theta)\\) 建模（误差状态 EKF）。
@@ -232,21 +278,23 @@ $$
 
 ### A. 可辨识性度量：带遗忘的信息累积
 
-对线性高斯模型，先验 \\(\mathcal N(\hat x,P)\\) 经量测 \\(z=Hx+v,\ v\sim\mathcal N(0,R)\\) 更新后的协方差为 \\(P^{+}=(P^{-1}+H^{\top}R^{-1}H)^{-1}\\)。定义**信息矩阵** \\(\mathcal J=P^{-1}\\)，批量更新的信息形式为
+对线性高斯模型，先验 \\(\mathcal N(\hat x,P)\\) 经量测 \\(z=Hx+v,\ v\sim\mathcal N(0,R_b)\\) 更新后的协方差为 \\(P^{+}=(P^{-1}+H^{\top}R_b^{-1}H)^{-1}\\)。定义**信息矩阵** \\(\mathcal J=P^{-1}\\)，批量更新的信息形式为
 
 $$
- \mathcal J_{k}=\mathcal J_0+\sum_{i\le k}H_i^{\top}R_i^{-1}H_i \tag{19} 
+ \mathcal J_{k}=\mathcal J_0+\sum_{i\le k}H_i^{\top}R_b^{-1}H_i \tag{19}
 $$
 
-即每次观测对状态空间的「照明量」按 \\(H^{\top}R^{-1}H\\) 累加。无传感器驱动中参数随温度、饱和、老化漂移，历史观测对**当前**参数的信息会陈旧，故采用指数遗忘的累积量作为诊断量：
+即每次观测对状态空间的「照明量」按 \\(H^{\top}R_b^{-1}H\\) 累加。无传感器驱动中参数随温度、饱和、老化漂移，历史观测对**当前**参数的信息会陈旧，故采用指数遗忘的累积量作为诊断量：
 
 $$
- \mathcal I_k=\lambda\,\mathcal I_{k-1}+H_k^{b\top}R_b^{-1}H_k^{b},\qquad \lambda\in(0.95,1) \tag{20} 
+ \mathcal I_k=\gamma\,\mathcal I_{k-1}+H_k^{b\top}R_b^{-1}H_k^{b},\qquad \gamma\in(0.95,1) \tag{20}
 $$
 
-对 \\(\mathcal I_k\\) 做特征分解 \\(\mathcal I_k=V\Lambda V^{\top}\\)：特征值大（「亮」）的方向已被近期多工况观测充分约束；特征值小（「黑」）的方向是当前激励未覆盖的方向。遗忘因子 \\(\lambda\\) 的取值对应参数漂移速率：参数漂移越快，旧工况信息退场应越快（定量关系可由稳态 Riccati 方程估计，工程上按「希望多长的工况历史有效」整定）。
+> 全称：累积信息矩阵(k) = 遗忘因子 × 累积信息矩阵(k−1) + 基波观测雅可比ᵀ × 基波量测噪声协方差⁻¹ × 基波观测雅可比
 
-需要说明 \\(\mathcal I_k\\) 与滤波器协方差 \\(P_k\\) 的关系：精确线性高斯且 \\(\lambda=1\\) 时二者互逆，判据冗余；引入遗忘后二者**有意地不互逆**——\\(P_k\\) 是滤波器对当前状态的局部不确定度，\\(\mathcal I_k\\) 是激励覆盖度的历史度量。双判据正是利用这一差异（第 IV-B 节）。
+对 \\(\mathcal I_k\\) 做特征分解 \\(\mathcal I_k=V\Lambda V^{\top}\\)：特征值大（「亮」）的方向已被近期多工况观测充分约束；特征值小（「黑」）的方向是当前激励未覆盖的方向。遗忘因子 \\(\gamma\\) 的取值对应参数漂移速率：参数漂移越快，旧工况信息退场应越快（定量关系可由稳态 Riccati 方程估计，工程上按「希望多长的工况历史有效」整定）。
+
+需要说明 \\(\mathcal I_k\\) 与滤波器协方差 \\(P_k\\) 的关系：精确线性高斯且 \\(\gamma=1\\) 时二者互逆，判据冗余；引入遗忘后二者**有意地不互逆**——\\(P_k\\) 是滤波器对当前状态的局部不确定度，\\(\mathcal I_k\\) 是激励覆盖度的历史度量。双判据正是利用这一差异（第 IV-B 节）。
 
 ### B. 触发判据与三分支决策
 
@@ -256,11 +304,15 @@ $$
  \lambda_{\max}\big(P_{k|k}\big)>\epsilon_P \tag{21} 
 $$
 
+> 全称：联合协方差的最大特征值 > 门限 ε<sub>P</sub>
+
 **判据 C2（看了有没有用）**：存在长期照明不足的方向——
 
 $$
  \lambda_{\min}\big(\mathcal I_k\big)<\epsilon_I \tag{22} 
 $$
+
+> 全称：累积信息矩阵的最小特征值 < 门限 ε<sub>I</sub>
 
 C2 采用最小特征值而非条件数 \\(\kappa=\lambda_{\max}/\lambda_{\min}\\)：二者在 \\(\lambda_{\max}\\) 有界时等价，但 \\(\lambda_{\min}\\) 无除法、数值稳健，且物理意义直白——「某方向照明低于阈值」。触发条件为 C1 **且** C2：C1 单独成立可能只是 \\(Q\\) 设错或死区干扰吹大了 \\(P\\)；C2 保证黑暗属于「激励可修复」的那一类。
 
@@ -292,23 +344,29 @@ $$
  P^{+}=\Big(P^{-1}+H_{\mathrm{inj}}^{\top}R_{\mathrm{inj}}^{-1}H_{\mathrm{inj}}\Big)^{-1} \tag{23} 
 $$
 
+> 全称：后验协方差 = (先验精度 + 注入观测信息)⁻¹；注入观测信息 = 注入观测雅可比ᵀ × 注入量测噪声协方差⁻¹ × 注入观测雅可比
+
 用信息语言概括：**注入的作用是给 \\(\mathcal I_k\\) 在缺失方向上增加秩，而不是另起一个高频观测器。**注入参数的选择也由缺失方向决定：脉振/旋转注入对付位置，双极性脉冲对付极性，双偏置扫描对付电感，低频探测对付电阻——框架不强制「实验必须高频」，标题中的 HF 是当前实例而非框架的必要条件。
 
 ### D. 信息增益预测与代价门控
 
-触发不等于一定注入。注入前即可解析预测其收益：对单标量量测（行向量 \\(h\\)，噪声方差 \\(R\\)），由 Sherman–Morrison 公式（**附录 B** 给出推导）：
+触发不等于一定注入。注入前即可解析预测其收益：对单标量量测（行向量 \\(h\\)，噪声方差 \\(\sigma^2\\)），由 Sherman–Morrison 公式（**附录 B** 给出推导）：
 
 $$
- \operatorname{tr}(P^{+})=\operatorname{tr}(P)-\frac{h\,P^2h^{\top}}{h\,Ph^{\top}+R} \tag{24} 
+ \operatorname{tr}(P^{+})=\operatorname{tr}(P)-\frac{h\,P^2h^{\top}}{h\,Ph^{\top}+\sigma^2} \tag{24}
 $$
 
-信息增益 \\(hP^2h^{\top}/(hPh^{\top}+R)\\) 有明确的两端行为（推导与单调性见**附录 B**）：方向已被照亮（\\(hPh^{\top}\\) 小）时增益按 \\(\approx(hPh^{\top})^2/R\\) 二次趋零——看得清就不值得睁眼；方向很暗时增益趋近该方向的全部方差——一次实验几乎照亮整个方向。以 \\(v_{\min}\\) 方向的脉振注入（\\(h=[g,0,0,0,0,0]\\)）为例，增益为 \\(g^2P_\theta^2/(g^2P_\theta+R_{\mathrm{inj}})\\)：\\(P_\theta\\) 已小时增益趋零，**不会为注入而注入**；灵敏度 \\(g\\) 弱（如表贴电机）时增益同样被压低——凸极微弱的电机天然少注入。每次注入都会收窄 \\(P_\theta\\)，连续注入的收益随之二次衰减，注入行为自然稀疏。
+> 全称：注入后期望协方差 = 注入前期望协方差 − 方向方差² ÷ (方向方差 + 噪声方差)；方向方差 = 观测行 × 先验协方差 × 观测行ᵀ
+
+信息增益 \\(hP^2h^{\top}/(hPh^{\top}+\sigma^2)\\) 有明确的两端行为（推导与单调性见**附录 B**）：方向已被照亮（\\(hPh^{\top}\\) 小）时增益按 \\(\approx(hPh^{\top})^2/\sigma^2\\) 二次趋零——看得清就不值得睁眼；方向很暗时增益趋近该方向的全部方差——一次实验几乎照亮整个方向。以 \\(v_{\min}\\) 方向的脉振注入（\\(h=[g,0,0,0,0,0]\\)）为例，增益为 \\(g^2P_\theta^2/(g^2P_\theta+R_{\mathrm{inj}})\\)：\\(P_\theta\\) 已小时增益趋零，**不会为注入而注入**；灵敏度 \\(g\\) 弱（如表贴电机）时增益同样被压低——凸极微弱的电机天然少注入。每次注入都会收窄 \\(P_\theta\\)，连续注入的收益随之二次衰减，注入行为自然稀疏。
 
 引入代价门控：
 
 $$
  \text{inject if}\quad \frac{h\,P^2h^{\top}}{h\,Ph^{\top}+R_{\mathrm{inj}}}\;>\;\rho\, C_{\mathrm{inj}} \tag{25} 
 $$
+
+> 全称：执行注入 ⟺ 信息增益 > 门限 ρ × 注入代价
 
 其中 \\(C_{\mathrm{inj}}\\) 为注入代价，含开关损耗（\\(\propto\\) 注入幅值与时长）、附加纹波转矩与声学噪声，按平台一次性标定；\\(\rho\\) 为无量纲门限。式 (25) 不是最优实验设计的完整解，而是显式承认注入有代价的最小可行门控——避免「一有不确定性就无脑睁眼」。
 
@@ -328,7 +386,7 @@ $$
 输入: 上一步估计 x̂, P, I, 极性状态 s
 1  预测        x̂⁻ = F x̂;  P⁻ = F P Fᵀ + Q                    (式 15)
 2  基波更新    H_b, r_k, K;  Joseph 更新 x̂, P                 (式 16–17)
-3  信息累积    I ← λI + H_bᵀ R_b⁻¹ H_b                        (式 20)
+3  信息累积    I ← γ·I + H_bᵀ R_b⁻¹ H_b                        (式 20)
 4  NIS 检验    NIS = rᵀS⁻¹r;  滑动均值是否超 χ²(2) 界         (式 18)
 5  决策
      ├ NIS 持续超限              → 告警/降级, 返回
@@ -380,7 +438,7 @@ $$
 
 ### B. 工况序列与预期判据
 
-1. **零速→低速→中速→高速**：预期在 \\(\omega_e\approx 0\\) 段 C1/C2 于 \\(\theta\\) 方向触发注入，随转速上升触发自动停止——即「转速阈值」作为本判据的特例被自动涌现，而非预设。
+1. **零速→低速→中速→高速**：预期在 \\(\omega\approx 0\\) 段 C1/C2 于 \\(\theta\\) 方向触发注入，随转速上升触发自动停止——即「转速阈值」作为本判据的特例被自动涌现，而非预设。
 2. **稳态巡航段**（中速轻载、参数无漂移）：预期 APO 注入占空比显著低于固定连续 HFI，且位置误差统计不劣——验证「按需注入省代价」。
 3. **\\(R_s\\) 温漂阶跃**（模拟 \\(+40\%\\) 突变）：预期 NIS 先超限、C1/C2 在 \\(R_s\\) 相关方向触发低频探测实验，参数协方差在实验后收窄，且**位置估计不被参数误差污染**——验证联合协方差「不背锅」。
 4. **\\(\psi_f\\) 缓慢退磁**：预期慢方向持续展宽并被周期性小实验收窄，无虚假收窄。
@@ -462,37 +520,43 @@ $$
 
 ## 附录 A：基波观测模型的雅可比
 
-由式 (13)，记 \\(g_k=u_{k-1}-R_s\hat i_{k-1}-e\\)，则 \\(h_b=\hat i_{k-1}+(T_s/\bar L)g_k\\)。反电势 \\(e=\omega\psi_f[-\sin\theta,\ \cos\theta]^{\top}\\)，逐项求偏导（在 \\(\hat x_{k|k-1}\\) 处取值）：
+> 演算层声明：本附录按《新数学语言倡议》规则二以短符号演算，符号映射见替换表，结论已翻译回正文。
+
+由式 (13)，记 \\(\xi_k=u_{k-1}-R_s\,\hat i_{k-1}-e_{\mathrm{emf}}\\)（电压驱动残差），则 \\(h_b=\hat i_{k-1}+(\Delta t/\bar L)\,\xi_k\\)。反电势 \\(e_{\mathrm{emf}}=\omega\psi_f[-\sin\theta,\ \cos\theta]^{\top}\\)，逐项求偏导（在 \\(\hat x_{k|k-1}\\) 处取值）：
 
 $$
- \frac{\partial h_b}{\partial\theta}=\frac{T_s}{\bar L}\,\omega\psi_f\begin{bmatrix}\cos\theta\\ \sin\theta\end{bmatrix},\qquad \frac{\partial h_b}{\partial\omega}=-\frac{T_s}{\bar L}\,\psi_f\begin{bmatrix}-\sin\theta\\ \cos\theta\end{bmatrix} \tag{A1} 
+ \frac{\partial h_b}{\partial\theta}=\frac{\Delta t}{\bar L}\,\omega\psi_f\begin{bmatrix}\cos\theta\\ \sin\theta\end{bmatrix},\qquad \frac{\partial h_b}{\partial\omega}=-\frac{\Delta t}{\bar L}\,\psi_f\begin{bmatrix}-\sin\theta\\ \cos\theta\end{bmatrix} \tag{A1} 
 $$
 
 $$
- \frac{\partial h_b}{\partial\psi_f}=-\frac{T_s}{\bar L}\,\omega\begin{bmatrix}-\sin\theta\\ \cos\theta\end{bmatrix},\qquad \frac{\partial h_b}{\partial R_s}=-\frac{T_s}{\bar L}\,\hat i_{k-1} \tag{A2} 
+ \frac{\partial h_b}{\partial\psi_f}=-\frac{\Delta t}{\bar L}\,\omega\begin{bmatrix}-\sin\theta\\ \cos\theta\end{bmatrix},\qquad \frac{\partial h_b}{\partial R_s}=-\frac{\Delta t}{\bar L}\,\hat i_{k-1} \tag{A2} 
 $$
 
 $$
- \frac{\partial h_b}{\partial L_d}=\frac{\partial h_b}{\partial L_q}=-\frac{1}{2}\cdot\frac{T_s}{\bar L^2}\,g_k \tag{A3} 
+ \frac{\partial h_b}{\partial L_d}=\frac{\partial h_b}{\partial L_q}=-\frac{1}{2}\cdot\frac{\Delta t}{\bar L^2}\,\xi_k \tag{A3} 
 $$
 
 其中式 (A3) 用了 \\(\bar L=(L_d+L_q)/2\\) 的链式法则。注意 (A1)(A2) 中 \\(\theta,\omega,\psi_f\\) 三行均含因子 \\(\omega\psi_f\\)：零速时这三行同时塌缩，\\(\theta,\omega\\) 方向的可观测性完全丢失——这是第 III-B 节论断的解析根据，也是 \\(R_s\\) 与 \\(\psi_f\\) 在低速下互相比划不清（两行近似共线）的来源。前者由注入实验修复，后者由变工况数据经 \\(\mathcal I_k\\) 累积慢慢解开。
 
 ## 附录 B：标量更新的信息增益公式
 
-对先验 \\(\mathcal N(\hat x,P)\\) 与标量量测 \\(z=hx^{\top}+v,\ v\sim\mathcal N(0,R)\\)，后验精度为 \\(P^{-1}+h^{\top}R^{-1}h\\)，故
+> 演算层声明：本附录按《新数学语言倡议》规则二以短符号演算，符号映射见替换表；式 (B2) 后附全称回译。
+
+对先验 \\(\mathcal N(\hat x,P)\\) 与标量量测 \\(z=hx^{\top}+v,\ v\sim\mathcal N(0,\sigma^2)\\)，后验精度为 \\(P^{-1}+h^{\top}\sigma^{-2}h\\)，故
 
 $$
- P^{+}=\Big(P^{-1}+\frac{1}{R}h^{\top}h\Big)^{-1}=P-\frac{P h^{\top}h P}{R+hPh^{\top}} \tag{B1} 
+ P^{+}=\Big(P^{-1}+\frac{1}{\sigma^2}h^{\top}h\Big)^{-1}=P-\frac{P h^{\top}h P}{\sigma^2+hPh^{\top}} \tag{B1}
 $$
 
 （Sherman–Morrison 公式。）取迹：
 
 $$
- \operatorname{tr}(P^{+})=\operatorname{tr}(P)-\frac{\operatorname{tr}(P h^{\top}h P)}{R+hPh^{\top}}=\operatorname{tr}(P)-\frac{hP^2h^{\top}}{hPh^{\top}+R} \tag{B2} 
+ \operatorname{tr}(P^{+})=\operatorname{tr}(P)-\frac{\operatorname{tr}(P h^{\top}h P)}{\sigma^2+hPh^{\top}}=\operatorname{tr}(P)-\frac{hP^2h^{\top}}{hPh^{\top}+\sigma^2} \tag{B2}
 $$
 
-最后一步用了迹的循环性 \\(\operatorname{tr}(Ph^{\top}hP)=\operatorname{tr}(hP^2h^{\top})=hP^2h^{\top}\\)（分子为标量）。增益函数 \\(G(t)=t^2/(t+R)\\)（其中 \\(t=hPh^{\top}\ge 0\\)）单调凸增且 \\(G(t)\le t\\)：已照亮方向（\\(t\\) 小）\\(G\approx t^2/R\\) 二次趋零；极暗方向（\\(t\\) 大）\\(G\approx t-R\\)，即一次更新几乎消除该方向全部方差。这就是式 (25) 门控的解析基础，也是「连续注入收益二次衰减、不会为注入而注入」的证明。块量测（多行 \\(H_{\mathrm{inj}}\\)）情形用 Woodbury 恒等式展开，结论相同。
+> 全称（回译）：一次标量观测带来的期望协方差缩减 = 方向方差 × 方向方差 ÷ (方向方差 + 噪声方差)；方向方差 = 观测行 × 先验协方差 × 观测行ᵀ
+
+最后一步用了迹的循环性 \\(\operatorname{tr}(Ph^{\top}hP)=\operatorname{tr}(hP^2h^{\top})=hP^2h^{\top}\\)（分子为标量）。增益函数 \\(G(t)=t^2/(t+\sigma^2)\\)（其中 \\(t=hPh^{\top}\ge 0\\)）单调凸增且 \\(G(t)\le t\\)：已照亮方向（\\(t\\) 小）\\(G\approx t^2/\sigma^2\\) 二次趋零；极暗方向（\\(t\\) 大）\\(G\approx t-\sigma^2\\)，即一次更新几乎消除该方向全部方差。这就是式 (25) 门控的解析基础，也是「连续注入收益二次衰减、不会为注入而注入」的证明。块量测（多行 \\(H_{\mathrm{inj}}\\)）情形用 Woodbury 恒等式展开，结论相同。
 
 ## 附录 C：APO 思想脉络（博客专享，投稿时删除）
 
@@ -514,3 +578,4 @@ $$
 **修订记录**
 
 - 2026-10-31：基于初稿全面重写。补全高频信号模型推导（式 1–8）、基波观测模型与雅可比（式 12–14、附录 A）、信息增益解析预测（式 24、附录 B）、三分支决策（IV-B）、磁极极性管理（II-D、IV-E）；修正摘要过度声称；补充相关工作与参考文献；增加算法伪代码与验证方案判据。
+- 2026-10-31（二）：记号体系按本站《新数学语言倡议》改造。新增「记号约定与替换表」；关键方程附「全称：」行（规则一）；附录声明演算层并回译结论（规则二、三）；消除跨节重载（规则四）：T_s→Δt、遗忘因子 λ→γ、旋转矩阵 J 内联化、参数块 p→φ、反电势 e→e_emf、复电流 x→i、电压残差 g_k→ξ_k、解调增益 k_h→g_r、附录裸 R→σ²。
