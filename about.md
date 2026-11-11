@@ -15,6 +15,4 @@ github : <https://github.com/microcai>
 ##我的联系方式
 Email: [microcaicai AT gmail.com](mailto:microcaicai@gmail.com)
 
-## DN42
-see [peering](/peering.html)
 
