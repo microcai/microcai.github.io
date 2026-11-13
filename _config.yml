@@ -33,7 +33,7 @@ disqus:
 gems: [jekyll-paginate]
 highlighter: rouge
 paginate: 20
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","LICENSE","Gemfile","Gemfile.lock"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","LICENSE","Gemfile","Gemfile.lock","tools"]
 anchorjs: true      # if you want to customize anchor. check out line:129 of `post.html`
 future: true
 
@@ -44,20 +44,9 @@ future: true
 markdown: kramdown
 kramdown:
   input: GFM        # use Github Flavored Markdown !important
+  # kramdown 只负责把 $$...$$ 标成 \[ ... \]，构建结束后由 tools/render-math.js
+  # 统一转成 MathML 写进静态页面（math_engine: katex 需要 katex gem，这里不用）
   math_engine: mathjax
-
-# Duoshuo settings
-# please set your own DuoShuo account in `post.html` and `about.html`
-useDuoshuo: false    # use both Comment and Share
-useShare: false      # use Comment only. seeing the Share component is depend on Comment so we can NOT use share only.
-
-
-# Todo: Analysis settings
-# Please set your own analysis account in `head.html`(Baidu) and `default.html`(QQ)
-useBaiduAnalysis: false
-useTencentAnalysis: false
-useGoogleAnalysis: false     # TODO
-
 
 # Sidebar settings
 sidebar: true

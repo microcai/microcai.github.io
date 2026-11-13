@@ -41,19 +41,10 @@
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ "/static/css/application.css" | prepend: site.baseurl }}">
 
-    <!-- Enable Mathjax -->
-    <script type="text/javascript" id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']],
-          processEscapes: true
-        }
-      };
-    </script>
+    <!-- 公式在构建时已渲染成 MathML，读者端不需要 JS/KaTeX，只需处理宽公式溢出 -->
+    <style>
+      math[display="block"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 0.4em 0; }
+    </style>
 
     <!-- Enable lazy image load -->
     <script src="/js/lazysizes.min.js" async=""></script>
