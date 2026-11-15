@@ -6,5 +6,7 @@
 - 文件名中的日期和 slug 必须与 front matter 里的 `date`、`slug` 保持一致；`slug` 用英文，因为它直接决定文章 URL。
 - 文章 URL 形如 /2026/10/31/a-new-sensorless-foc-algo.html，改动 slug 等于改 URL，老链接会失效。
 - 文章中引用的图片放在 static/images 目录下，正文用 /images/xxx 引用。
-- 公式在构建时被渲染成 MathML（transform.ToMath），正文照常写 $...$ / $$...$$ 即可；行内出现非公式的 `$` 请用反引号包起来。
+- 公式在构建时被渲染成 MathML（transform.ToMath）：行内写 `$...$`，块级只能写 `$$...$$`。
+- `\[ \]` 不是公式定界符，正文里的 `\[1\]\[2\]` 会按普通文本渲染成 [1][2]，适合写引用编号。
+- 行内出现非公式的 `$`（如路径变量）请用反引号包起来，否则会被当成公式。
 - 写文章的时候，公式请使用 content/posts/2026-10-09-new-math-lang.md 倡议的规范。

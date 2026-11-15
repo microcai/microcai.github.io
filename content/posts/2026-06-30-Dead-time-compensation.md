@@ -58,9 +58,9 @@ slug: Dead-time-compensation
   - 平均电压增益：$V_{gain} = V_{dc} \times \frac{T_d}{T_s}$。
 
 统一写成矢量形式：
-\[
+$$
 \Delta V_{dead} = -\text{sign}(I) \times V_{dc} \times \frac{T_d}{T_s}
-\]
+$$
 （注意：这里的符号取决于电压参考方向，但幅值固定为 $V_{dc} \times T_d/T_s$）
 
 

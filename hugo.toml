@@ -27,7 +27,8 @@ enableRobotsTXT = true
   enable = true
 
 [markup.goldmark.extensions.passthrough.delimiters]
-  block = [['\[', '\]'], ['$$', '$$']]
+  # 只认 $$ 作为块级公式：正文里的 \[1\]\[2\] 是引用编号，不能当公式吃掉
+  block = [['$$', '$$']]
   inline = [['\(', '\)'], ['$', '$']]
 
 # 旧的订阅地址是 /feed.xml，继续沿用
