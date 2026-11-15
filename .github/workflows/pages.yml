@@ -24,7 +24,7 @@ jobs:
 
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.163.3"
+          hugo-version: latest
           extended: true
 
       # 公式在构建期由 transform.ToMath 渲染成 MathML，不需要 node
