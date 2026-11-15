@@ -1,3 +1,9 @@
+---
+layout: post
+title: 3950X 再次拯救 Gentoo
+tags: [AMD, 3950X, Gentoo]
+---
+
 镜像  EFI boot 分区。
 
 
