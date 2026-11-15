@@ -1,6 +1,9 @@
 baseURL = "https://microcai.org/"
 title = "菜菜博士"
 defaultContentLanguage = "zh-cn"
+# front matter 里的 date 不带时区，Hugo 默认按 UTC 零点解析；
+# 机器时钟是北京时间时，当天发的文章会被当成"未来"而不发布，所以按东八区解析
+timezone = "Asia/Shanghai"
 theme = "PaperMod"
 
 # 保留 Jekyll 时代的 URL 形态：/2026/10/31/xxx.html
