@@ -148,7 +148,11 @@ $$
 响应由两个序列构成：**正序分量**幅值正比于 注入电压幅值 ÷ (注入角频率 × 平均电感)，只含平均电感信息；**负序分量**幅值正比于 注入电压幅值 × 半凸极差 ÷ (注入角频率 × 直轴增量电感 × 交轴增量电感)（注意 平均电感的平方减半凸极差的平方，恰等于两轴增量电感之积），相位含二倍转子角度。用与注入同频的复指数同步解调并低通滤波，正序被搬到二倍注入频率处滤除，负序被搬到直流：
 
 $$
- \text{解调位置相量}=\text{低通}\!\big\{\text{高频电流}\times e^{\,j\times\text{注入角频率}\times t}\big\} =\text{解调增益}\times e^{\,j\times 2\times\text{转子角度}},\qquad \text{解调增益}=\frac{\text{注入电压幅值}\times\text{半凸极差}}{\text{注入角频率}\times\text{直轴增量电感}\times\text{交轴增量电感}}\times e^{-j\pi/2} \tag{6}
+\begin{aligned}
+ \text{解调位置相量} &= \text{低通}\!\big\{\text{高频电流}\times e^{\,j\times\text{注入角频率}\times t}\big\} = \text{解调增益}\times e^{\,j\times 2\times\text{转子角度}},\\
+ \text{解调增益} &= \frac{\text{注入电压幅值}\times\text{半凸极差}}{\text{注入角频率}\times\text{直轴增量电感}\times\text{交轴增量电感}}\times e^{-j\pi/2}
+\end{aligned}
+\tag{6}
 $$
 
 即解调相量的辐角直接给出二倍转子角度。相对估计角度归一化，得标量误差信号 = sin(2 × 角度误差) ≈ 2 × 角度误差（小误差时），供锁相环或观测器压零。
@@ -164,7 +168,11 @@ $$
 将估计交轴高频电流与响应同相的正弦参考相乘后低通，得误差信号
 
 $$
- \text{解调误差信号}=-\frac{\text{注入电压幅值}\times\text{半凸极差}}{2\times\text{注入角频率}\times\text{直轴增量电感}\times\text{交轴增量电感}}\times\sin\big(2\times\text{角度误差}\big) \;\approx\; -\text{误差灵敏度}\times\text{角度误差} \tag{8}
+\begin{aligned}
+ \text{解调误差信号} &= -\frac{\text{注入电压幅值}\times\text{半凸极差}}{2\times\text{注入角频率}\times\text{直轴增量电感}\times\text{交轴增量电感}}\times\sin\big(2\times\text{角度误差}\big)\\
+ &\approx -\text{误差灵敏度}\times\text{角度误差}
+\end{aligned}
+\tag{8}
 $$
 
 误差灵敏度由注入幅值、注入频率与电机凸极共同决定（= 注入电压幅值 × 半凸极差 ÷ (注入角频率 × 直轴增量电感 × 交轴增量电感)）——这就是第 IV 节注入实验观测方程的增益来源。
@@ -190,7 +198,12 @@ $$
 注意此处直轴、交轴电感指基波工作点的电感（平均意义），与第 II 节的两轴增量电感通过磁饱和曲线相联系：学习型残差实验观测器用离线磁饱和数据表约束二者的关系（第 IV-E 节）。过程模型取最简形式：
 
 $$
- \text{转子角度}_{k+1}=\text{转子角度}_k+\text{采样周期}\times\text{角速度}_k+\text{角度噪声},\quad \text{角速度}_{k+1}=\text{角速度}_k+\text{速度噪声},\quad \text{参数向量}_{k+1}=\text{参数向量}_k+\text{参数噪声} \tag{10}
+\begin{aligned}
+ \text{转子角度}_{k+1} &= \text{转子角度}_k+\text{采样周期}\times\text{角速度}_k+\text{角度噪声},\\
+ \text{角速度}_{k+1} &= \text{角速度}_k+\text{速度噪声},\\
+ \text{参数向量}_{k+1} &= \text{参数向量}_k+\text{参数噪声}
+\end{aligned}
+\tag{10}
 $$
 
 参数向量即状态向量中的四个慢变分量，各噪声为相互独立的零均值高斯白噪声。状态转移矩阵与过程噪声协方差为
@@ -206,13 +219,21 @@ $$
 基波频段采用反电势模型（静止 αβ 坐标系，电感取平均电感，忽略凸极交叉项的基波影响）：
 
 $$
- \text{电压}=\text{定子电阻}\times\text{电流}+\text{平均电感}\times\frac{d\,\text{电流}}{dt}+\text{反电势},\qquad \text{反电势}=\text{角速度}\times\text{永磁磁链}\times\begin{bmatrix}-\sin\big(\text{转子角度}\big)\\ \cos\big(\text{转子角度}\big)\end{bmatrix} \tag{12}
+\begin{aligned}
+ \text{电压} &= \text{定子电阻}\times\text{电流}+\text{平均电感}\times\frac{d\,\text{电流}}{dt}+\text{反电势},\\
+ \text{反电势} &= \text{角速度}\times\text{永磁磁链}\times\begin{bmatrix}-\sin\big(\text{转子角度}\big)\\ \cos\big(\text{转子角度}\big)\end{bmatrix}
+\end{aligned}
+\tag{12}
 $$
 
 前向欧拉离散化，得单步电流预测作为观测函数：
 
 $$
- \text{预测电流}=\text{上一步电流}+\frac{\text{采样周期}}{\text{平均电感}}\times\Big(\text{上一步电压}-\text{定子电阻}\times\text{上一步电流}-\text{反电势}\big(\text{转子角度},\ \text{角速度},\ \text{永磁磁链}\big)\Big) \tag{13}
+\begin{aligned}
+ \text{预测电流} &= \text{上一步电流}+\frac{\text{采样周期}}{\text{平均电感}}\times\Big(\text{上一步电压}-\text{定子电阻}\times\text{上一步电流}\\
+ &\qquad -\text{反电势}\big(\text{转子角度},\ \text{角速度},\ \text{永磁磁链}\big)\Big)
+\end{aligned}
+\tag{13}
 $$
 
 上一步电压取算法输出的电压指令——死区补偿的意义正在于此：算法指令加上死区补偿后送入硬件执行，经历死区畸变之后，实际施加在电机上的电压恰为算法输出的电压指令。量测为实测电流，残差（新息）定义为
@@ -228,17 +249,31 @@ $$
 标准扩展卡尔曼滤波预测：
 
 $$
- \text{先验均值}=\text{状态转移矩阵}\times\text{后验均值},\qquad \text{先验协方差}=\text{状态转移矩阵}\times\text{后验协方差}\times\text{状态转移矩阵}^{\top}+\text{过程噪声协方差} \tag{15}
+\begin{aligned}
+ \text{先验均值} &= \text{状态转移矩阵}\times\text{后验均值},\\
+ \text{先验协方差} &= \text{状态转移矩阵}\times\text{后验协方差}\times\text{状态转移矩阵}^{\top}+\text{过程噪声协方差}
+\end{aligned}
+\tag{15}
 $$
 
 更新（增益、均值与 Joseph 形式协方差）：
 
 $$
- \text{卡尔曼增益}=\text{先验协方差}\times\text{观测雅可比}^{\top}\times\big(\text{观测雅可比}\times\text{先验协方差}\times\text{观测雅可比}^{\top}+\text{基波量测噪声协方差}\big)^{-1} \tag{16}
+\begin{aligned}
+ \text{卡尔曼增益} &= \text{先验协方差}\times\text{观测雅可比}^{\top}\\
+ &\quad\times\big(\text{观测雅可比}\times\text{先验协方差}\times\text{观测雅可比}^{\top}+\text{基波量测噪声协方差}\big)^{-1}
+\end{aligned}
+\tag{16}
 $$
 
 $$
- \text{后验均值}=\text{先验均值}+\text{卡尔曼增益}\times\text{残差},\qquad \text{后验协方差}=\big(\text{单位阵}-\text{卡尔曼增益}\times\text{观测雅可比}\big)\times\text{先验协方差}\times\big(\text{单位阵}-\text{卡尔曼增益}\times\text{观测雅可比}\big)^{\top}+\text{卡尔曼增益}\times\text{基波量测噪声协方差}\times\text{卡尔曼增益}^{\top} \tag{17}
+\begin{aligned}
+ \text{后验均值} &= \text{先验均值} + \text{卡尔曼增益}\times\text{残差},\\
+ \text{后验协方差} &= \big(\text{单位阵}-\text{卡尔曼增益}\times\text{观测雅可比}\big)\times\text{先验协方差}\\
+ &\quad \times\big(\text{单位阵}-\text{卡尔曼增益}\times\text{观测雅可比}\big)^{\top}\\
+ &\quad +\text{卡尔曼增益}\times\text{基波量测噪声协方差}\times\text{卡尔曼增益}^{\top}
+\end{aligned}
+\tag{17}
 $$
 
 低维残差（2 维电流）更新 6 维状态看似维度不匹配，实则正是卡尔曼增益的设计意图：残差信息沿当前协方差允许的方向投影回状态空间，不可观测方向上增益趋零，滤波器不会虚假收窄。工程细节有三：
@@ -252,7 +287,11 @@ $$
 定义归一化新息平方检验统计量
 
 $$
- \text{新息统计量}_k=\text{残差}_k^{\top}\times\text{新息协方差}_k^{-1}\times\text{残差}_k,\qquad \text{新息协方差}_k=\text{观测雅可比}\times\text{先验协方差}\times\text{观测雅可比}^{\top}+\text{基波量测噪声协方差} \tag{18}
+\begin{aligned}
+ \text{新息统计量}_k &= \text{残差}_k^{\top}\times\text{新息协方差}_k^{-1}\times\text{残差}_k,\\
+ \text{新息协方差}_k &= \text{观测雅可比}\times\text{先验协方差}\times\text{观测雅可比}^{\top}+\text{基波量测噪声协方差}
+\end{aligned}
+\tag{18}
 $$
 
 模型一致时，单次新息统计量渐近服从自由度为 2 的卡方分布；长度为 N 的独立窗口，均值应与「自由度 2N 的卡方分布除以 N」的分位数比较，而非沿用单次卡方界（新息相关时以标定的经验分位数为准）。滑动窗均值持续超限说明**模型与观测系统性不符**——原因可能是死区补偿残差、未建模非线性或传感器故障。这一检验是第 IV-B 节三分支决策的基础：**如果不确定性大而新息一致，是「看得不够」，注入实验能修；如果新息本身就不一致，「睁眼」也救不了，应当告警降级。**混淆这两种情况，是「一有不确定性就无脑注入」的根子。另须记住：新息检验单独超限只能说明统计一致性可疑，不能唯一定位故障源——参数突变与异常值同样会推高新息；新息正常也不能证明模型正确——参数误差与状态误差可能互相补偿。故它只作判据之一，而非充分条件。
@@ -272,7 +311,11 @@ $$
 即每次观测对状态空间的「照明量」按「观测雅可比ᵀ × 量测噪声协方差⁻¹ × 观测雅可比」累加。无传感器驱动中参数随温度、饱和、老化漂移，历史观测对**当前**参数的信息会陈旧，故采用指数遗忘的累积量作为诊断量：
 
 $$
- \text{累积信息矩阵}_k=\gamma\times\text{累积信息矩阵}_{k-1}+\text{观测雅可比}_k^{\top}\times\text{基波量测噪声协方差}^{-1}\times\text{观测雅可比}_k,\qquad \gamma\in(0.95,\,1) \tag{20}
+\begin{aligned}
+ \text{累积信息矩阵}_k &= \gamma\times\text{累积信息矩阵}_{k-1}+\text{观测雅可比}_k^{\top}\times\text{基波量测噪声协方差}^{-1}\times\text{观测雅可比}_k,\\
+ &\qquad \gamma\in(0.95,\,1)
+\end{aligned}
+\tag{20}
 $$
 
 对累积信息矩阵做特征分解：特征值大（「亮」）的方向已被近期多工况观测充分约束；特征值小（「黑」）的方向是当前激励未覆盖的方向。遗忘因子 γ 的取值对应参数漂移速率：参数漂移越快，旧工况信息退场应越快（定量关系可由稳态 Riccati 方程估计，工程上按「希望多长的工况历史有效」整定）。
@@ -320,7 +363,11 @@ C2 采用最小特征值而非条件数（最大特征值与最小特征值之�
 注入的解调响应构成注入量测，其观测方程与基波量测**并列进入同一次贝叶斯更新**。需要说明：二者来自同一路电流采样，噪声仅在频段上近似分离（基波模型用低频段、注入信息来自注入频率附近的窄带）；注入量测噪声协方差应从残差统计中标定，必要时对两类更新在时间上错峰或建模互协方差，避免把相关证据当作独立信息而过度自信（两条链的实现分工见第 IV-F 节）：
 
 $$
- \text{后验协方差}=\Big(\text{先验精度}+\text{注入观测信息}\Big)^{-1},\qquad \text{注入观测信息}=\text{注入观测雅可比}^{\top}\times\text{注入量测噪声协方差}^{-1}\times\text{注入观测雅可比} \tag{23}
+\begin{aligned}
+ \text{后验协方差} &= \Big(\text{先验精度}+\text{注入观测信息}\Big)^{-1},\\
+ \text{注入观测信息} &= \text{注入观测雅可比}^{\top}\times\text{注入量测噪声协方差}^{-1}\times\text{注入观测雅可比}
+\end{aligned}
+\tag{23}
 $$
 
 用信息语言概括：**注入的作用是给累积信息矩阵在缺失方向上增加秩，而不是另起一个高频观测器。**注入参数的选择也由缺失方向决定：脉振/旋转注入对付位置，双极性脉冲对付极性，双偏置扫描对付电感，低频探测对付电阻——框架不强制「实验必须高频」，标题中的「高频」是当前实例而非框架的必要条件。两点实现细节：其一，直轴与交轴电感之差这一方向对基波模型天然零照明（附录 A 中两行雅可比相等），累积信息矩阵应以离线磁饱和数据表提供的先验信息初始化，该方向才不至于永远黑暗；其二，注入实验得到的信息必须同步写回累积信息矩阵（与式 (23) 同一步更新），否则触发判据会对同一方向反复报警。
@@ -330,7 +377,11 @@ $$
 触发不等于一定注入。注入前即可解析预测其收益：对单标量量测（观测行、标量噪声方差），由 Sherman–Morrison 公式（**附录 B** 给出推导）：
 
 $$
- \text{注入后协方差的迹}=\text{注入前协方差的迹}-\frac{\text{观测行}\times\text{先验协方差}\times\text{先验协方差}\times\text{观测行}^{\top}}{\text{方向方差}+\text{噪声方差}},\qquad \text{方向方差}=\text{观测行}\times\text{先验协方差}\times\text{观测行}^{\top} \tag{24}
+\begin{aligned}
+ \text{注入后协方差的迹} &= \text{注入前协方差的迹}-\frac{\text{观测行}\times\text{先验协方差}\times\text{先验协方差}\times\text{观测行}^{\top}}{\text{方向方差}+\text{噪声方差}},\\
+ \text{方向方差} &= \text{观测行}\times\text{先验协方差}\times\text{观测行}^{\top}
+\end{aligned}
+\tag{24}
 $$
 
 式 (24) 的迹把转子角度（弧度）、角速度、定子电阻、永磁磁链、直轴电感与交轴电感的方差直接相加，量纲各不相同——拿它做决策量，换一套单位就能改变结论，这也正是它无法与注入代价放在同一端比较的原因。落地时必须先折到无量纲坐标：取对角阵「容许误差加权阵」，其第 i 个对角元为第 i 个分量「容许误差平方」的倒数（转子角度的容许误差由精度规格折算成弧度，参数的由标称值与容差给出），归一化后的迹便无量纲，读作「以容许误差平方为单位的方差当量」。加权后的增益与被减去的项同构（容许误差加权阵取单位阵即退回原式）：
