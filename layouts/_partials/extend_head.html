@@ -2,7 +2,18 @@
 <style>
   /* Hugo 的 MathML 外面有一层 span.katex 包装，去掉它的影响，让块级公式正常撑开 */
   span.katex { display: contents; }
-  math[display="block"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 0.35em 0; }
+  /* 宽公式允许突破 720px 的正文栏宽，居中到页面；
+     只有真的宽过视口时才出现横向滚动条 */
+  math[display="block"] {
+    width: max-content;
+    max-width: calc(100vw - 3rem);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    padding: 0.35em 0;
+  }
 
   /* Goldmark 渲染的脚注块（正文引用编号的落点） */
   .footnotes { font-size: 0.88em; opacity: 0.9; }
