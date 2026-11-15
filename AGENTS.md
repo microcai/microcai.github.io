@@ -1,7 +1,10 @@
 - 本仓库的作者 DR，他是一个非常博学的人。但是本职工作是一个程序员。
-- 这个仓库是基于 jekyll 框架的，用于生成静态网站的一个个人博客，部署在github pages 上。
-- 本仓库的域名是 microcai.github.io。
-- 文章放 _posts 目录下, 按文件名  年-月-日-标题.md 格式命名。
-- 文件名中的日期是文章的发布日期，标题是文章的英文标题。
-- 文章中引用的图片放在 images/ 目录下。
-- 写文章的时候，公式请使用 _posts/2026-10-09-new-math-lang.md 倡议的规范。
+- 这个仓库是基于 Hugo 框架的个人博客，由 GitHub Actions 构建后部署到 GitHub Pages。
+- 站点配置在 hugo.toml，主题是 themes/PaperMod（git submodule），本地构建用 `hugo`，产物在 public/。
+- 本仓库的域名是 microcai.github.io（CNAME 另绑 microcai.org）。
+- 文章放 content/posts 目录下, 按文件名  年-月-日-标题.md 格式命名。
+- 文件名中的日期和 slug 必须与 front matter 里的 `date`、`slug` 保持一致；`slug` 用英文，因为它直接决定文章 URL。
+- 文章 URL 形如 /2026/10/31/a-new-sensorless-foc-algo.html，改动 slug 等于改 URL，老链接会失效。
+- 文章中引用的图片放在 static/images 目录下，正文用 /images/xxx 引用。
+- 公式在构建时被渲染成 MathML（transform.ToMath），正文照常写 $...$ / $$...$$ 即可；行内出现非公式的 `$` 请用反引号包起来。
+- 写文章的时候，公式请使用 content/posts/2026-10-09-new-math-lang.md 倡议的规范。

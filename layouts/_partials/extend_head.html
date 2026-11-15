@@ -1,0 +1,6 @@
+{{- /* 站点级自定义样式：换主题时这个文件要么保留，要么把里面的规则搬过去 */ -}}
+<style>
+  /* Hugo 的 MathML 外面有一层 span.katex 包装，去掉它的影响，让块级公式正常撑开 */
+  span.katex { display: contents; }
+  math[display="block"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 0.35em 0; }
+</style>

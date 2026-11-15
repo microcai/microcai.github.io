@@ -1,0 +1,21 @@
+{{- /* Gitalk 评论：沿用旧站配置，id 仍用 location.pathname，历史 issue 不会失联 */ -}}
+{{- if site.Params.comments -}}
+<div class="post-comments">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script>
+    new Gitalk({
+      clientID: "c974f297478bbdd002a7",
+      clientSecret: "9c92982c6959747721a9721b75933eb40642ffc0",
+      repo: "microcai.github.io",
+      owner: "microcai",
+      admin: ["microcai"],
+      id: location.pathname,
+      title: {{ .Title | jsonify | safeJS }},
+      body: "🚀 " + location.href + "\n\n欢迎通过 issues 留言，互相交流学习😊",
+      distractionFreeMode: true
+    }).render("gitalk-container");
+  </script>
+</div>
+{{- end -}}

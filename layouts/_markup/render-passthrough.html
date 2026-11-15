@@ -1,0 +1,13 @@
+{{- /* 构建期把公式转成 MathML，读者端不需要任何 JS。
+       strict = ignore：中文变量名在数学模式里只是 KaTeX 的告警，不是错误。 */ -}}
+{{- $inner := .Inner -}}
+{{- $display := eq .Type "block" -}}
+{{- $opts := dict "displayMode" $display "strict" "ignore" -}}
+{{- with try (transform.ToMath $inner $opts) -}}
+  {{- with .Err -}}
+    {{- warnf "公式渲染失败 %s：%s（%s）" $.Page.File.Path . $inner -}}
+    <code>{{ $inner }}</code>
+  {{- else -}}
+    {{- .Value -}}
+  {{- end -}}
+{{- end -}}

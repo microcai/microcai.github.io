@@ -1,0 +1,102 @@
+baseURL = "https://microcai.org/"
+title = "菜菜博士"
+defaultContentLanguage = "zh-cn"
+theme = "PaperMod"
+
+# 保留 Jekyll 时代的 URL 形态：/2026/10/31/xxx.html
+uglyURLs = true
+# 旧文章 slug 里有大写字母（如 Dead-time-compensation），GitHub Pages 区分大小写
+disablePathToLower = true
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 20
+
+[permalinks]
+  posts = "/:year/:month/:day/:slug"
+
+[taxonomies]
+  tag = "tags"
+
+[markup.goldmark.renderer]
+  # 正文里有手写的 <sub>、<span> 等 HTML
+  unsafe = true
+
+# 公式交给 Goldmark 的 passthrough 保护起来，再由渲染钩子转成 MathML
+[markup.goldmark.extensions.passthrough]
+  enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+  block = [['\[', '\]'], ['$$', '$$']]
+  inline = [['\(', '\)'], ['$', '$']]
+
+# 旧的订阅地址是 /feed.xml，继续沿用
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "feed"
+
+# 搜索页要读取首页生成的 index.json
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  env = "production"
+  defaultTheme = "auto"
+  ShowReadingTime = false
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  ShowRssButtonInSectionTermList = true
+  comments = true
+
+  [params.homeInfoParams]
+    Title = "菜菜博士"
+    Content = "博士在网络的家。这里写技术，偶尔聊点别的。"
+
+  [params.assets]
+    disableHLJS = true
+
+  [params.label]
+    text = "菜菜博士"
+
+  [params.footer]
+    text = ""
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    includeScore = true
+    minMatchCharLength = 1
+    keys = ["title", "permalink", "summary", "content"]
+    threshold = 0.3
+    ignoreLocation = true
+    useExtendedSearch = true
+    ignoreFieldNorm = true
+
+[[menu.main]]
+  name = "文章"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "归档"
+  url = "/archive.html"
+  weight = 20
+
+[[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  name = "搜索"
+  url = "/search/"
+  weight = 40
+
+[[menu.main]]
+  name = "关于"
+  url = "/about.html"
+  weight = 50
