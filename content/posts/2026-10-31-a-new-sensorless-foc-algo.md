@@ -49,22 +49,22 @@ slug: a-new-sensorless-foc-algo
 
 ### A. 背景
 
-高频注入是解决永磁同步电机零速与低速无传感器控制可观测性的经典手段 \[1\]\[2\]\[3\]。其物理图像是：向定子施加已知的微小高频激励，转子凸极与磁饱和使增量电感随位置周期变化，从而把转子位置「调制」到高频电流响应上，经带通滤波与同步解调即可解出位置。中高速段则由反电势/磁链类的基波模型观测器承担估计任务 \[5\]\[6\]。本文方法适用于凸极式（内置式）永磁同步电机；表贴式机型的凸极差仅源于磁饱和、信号微弱，适用边界见第 II-D 节与第 VIII 节。
+高频注入是解决永磁同步电机零速与低速无传感器控制可观测性的经典手段 [^1][^2][^3]。其物理图像是：向定子施加已知的微小高频激励，转子凸极与磁饱和使增量电感随位置周期变化，从而把转子位置「调制」到高频电流响应上，经带通滤波与同步解调即可解出位置。中高速段则由反电势/磁链类的基波模型观测器承担估计任务 [^5][^6]。本文方法适用于凸极式（内置式）永磁同步电机；表贴式机型的凸极差仅源于磁饱和、信号微弱，适用边界见第 II-D 节与第 VIII 节。
 
 ### B. 现有做法及其隐含假设
 
-现有工程实现大多把高频注入视为**前置信号源**：要么全程连续注入 \[3\]，要么按转速阈值开关。与卡尔曼滤波结合的工作（如注入式扩展卡尔曼滤波）把解调后的误差信号作为滤波器量测输入 \[16\]；联合估计状态与参数的主流方案是双扩展卡尔曼滤波的级联或交替更新 \[7\]。这类结构有两个隐含假设：
+现有工程实现大多把高频注入视为**前置信号源**：要么全程连续注入 [^3]，要么按转速阈值开关。与卡尔曼滤波结合的工作（如注入式扩展卡尔曼滤波）把解调后的误差信号作为滤波器量测输入 [^16]；联合估计状态与参数的主流方案是双扩展卡尔曼滤波的级联或交替更新 [^7]。这类结构有两个隐含假设：
 
 1. **低速一定观测不足，高速一定观测充足**——注入时机是转速的函数；
 2. **注入模式与当前不可辨识方向无关**——注入只是「开」或「关」，不区分到底哪个方向看不清。
 
 第一个假设在参数温漂、深度弱磁、大电流饱和等场景下不成立：高速同样可能出现某参数方向不可辨识；低速时也并非所有方向都不可观测。第二个假设则浪费了注入自由度：不同注入方式（脉振、旋转、低频脉冲、双极性脉冲）对不同参数方向的照明能力差异极大。
 
-此外，双扩展卡尔曼滤波的级联架构通常切断状态滤波器与参数滤波器之间的互协方差，使「状态误差被误判为参数误差」这一耦合无法在协方差中显式记录 \[7\]——两个滤波器各自收敛到一个自洽但可能联合错误的解。
+此外，双扩展卡尔曼滤波的级联架构通常切断状态滤波器与参数滤波器之间的互协方差，使「状态误差被误判为参数误差」这一耦合无法在协方差中显式记录 [^7]——两个滤波器各自收敛到一个自洽但可能联合错误的解。
 
 ### C. 本文出发点与贡献
 
-本文的出发点是：**是否注入、注入什么方向、注入多久，应由联合后验的不确定性结构决定，而不是由转速阈值或固定时序决定。** 换言之，高频注入从「预设信号源」升格为「受控实验」，观测不是给定的，而是被制造的。这与主动感知 \[12\]、对偶控制 \[13\] 中的主动探测思想一脉相承；与电机领域事件触发估计 \[14\] 的区别在于：后者的触发目标是降低计算/通信量，本文的触发目标是**信息增益**。
+本文的出发点是：**是否注入、注入什么方向、注入多久，应由联合后验的不确定性结构决定，而不是由转速阈值或固定时序决定。** 换言之，高频注入从「预设信号源」升格为「受控实验」，观测不是给定的，而是被制造的。这与主动感知 [^12]、对偶控制 [^13] 中的主动探测思想一脉相承；与电机领域事件触发估计 [^14] 的区别在于：后者的触发目标是降低计算/通信量，本文的触发目标是**信息增益**。
 
 本文贡献有三：
 
@@ -409,9 +409,9 @@ $$
 | 不可辨识时的行为 | 反电势在零速塌缩，角度失效或漂移 | 干扰持续存在 | 切换盲区 | 滤波器照常输出 | 可能虚假收敛 | 保持诚实展宽；触发实验；失配时告警 |
 | 失败模式定位 | 难（不输出不确定度） | 难 | 难 | 中 | 难（级联） | 三分支显式区分 |
 
-最左列的滑模观测器（sliding mode observer）加锁相环是工业界最常见的模型基无传感器方案（综述见 \[4\]），本文把它列入基线，是因为它最能说明差异所在：它以不连续切换把电流误差驱上滑模面，再从等效控制量里取反电势，全程只依赖基波。它的失效机理与本文的诊断是同一件事——零速时反电势模型的照明塌缩（第 III-B 节）；区别在于它既不知道自己在塌缩，也不具备自救手段，而本文的触发判据恰是把这一塌缩量化。它也不输出不确定度，因而「按需注入」与「三分支判定」在它那里无从谈起，这不是它的缺陷，而是它不做估计问题之外的事。
+最左列的滑模观测器（sliding mode observer）加锁相环是工业界最常见的模型基无传感器方案（综述见 [^4]），本文把它列入基线，是因为它最能说明差异所在：它以不连续切换把电流误差驱上滑模面，再从等效控制量里取反电势，全程只依赖基波。它的失效机理与本文的诊断是同一件事——零速时反电势模型的照明塌缩（第 III-B 节）；区别在于它既不知道自己在塌缩，也不具备自救手段，而本文的触发判据恰是把这一塌缩量化。它也不输出不确定度，因而「按需注入」与「三分支判定」在它那里无从谈起，这不是它的缺陷，而是它不做估计问题之外的事。
 
-学理脉络上，学习型残差实验观测器处于三条线的交汇处：**主动感知**（Bajcsy \[12\]：通过行动改变传感器信息结构）、**对偶控制**（Feldbaum \[13\]：控制信号兼作探测信号）、**事件触发估计**（Sijs & Lazar \[14\]：按事件而非时钟更新）。与 2013 年「用卡尔曼滤波统一模型基与高频注入基两类无传感器观测」的工作 \[16\] 的本质区别在于哲学定位：那里高频注入是给定的前置信号源、滤波器是主角；这里注入是由不确定性结构驱动的内生决策变量、与推断共同设计——用形式化语言说，前者估计 \(p(\text{状态}\mid\text{观测})\)，后者估计 \(p(\text{状态}\mid\text{观测},\text{激励设计})\)，激励是被优化的量。变工况信息经遗忘信息矩阵累积以解开参数耦合的思路，与 Ljung 对扩展卡尔曼滤波作为参数估计器的渐近分析 \[7\] 和多模型辨识实践一致；对「不想实时估计但必须计入影响」的量只传协方差不传均值，则是 Schmidt–Kalman 考虑策略 \[15\] 的反向运用。
+学理脉络上，学习型残差实验观测器处于三条线的交汇处：**主动感知**（Bajcsy [^12]：通过行动改变传感器信息结构）、**对偶控制**（Feldbaum [^13]：控制信号兼作探测信号）、**事件触发估计**（Sijs & Lazar [^14]：按事件而非时钟更新）。与 2013 年「用卡尔曼滤波统一模型基与高频注入基两类无传感器观测」的工作 [^16] 的本质区别在于哲学定位：那里高频注入是给定的前置信号源、滤波器是主角；这里注入是由不确定性结构驱动的内生决策变量、与推断共同设计——用形式化语言说，前者估计 \(p(\text{状态}\mid\text{观测})\)，后者估计 \(p(\text{状态}\mid\text{观测},\text{激励设计})\)，激励是被优化的量。变工况信息经遗忘信息矩阵累积以解开参数耦合的思路，与 Ljung 对扩展卡尔曼滤波作为参数估计器的渐近分析 [^7] 和多模型辨识实践一致；对「不想实时估计但必须计入影响」的量只传协方差不传均值，则是 Schmidt–Kalman 考虑策略 [^15] 的反向运用。
 
 ---
 
@@ -474,43 +474,42 @@ $$
 
 ---
 
-## 参考文献
 
 > ⟨标注「待核实」的条目投稿前须补全作者与出版信息⟩
 
-\[1\] P. L. Jansen, R. D. Lorenz, "Transducerless position and velocity estimation in induction and salient AC machines," *IEEE Trans. Ind. Appl.*, vol. 31, no. 2, pp. 240–247, 1995.
+[^1]: P. L. Jansen, R. D. Lorenz, "Transducerless position and velocity estimation in induction and salient AC machines," *IEEE Trans. Ind. Appl.*, vol. 31, no. 2, pp. 240–247, 1995.
 
-\[2\] M. J. Corley, R. D. Lorenz, "Rotor position and velocity estimation for a salient-pole permanent magnet synchronous machine at standstill and high speeds," *IEEE Trans. Ind. Appl.*, vol. 34, no. 4, pp. 784–789, 1998.
+[^2]: M. J. Corley, R. D. Lorenz, "Rotor position and velocity estimation for a salient-pole permanent magnet synchronous machine at standstill and high speeds," *IEEE Trans. Ind. Appl.*, vol. 34, no. 4, pp. 784–789, 1998.
 
-\[3\] S. Kim, J.-I. Ha, S.-K. Sul, "PWM switching frequency signal injection sensorless method in IPMSM," *IEEE Trans. Ind. Appl.*, vol. 48, no. 5, pp. 1576–1587, 2012.
+[^3]: S. Kim, J.-I. Ha, S.-K. Sul, "PWM switching frequency signal injection sensorless method in IPMSM," *IEEE Trans. Ind. Appl.*, vol. 48, no. 5, pp. 1576–1587, 2012.
 
-\[4\] G. Wang, M. Valla, J. Solsona, "Position sensorless permanent magnet synchronous machine drives — A review," *IEEE Trans. Ind. Electron.*, vol. 67, no. 7, pp. 5830–5842, 2020.
+[^4]: G. Wang, M. Valla, J. Solsona, "Position sensorless permanent magnet synchronous machine drives — A review," *IEEE Trans. Ind. Electron.*, vol. 67, no. 7, pp. 5830–5842, 2020.
 
-\[5\] J. Holtz, "Sensorless control of induction motor drives," *Proc. IEEE*, vol. 90, no. 8, pp. 1359–1394, 2002.
+[^5]: J. Holtz, "Sensorless control of induction motor drives," *Proc. IEEE*, vol. 90, no. 8, pp. 1359–1394, 2002.
 
-\[6\] S. Bolognani, L. Tubiana, M. Zigliotto, "Extended Kalman filter tuning in sensorless PMSM drives," *IEEE Trans. Ind. Appl.*, vol. 39, no. 6, pp. 1741–1747, 2003.
+[^6]: S. Bolognani, L. Tubiana, M. Zigliotto, "Extended Kalman filter tuning in sensorless PMSM drives," *IEEE Trans. Ind. Appl.*, vol. 39, no. 6, pp. 1741–1747, 2003.
 
-\[7\] L. Ljung, "Asymptotic behavior of the extended Kalman filter as a parameter estimator for linear systems," *IEEE Trans. Autom. Control*, vol. 24, no. 1, pp. 36–50, 1979.
+[^7]: L. Ljung, "Asymptotic behavior of the extended Kalman filter as a parameter estimator for linear systems," *IEEE Trans. Autom. Control*, vol. 24, no. 1, pp. 36–50, 1979.
 
-\[8\] R. E. Kalman, "A new approach to linear filtering and prediction problems," *J. Basic Eng.*, vol. 82, no. 1, pp. 35–45, 1960.
+[^8]: R. E. Kalman, "A new approach to linear filtering and prediction problems," *J. Basic Eng.*, vol. 82, no. 1, pp. 35–45, 1960.
 
-\[9\] A. H. Jazwinski, *Stochastic Processes and Filtering Theory*. New York: Academic Press, 1970.
+[^9]: A. H. Jazwinski, *Stochastic Processes and Filtering Theory*. New York: Academic Press, 1970.
 
-\[10\] Y. Bar-Shalom, X. R. Li, T. Kirubarajan, *Estimation with Applications to Tracking and Navigation*. New York: Wiley, 2001.
+[^10]: Y. Bar-Shalom, X. R. Li, T. Kirubarajan, *Estimation with Applications to Tracking and Navigation*. New York: Wiley, 2001.
 
-\[11\] D. Simon, *Optimal State Estimation: Kalman, H∞, and Nonlinear Approaches*. Hoboken: Wiley, 2006.
+[^11]: D. Simon, *Optimal State Estimation: Kalman, H∞, and Nonlinear Approaches*. Hoboken: Wiley, 2006.
 
-\[12\] R. Bajcsy, "Active perception," *Proc. IEEE*, vol. 76, no. 8, pp. 996–1005, 1988.
+[^12]: R. Bajcsy, "Active perception," *Proc. IEEE*, vol. 76, no. 8, pp. 996–1005, 1988.
 
-\[13\] A. A. Feldbaum, "Dual control theory," *Automation and Remote Control*, vol. 21, pp. 874–880, 1033–1039, 1960–1961.
+[^13]: A. A. Feldbaum, "Dual control theory," *Automation and Remote Control*, vol. 21, pp. 874–880, 1033–1039, 1960–1961.
 
-\[14\] J. Sijs, M. Lazar, "Event based state estimation with time synchronous updates," *IEEE Trans. Autom. Control*, vol. 57, no. 10, pp. 2650–2655, 2012.
+[^14]: J. Sijs, M. Lazar, "Event based state estimation with time synchronous updates," *IEEE Trans. Autom. Control*, vol. 57, no. 10, pp. 2650–2655, 2012.
 
-\[15\] S. F. Schmidt, "Application of state-space methods to navigation problems," *Advances in Control Systems*, vol. 3, pp. 293–340, 1966.
+[^15]: S. F. Schmidt, "Application of state-space methods to navigation problems," *Advances in Control Systems*, vol. 3, pp. 293–340, 1966.
 
-\[16\] "Kalman filters unifying model-based and HF injection-based sensorless control of PMSM drives," 2013. ⟨作者与出版信息待核实⟩
+[^16]: "Kalman filters unifying model-based and HF injection-based sensorless control of PMSM drives," 2013. ⟨作者与出版信息待核实⟩
 
-\[17\] "Integration of high-frequency injection methods for sensorless control of PMSMs in next-generation transportation systems: Principles, challenges, and solutions," *Renew. Sustain. Energy Rev.*, 2026. ⟨卷期页待核实⟩
+[^17]: "Integration of high-frequency injection methods for sensorless control of PMSMs in next-generation transportation systems: Principles, challenges, and solutions," *Renew. Sustain. Energy Rev.*, 2026. ⟨卷期页待核实⟩
 
 ---
 
