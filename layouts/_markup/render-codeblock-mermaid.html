@@ -1,0 +1,10 @@
+{{- /* Mermaid 代码块：交给浏览器端的 mermaid.js 渲染 */ -}}
+<pre class="mermaid">{{ .Inner }}</pre>
+{{- if not (.Page.Scratch.Get "mermaidLoaded") -}}
+  {{- .Page.Scratch.Set "mermaidLoaded" true -}}
+  <script type="module">
+    import mermaid from "https://registry.npmmirror.com/mermaid/11.17.2/files/dist/mermaid.esm.min.mjs";
+    const dark = document.documentElement.dataset.theme === "dark";
+    mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "neutral" });
+  </script>
+{{- end -}}
