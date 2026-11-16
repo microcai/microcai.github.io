@@ -2,11 +2,17 @@
    站点级自定义样式（PaperMod 扩展点，主题样式之后加载，会被 minify
    打包进 stylesheet.css）。改这里而不是 themes/PaperMod：后者是
    submodule，GitHub Actions 构建时从远端拉取，本地改动不会进部署。
-
-   正文排版：两端对齐让行尾平齐；pretty 让换行点均匀，避免末行只剩
-   一个字/一个词的孤行。text-wrap: pretty 需要 Chromium 117+ /
-   Safari 17.2+，不支持的浏览器忽略该行，justify 仍然生效。
    ------------------------------------------------------------------ */
+
+/* 正文栏宽：主题默认 --main-width: 720px，拉宽到 900px。
+   首页列表、文章页与页脚共用它；导航栏仍按 --nav-width 1024px。 */
+:root {
+    --main-width: 900px;
+}
+
+/* 正文排版：两端对齐让行尾平齐；pretty 让换行点均匀，避免末行只剩
+   一个字/一个词的孤行。text-wrap: pretty 目前主要在 Chromium 系与
+   Safari 较新版本生效，不支持的浏览器忽略该行，justify 仍然可用。 */
 .md-content p,
 .md-content li,
 .md-content blockquote {

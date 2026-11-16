@@ -2,7 +2,8 @@
 <style>
   /* Hugo 的 MathML 外面有一层 span.katex 包装，去掉它的影响，让块级公式正常撑开 */
   span.katex { display: contents; }
-  /* 宽公式允许突破 720px 的正文栏宽，居中到页面；
+  /* 宽公式允许突破正文栏宽（--main-width，现为 900px，见 assets/css/extended/blank.css），
+     居中到页面；
      只有真的宽过视口时才出现横向滚动条 */
   math[display="block"] {
     width: max-content;
