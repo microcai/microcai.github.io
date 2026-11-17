@@ -11,6 +11,8 @@ uglyURLs = true
 # 旧文章 slug 里有大写字母（如 Dead-time-compensation），GitHub Pages 区分大小写
 disablePathToLower = true
 enableRobotsTXT = true
+# 未来日期的文章也照样构建：提前出现在首页/RSS/sitemap，剧透无所谓
+buildFuture = true
 
 [pagination]
   pagerSize = 20
