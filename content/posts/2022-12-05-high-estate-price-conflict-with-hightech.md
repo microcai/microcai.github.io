@@ -1,5 +1,5 @@
 ---
-title: 高房间必然没有高科技
+title: 高房价必然没有高科技
 tags:   [房价, 科技]
 date: 2022-12-05
 slug: high-estate-price-conflict-with-hightech
