@@ -88,6 +88,11 @@ buildFuture = true
   weight = 10
 
 [[menu.main]]
+  name = "技术翻译"
+  pageRef = "/translist.html"
+  weight = 12
+
+[[menu.main]]
   name = "归档"
   url = "/archive.html"
   weight = 20

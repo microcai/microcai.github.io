@@ -1,0 +1,42 @@
+{{- /* 覆盖主题的 home_info.html：家园卡片下面加一个精选区。
+       只在首页第一页被调用（见主题 list.html 里 .IsHome 且 PageNumber 1 的条件），
+       标签页、section 页、翻页都不受影响。
+       文章 front matter 写 pinned: true 进精选区，
+       同时写 hiddenInHomeList: true 让它不在下面的时间流里重复出现。 */ -}}
+{{- with site.Params.homeInfoParams }}
+{{- $pinned := where site.RegularPages "Params.pinned" "eq" true }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    {{- if $pinned }}
+    <style>
+        /* 精选区：纯标题链接。只在本页渲染，故内联；用主题变量，暗色模式自动跟随 */
+        .home-featured { margin-block-start: 16px; }
+        .home-featured-label {
+            color: var(--secondary);
+            font-size: 13px;
+            margin-block-end: 6px;
+        }
+        .home-featured-list { list-style: none; margin: 0; padding: 0; }
+        .home-featured-list li { margin-block: 4px; font-size: 15px; line-height: 1.4; }
+        .home-featured-list a { color: var(--primary); text-decoration: underline; }
+    </style>
+    <nav class="home-featured" aria-label="精选文章">
+        <div class="home-featured-label">精选</div>
+        <ul class="home-featured-list">
+            {{- range $pinned }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{- end }}
+        </ul>
+    </nav>
+    {{- end }}
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
