@@ -38,3 +38,8 @@
     text-align: start;
     text-wrap: auto;
 }
+
+.gt-container .gt-header-textarea {
+    background-color: blanchedalmond;
+    color:darkmagenta;
+}
