@@ -1,8 +1,7 @@
 ---
 title: 同居是没有保障的婚姻
 tags: [结婚, 同居]
-date: 2024-09-12
-slug: girls-are-stupid
+url: /2024/09/12/girls-are-stupid.html
 ---
 现代女性恐惧婚姻，却不恐惧同居。反而欣欣向荣。
 

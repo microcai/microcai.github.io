@@ -1,7 +1,6 @@
 ---
 title: gnome 的对与错
-date: 2011-03-15
-slug: gnomefault
+url: /2011/03/15/gnomefault.html
 ---
 gnome-shell 也用了许久了。从一开始的新鲜到习惯， 再到离不开它。
 

@@ -1,8 +1,7 @@
 ---
 title: 电机控制的几个思索
 tags: [bldc, motor]
-date: 2025-01-26
-slug: motor-and-regenerative
+url: /2025/01/26/motor-and-regenerative.html
 ---
 # 关于能量转化上的思考
 

@@ -1,7 +1,6 @@
 ---
 title: 简历上的神吹
-date: 2010-07-28
-slug: fuckingresume
+url: /2010/07/28/fuckingresume.html
 ---
 实习的时候看过几十份求职简历，现在把我看过的简历的特点简单介绍一下：
 

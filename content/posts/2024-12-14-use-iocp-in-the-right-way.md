@@ -1,8 +1,7 @@
 ---
 title: 深入异步IO 第二篇： 正确使用 IOCP，正确设计 proactor
 tags: [c++, cpp, async, IOCP, proactor]
-date: 2024-12-14
-slug: use-iocp-in-the-right-way
+url: /2024/12/14/use-iocp-in-the-right-way.html
 ---
 # 前言
 

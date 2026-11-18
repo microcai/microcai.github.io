@@ -1,8 +1,7 @@
 ---
 title: IPv6 这几天的体验
 tags: [network, ipv6]
-date: 2019-02-13
-slug: ipv6-experience
+url: /2019/02/13/ipv6-experience.html
 ---
 如果只是家里折腾上了 ipv6 那不算 ipv6。网络这种东西一定要互联互通才算。最近把公司的猫也折腾了一下下，上了 ipv6。
 

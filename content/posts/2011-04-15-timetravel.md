@@ -1,8 +1,7 @@
 ---
 title: 为何我们不能回到过去
 tags: [physics]
-date: 2011-04-15
-slug: timetravel
+url: /2011/04/15/timetravel.html
 ---
 我们能回到过去么？
 

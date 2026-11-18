@@ -1,8 +1,7 @@
 ---
 title: 萌王观后感
 tags: [利姆鲁, 萌王]
-date: 2021-04-18
-slug: limuru-the-ani
+url: /2021/04/18/limuru-the-ani.html
 ---
 萌王第二季前半部分完结撒花。
 

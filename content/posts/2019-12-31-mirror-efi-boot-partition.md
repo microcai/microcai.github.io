@@ -1,8 +1,7 @@
 ---
 title: 3950X 再次拯救 Gentoo
 tags: [AMD, 3950X, Gentoo]
-date: 2019-12-31
-slug: mirror-efi-boot-partition
+url: /2019/12/31/mirror-efi-boot-partition.html
 ---
 镜像  EFI boot 分区。
 

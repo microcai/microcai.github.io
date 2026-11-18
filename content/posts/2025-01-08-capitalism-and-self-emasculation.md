@@ -1,8 +1,7 @@
 ---
 title: 资本主义绝户计
 tags: [capitalism]
-date: 2025-01-08
-slug: capitalism-and-self-emasculation
+url: /2025/01/08/capitalism-and-self-emasculation.html
 ---
 全世界的文明，都陷入了一个困境：经济越是发达，生育率越低。
 

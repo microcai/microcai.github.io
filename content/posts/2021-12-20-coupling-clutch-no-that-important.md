@@ -2,8 +2,7 @@
 title:  增程不差，直驱没那么神
 tags:   [dmi,增程,直驱]
 
-date: 2021-12-20
-slug: coupling-clutch-no-that-important
+url: /2021/12/20/coupling-clutch-no-that-important.html
 ---
 # 不要迷信发动机直驱
 

@@ -1,8 +1,7 @@
 ---
 title: 新的路由器
 tags: [network, ERX]
-date: 2016-10-18
-slug: new-router
+url: /2016/10/18/new-router.html
 ---
 上文说到，我使用无线网桥衔接了2个家庭，组成了一个局域网，共享了宽带。
 

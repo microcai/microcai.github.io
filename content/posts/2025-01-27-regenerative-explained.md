@@ -1,8 +1,7 @@
 ---
 title: 动能回收的实现方式
 tags: [bldc, motor]
-date: 2025-01-27
-slug: regenerative-explained
+url: /2025/01/27/regenerative-explained.html
 ---
 电动汽车进行动能回收的原理就是电动机可以作为发电机使用。
 

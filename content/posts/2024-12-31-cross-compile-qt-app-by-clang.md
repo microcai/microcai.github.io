@@ -1,8 +1,7 @@
 ---
 title: 在Linux上交叉编译windows版 Qt 和 qt应用
 tags: [llvm, mingw32, clang, qt]
-date: 2024-12-31
-slug: cross-compile-qt-app-by-clang
+url: /2024/12/31/cross-compile-qt-app-by-clang.html
 ---
 # 准备工具链
 

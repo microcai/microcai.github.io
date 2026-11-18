@@ -1,8 +1,7 @@
 ---
 title: 链接到 ucrtbase.dll
 tags: [c++, cpp, ucrt, mingw, llvm]
-date: 2024-12-23
-slug: link-to-ucrtbase-dll
+url: /2024/12/23/link-to-ucrtbase-dll.html
 ---
 使用 vc6.0 以后的 VS 编译器，最恼火的一点就是生成的 exe 依赖 msvcrXXX.dll。
 其中 XXX 是个版本号。而且 msvcrXXX.dll 系统是不自带的。

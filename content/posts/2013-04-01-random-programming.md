@@ -1,7 +1,6 @@
 ---
 title: 随机编程
-date: 2013-04-01
-slug: random-programming
+url: /2013/04/01/random-programming.html
 ---
 这个想法由来已久, 是从和  [Jack](http://codedoom.net) 的多次交谈中逐渐悟出来的天朝程序员惯用编程模式.
 

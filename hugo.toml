@@ -6,18 +6,28 @@ defaultContentLanguage = "zh-cn"
 timezone = "Asia/Shanghai"
 theme = "PaperMod"
 
-# 保留 Jekyll 时代的 URL 形态：/2026/10/31/xxx.html
+# 保留 Jekyll 时代的 .html 后缀。
+# 老文章的完整 URL 已逐篇用 front matter 的 url: 钉死（/2026/10/31/xxx.html），
+# 不再依赖下面的 permalinks 规则；这两种设置只作用于之后的新文章。
 uglyURLs = true
-# 旧文章 slug 里有大写字母（如 Dead-time-compensation），GitHub Pages 区分大小写
-disablePathToLower = true
+# 路径统一小写：正文里有 DC/dc、PCIe/PCIE 这类只差大小写的标签，
+# Hugo 按小写键合并词条后，用哪个写法做 URL 是不确定的，会随构建翻转。
+# 老文章的 URL 已由 front matter 的 url: 按字面固定，不受此项影响。
+disablePathToLower = false
 enableRobotsTXT = true
 # 未来日期的文章也照样构建：提前出现在首页/RSS/sitemap，剧透无所谓
 buildFuture = true
+
+[frontmatter]
+  # date 优先取 front matter，缺失时从文件名（2026-11-18-xxx.md）解析
+  date = [":default", ":filename"]
 
 [pagination]
   pagerSize = 20
 
 [permalinks]
+  # 新文章沿用老的 URL 形态：2026-11-18-foo.md → /2026/11/18/foo.html
+  # slug 与 date 都不用写在 front matter：前者由文件名去掉日期前缀得到，后者从文件名解析
   posts = "/:year/:month/:day/:slug"
 
 [taxonomies]

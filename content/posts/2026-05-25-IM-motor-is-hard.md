@@ -1,8 +1,7 @@
 ---
 title: 异步电机控制何以复杂
 tags: [c++]
-date: 2026-05-25
-slug: IM-motor-is-hard
+url: /2026/05/25/IM-motor-is-hard.html
 ---
 一言以蔽之：因为有两个控制维度。
 

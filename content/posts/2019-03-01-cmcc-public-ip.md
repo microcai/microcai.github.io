@@ -1,8 +1,7 @@
 ---
 title: 拿到了移动宽带的公网IP
 tags: [network, cmcc, CGNAT, ipv4]
-date: 2019-03-01
-slug: cmcc-public-ip
+url: /2019/03/01/cmcc-public-ip.html
 ---
 闻觉 CMCC 手握 HKIX 宝剑， 想必连 HK 节点的 VPN 访问世界一定更快。世界的一部分一般在 HK 本地也有 CDN 节点，因此多数时候并不需要再从 HK 去世界绕一圈。于是买新房后，就办理了免费的CMCC宽带。不再向恶势力CT低头了。
 

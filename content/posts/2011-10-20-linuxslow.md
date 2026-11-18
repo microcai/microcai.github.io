@@ -1,7 +1,6 @@
 ---
 title: 原来 Linux 已经慢到这种地步了啊
-date: 2011-10-20
-slug: linuxslow
+url: /2011/10/20/linuxslow.html
 ---
 因为特别喜欢 Gentoo , 所以自从2年前的一次偶然，我用上了 Gentoo 后就在也没有换过系统。 
 

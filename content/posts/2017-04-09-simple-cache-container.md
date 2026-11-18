@@ -1,8 +1,7 @@
 ---
 title: 使用异常实现cache
 tags:   [c++, exception]
-date: 2017-04-09
-slug: simple-cache-container
+url: /2017/04/09/simple-cache-container.html
 ---
 异常用来做错误处理的时候，程序到处都是 try  cache ，代码十分的丑陋，我是不怎么喜欢的，我喜欢 asio 那种用 error\_code  汇报错误 —— 不传 ec 的时候就抛异常，传就不抛，改为写入错误到 ec。
 

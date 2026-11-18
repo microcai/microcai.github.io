@@ -1,8 +1,7 @@
 ---
 title: 批量提交IO提升性能
 tags: [c++, cpp, async, iouring, io_uring, IOCP]
-date: 2024-12-10
-slug: io_batching-boost-performance
+url: /2024/12/10/io_batching-boost-performance.html
 ---
 在基本完成 iocp4linux 后，我抽空在 [rockpi](https://wiki.radxa.com/Rockpi4) 上测了下性能。
 

@@ -1,8 +1,7 @@
 ---
 title: platformIO 单片机开发神器
 tags:   [ESP32, STM32, Arduino]
-date: 2022-11-12
-slug: platformio
+url: /2022/11/12/platformio.html
 ---
 近来闲暇无事，想弄个三相变频器玩玩。
 三相变频器可以用来驱动异步电机，还可以驱动直线加速器。

@@ -1,8 +1,7 @@
 ---
 title: TOKEN的最佳翻译
 tags: [translation, token]
-date: 2026-09-24
-slug: good-translation-for-token
+url: /2026/09/24/good-translation-for-token.html
 ---
 大语言模型火了之后，`token` 这个词无处不在，但它的中文译名一直没定下来。目前最流行的是「词元」。我不同意——它译错了方向。更准确的译法应该是「**模型字**」，简称「**字**」。
 

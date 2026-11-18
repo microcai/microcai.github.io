@@ -1,7 +1,6 @@
 ---
 title: avplayer 维基站点建立 
-date: 2013-07-01
-slug: wiki-avplayer
+url: /2013/07/01/wiki-avplayer.html
 ---
 avplayer 社区的维基站点建立了, 欢迎大家访问  [http://wiki.avplayer.org](http://wiki.avplayer.org)
 

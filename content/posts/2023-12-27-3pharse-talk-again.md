@@ -1,8 +1,7 @@
 ---
 title: 三相的恒功率优势
 tags: [三相电]
-date: 2023-12-27
-slug: 3pharse-talk-again
+url: /2023/12/27/3pharse-talk-again.html
 ---
 在 [这篇](/2022/02/14/ev-charging-and-3phase-balance.html) 文章里，我曾经说，三相电是恒功率的。
 

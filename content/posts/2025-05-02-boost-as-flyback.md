@@ -1,8 +1,7 @@
 ---
 title: 设计一个 3V - 100V 超宽压输入，15V 输出的电源
 tags: [Boost, PCB, FlyBack, DCDC]
-date: 2025-05-02
-slug: boost-as-flyback
+url: /2025/05/02/boost-as-flyback.html
 ---
 # DCDC 的困境
 

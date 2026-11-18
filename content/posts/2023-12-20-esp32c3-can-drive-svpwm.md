@@ -1,8 +1,7 @@
 ---
 title: 变频器制作-第九部分之ESP32C3 也能输出svpwm
 tags: [变频器, ESP32C3, ESP32]
-date: 2023-12-20
-slug: esp32c3-can-drive-svpwm
+url: /2023/12/20/esp32c3-can-drive-svpwm.html
 ---
 # 前言
 先看以下乐馨官方的 ESP32S3 和 ESP32C3 的对比

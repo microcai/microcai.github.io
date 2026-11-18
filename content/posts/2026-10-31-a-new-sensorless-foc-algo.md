@@ -1,8 +1,7 @@
 ---
 title: 学习型残差实验观测器：基于机器学习和主动实验的电机参数观测器
 tags: [foc, sensorless, observer, HFI, EKF, machine-learning]
-date: 2026-10-31
-slug: a-new-sensorless-foc-algo
+url: /2026/10/31/a-new-sensorless-foc-algo.html
 ---
 <!-- ============================================================
   双用途说明（源码注释，不渲染）：

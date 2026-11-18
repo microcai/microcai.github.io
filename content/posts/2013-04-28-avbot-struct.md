@@ -1,8 +1,7 @@
 ---
 title: avbot 结构解释
 tags: [avbot]
-date: 2013-04-28
-slug: avbot-struct
+url: /2013/04/28/avbot-struct.html
 ---
 avbot 由 4 大部分构成 libavbot libavlog botctl avbotrpc
 

@@ -1,8 +1,7 @@
 ---
 title: Linux多WAN负载均衡原理
 tags: [network]
-date: 2016-11-02
-slug: load-balancing
+url: /2016/11/02/load-balancing.html
 ---
 玩了一段时间 EdgeRouter , 对他的负载均衡的可玩性非常着迷。仔细研究后发现，他的实现原理是 iptables 标记数据包，然后对标记的数据包使用使用特定的路由表实现的。
 

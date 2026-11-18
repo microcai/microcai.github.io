@@ -1,8 +1,7 @@
 ---
 title: 不需要void*user_data的闭包封装
 tags: [c, closure]
-date: 2024-10-31
-slug: c-closure-without-void-userdata
+url: /2024/10/31/c-closure-without-void-userdata.html
 ---
 一般来说，如果 C api 接受一个回调，通常会额外允许设置一个 void* 的回调参数。
 用户可以把一些额外的参数用这个 void* 传给回调函数。

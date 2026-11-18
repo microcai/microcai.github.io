@@ -1,8 +1,7 @@
 ---
 title:  asio::promise yyds
 tags:   [asio, promise, c++20]
-date: 2022-02-04
-slug: asio-promise-yyds
+url: /2022/02/04/asio-promise-yyds.html
 ---
 最近在写以太坊的巧克力浏览器（区块链浏览器）。因为区块链浏览器需要访问历史的块，因此需要节点以 archive 模式同步。
 

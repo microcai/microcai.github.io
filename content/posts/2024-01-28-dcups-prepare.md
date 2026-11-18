@@ -1,8 +1,7 @@
 ---
 title: 准备制作直流UPS
 tags: [DCUPS]
-date: 2024-01-28
-slug: dcups-prepare
+url: /2024/01/28/dcups-prepare.html
 ---
 # 问题
 

@@ -1,8 +1,7 @@
 ---
 title: 聊聊  type  erasure
 tags: [c++]
-date: 2014-04-21
-slug: type-erasure
+url: /2014/04/21/type-erasure.html
 ---
 # 什么是类型橡皮擦? 
 

@@ -1,8 +1,7 @@
 ---
 title: 了解反激，驯服反激
 tags: [PCB, FlyBack, ACDC]
-date: 2025-05-24
-slug: flyback-howto
+url: /2025/05/24/flyback-howto.html
 ---
 # 序
 

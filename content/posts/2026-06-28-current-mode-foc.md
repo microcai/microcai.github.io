@@ -1,8 +1,7 @@
 ---
 title: 电流模式 FOC
 tags: [foc, 电流模式控制]
-date: 2026-06-28
-slug: current-mode-foc
+url: /2026/06/28/current-mode-foc.html
 ---
 记得很久以前，我曾经说过，**现有的FOC电机驱动都是电压模式控制**而遭到嘲讽。
 

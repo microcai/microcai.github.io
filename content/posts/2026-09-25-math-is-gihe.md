@@ -1,8 +1,7 @@
 ---
 title: 数学就是几何，高数就是高维几何
 tags: [math, geometry, 高维几何]
-date: 2026-09-25
-slug: math-is-gihe
+url: /2026/09/25/math-is-gihe.html
 ---
 我总觉得 alpha-beta 这种正交的波形，不如三相的波形好看。
 

@@ -1,7 +1,6 @@
 ---
 title: force AHCI without BIOS
-date: 2011-02-02
-slug: forceahci
+url: /2011/02/02/forceahci.html
 ---
 For long time, I've been using IDE mode for SATA.
 长久以来，我一直在用SATA的IDE模式。

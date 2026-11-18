@@ -1,8 +1,7 @@
 ---
 title: 制作变频器-第八部分
 tags: [变频器, 同步调制, 异步调制]
-date: 2023-12-16
-slug: sync-modulation-corrected
+url: /2023/12/16/sync-modulation-corrected.html
 ---
 # 载波比得多少合适
 

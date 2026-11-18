@@ -1,7 +1,6 @@
 ---
 title: OSS4 deprecated ALSA and PulseAudio
-date: 2011-02-15
-slug: oss4fuckofalsaandpa
+url: /2011/02/15/oss4fuckofalsaandpa.html
 ---
 Turst me , OSS4 = ALSA + PulseAudio , and all implemented in kernel. very low latency.
 

@@ -1,8 +1,7 @@
 ---
 title:  免费版的 PrimoCache
 tags:   [iscsi, cache, fancycache]
-date: 2017-02-10
-slug: fix-slow-hdd-aka-free-version-of-PrimoCache
+url: /2017/02/10/fix-slow-hdd-aka-free-version-of-PrimoCache.html
 ---
 去年DIY一个 NAS. 其实就是台 MINI PC. 自带一个很小的 mSATA SSD 用来装系统, 然后外接了一个大 HDD 做存储.
 

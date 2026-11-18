@@ -1,8 +1,7 @@
 ---
 title: 沙雕动画 vs 腾讯动画
 tags: [熊猫人, 配音]
-date: 2024-03-21
-slug: shadiao-ani-vs-tencent
+url: /2024/03/21/shadiao-ani-vs-tencent.html
 ---
 很多人说，看国产的动画片，配音不好。然后就跑去看日本片去了。更有奇葩的，要看日语配音的国产动画片。
 

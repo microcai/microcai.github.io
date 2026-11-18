@@ -1,8 +1,7 @@
 ---
 title: NAS 的 pcie 短缺问题
 tags: [network, 10G, NAS，pcie, M2, sata]
-date: 2019-04-23
-slug: intel-pcie-shortage
+url: /2019/04/23/intel-pcie-shortage.html
 ---
 万兆网卡到货后，迫不及待的插上主板开机。
 

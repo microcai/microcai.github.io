@@ -1,8 +1,7 @@
 ---
 title: 微软不会起名
 tags: [c++, coroutine]
-date: 2024-10-30
-slug: ms-went-wrong-on-coroutine-naming
+url: /2024/10/30/ms-went-wrong-on-coroutine-naming.html
 ---
 微软不会起名，而且名字还具有极大的误导性。
 

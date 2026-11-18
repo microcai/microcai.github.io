@@ -1,8 +1,7 @@
 ---
 title: NAS 换 Gentoo
 tags: [network, 10G, NAS，pcie, M2, sata]
-date: 2019-05-29
-slug: goback-to-gentoo
+url: /2019/05/29/goback-to-gentoo.html
 ---
 freenas 使用了一阵子，发现了几个严重的问题
 

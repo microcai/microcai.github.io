@@ -1,8 +1,7 @@
 ---
 title: 调用约定和上下文切换
 tags: [c++, cpp, coroutine, zcontext, fcontext, clang]
-date: 2025-01-03
-slug: calling-convertion-and-context-swap
+url: /2025/01/03/calling-convertion-and-context-swap.html
 ---
 编写协程库的时候，我常常在想，上下文切换的速度，受**调用约定**的影响非常大。
 

@@ -1,8 +1,7 @@
 ---
 title: 使用邻居的CMCC宽带加速
 tags: [network, ERX]
-date: 2016-12-07
-slug: use-neighbor-CMCC
+url: /2016/12/07/use-neighbor-CMCC.html
 ---
 基于某些特殊原因，我知道邻居家的wifi密码。
 

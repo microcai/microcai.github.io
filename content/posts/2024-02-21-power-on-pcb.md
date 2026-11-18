@@ -1,8 +1,7 @@
 ---
 title: 变频器制作-第12部分 电源，还是电源
 tags: [变频器, 供电, DCDC, ACDC, FlyBuck, 隔离]
-date: 2024-02-21
-slug: power-on-pcb
+url: /2024/02/21/power-on-pcb.html
 ---
 # 说到供电
 

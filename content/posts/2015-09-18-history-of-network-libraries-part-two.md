@@ -1,8 +1,7 @@
 ---
 title: ASIO 腾空出世 （那些年我们追过的网络库.PartII）
 tags: [network, asio]
-date: 2015-09-18
-slug: history-of-network-libraries-part-two
+url: /2015/09/18/history-of-network-libraries-part-two.html
 ---
 > 这是上篇 [那些年我们追过的网络库(PartI)][1] 的后续，
 

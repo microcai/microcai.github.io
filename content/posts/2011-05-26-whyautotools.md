@@ -1,7 +1,6 @@
 ---
 title: 为什么你应该让你的项目使用 autotools 而不是别的编译系统
-date: 2011-05-26
-slug: whyautotools
+url: /2011/05/26/whyautotools.html
 ---
 编写软件离不开编译。 
 

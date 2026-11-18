@@ -1,8 +1,7 @@
 ---
 title: 使用自己硬件的时候写的两个补丁
 tags: [kernel]
-date: 2014-08-09
-slug: two-kernel-patch-for-my-pc
+url: /2014/08/09/two-kernel-patch-for-my-pc.html
 ---
 # 键盘问题
 

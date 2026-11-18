@@ -1,8 +1,7 @@
 ---
 title: foc速成班
 tags: [FOC]
-date: 2023-12-22
-slug: clarke-transform-is-not-essential
+url: /2023/12/22/clarke-transform-is-not-essential.html
 ---
 # 前言
 

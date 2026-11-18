@@ -1,8 +1,7 @@
 ---
 title: 制作变频器-第六部分
 tags: [协程, 变频器]
-date: 2023-12-08
-slug: cooperative-multitasking-in-mcu
+url: /2023/12/08/cooperative-multitasking-in-mcu.html
 ---
 # 从多任务说起.
 

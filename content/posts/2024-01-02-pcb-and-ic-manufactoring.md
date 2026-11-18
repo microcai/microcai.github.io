@@ -1,8 +1,7 @@
 ---
 title: PCB和芯片
 tags: [IC, PCB]
-date: 2024-01-02
-slug: pcb-and-ic-manufactoring
+url: /2024/01/02/pcb-and-ic-manufactoring.html
 ---
 进来做变频器，画了不少 PCB 板子。突然发现画 PCB 和芯片设计，有极大的共同点。
 

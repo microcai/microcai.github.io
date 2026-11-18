@@ -1,8 +1,7 @@
 ---
 title:  ubuntu 太反人类了
 tags: [os]
-date: 2014-11-11
-slug: fuck-ubuntu
+url: /2014/11/11/fuck-ubuntu.html
 ---
 ubuntu 这个烂东西, 我本来不打算吐槽的, 反正烂东西我不触碰就是了.
 

@@ -1,8 +1,7 @@
 ---
 title:  新能源汽车充电和三相负荷平衡
 tags:   [三相电]
-date: 2022-02-14
-slug: ev-charging-and-3phase-balance
+url: /2022/02/14/ev-charging-and-3phase-balance.html
 ---
 我喜欢直流电，本质原因是直流电是恒功率的。而交流电的功率是脉动式的。
 

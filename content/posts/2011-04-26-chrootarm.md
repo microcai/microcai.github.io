@@ -1,7 +1,6 @@
 ---
 title: chroot to arm on an x86 Gentoo
-date: 2011-04-26
-slug: chrootarm
+url: /2011/04/26/chrootarm.html
 ---
 在早上的邮件中，我指出 Gentoo 是如何方便的构筑交叉环境的。
 现在，我要指出，我还要运行里面的arm程序！ 在 chroot 环境中，真正的把它当

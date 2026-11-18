@@ -1,7 +1,6 @@
 ---
 title: For every bug, there is a ugly man
-date: 2009-09-28
-slug: foreverybugthereisauglyman
+url: /2009/09/28/foreverybugthereisauglyman.html
 ---
 For every bug found in the softwre, there is a ugly man behind.
 For too many days! I've been working on that bug! And the software has already ran in a hotel!

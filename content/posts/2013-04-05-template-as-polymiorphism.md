@@ -1,8 +1,7 @@
 ---
 title: 模板多态
 tags: [c++]
-date: 2013-04-05
-slug: template-as-polymiorphism
+url: /2013/04/05/template-as-polymiorphism.html
 ---
 # 需求
 

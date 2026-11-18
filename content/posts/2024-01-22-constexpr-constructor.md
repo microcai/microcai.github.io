@@ -1,8 +1,7 @@
 ---
 title: 编译期对象构造优化 .bss 为 .rodata
 tags: [constexpr, construct, c++]
-date: 2024-01-22
-slug: constexpr-constructor
+url: /2024/01/22/constexpr-constructor.html
 ---
 # 问题
 

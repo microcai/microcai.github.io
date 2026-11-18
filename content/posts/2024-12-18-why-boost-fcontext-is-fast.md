@@ -1,8 +1,7 @@
 ---
 title: boost.fcontext 为何快？
 tags: [c++, cpp, coroutine, boost, fcontext]
-date: 2024-12-18
-slug: why-boost-fcontext-is-fast
+url: /2024/12/18/why-boost-fcontext-is-fast.html
 ---
 在 [批评 libco](https://microcai.org/2024/12/17/dig-into-libco.html) 的 上下文切换代码的时候，我曾经说，协程的上下文切换代码，并不需要恢复所有的寄存器。
 只需要恢复调用约定里规定的 “非易失性寄存器”。

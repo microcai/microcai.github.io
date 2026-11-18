@@ -1,8 +1,7 @@
 ---
 title: 重提类型擦除器
 tags: [c++, cpp]
-date: 2024-11-01
-slug: type-erasuer
+url: /2024/11/01/type-erasuer.html
 ---
 # 序
 

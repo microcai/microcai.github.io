@@ -1,7 +1,6 @@
 ---
 title: 读书人最容易出卖灵魂
-date: 2020-07-26
-slug: faked-freedom-speech
+url: /2020/07/26/faked-freedom-speech.html
 ---
 咱国家其实对明朝研究的特别少。特少。
 

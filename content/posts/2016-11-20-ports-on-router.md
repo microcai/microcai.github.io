@@ -1,8 +1,7 @@
 ---
 title: 路由口和交换口
 tags: [network]
-date: 2016-11-20
-slug: ports-on-router
+url: /2016/11/20/ports-on-router.html
 ---
 很久以前，我买路由器非常关心路由器有几个口。但是我最终发现，其实路由器都只有2个口。
 一个 WAN 口一个LAN口。哪怕是一些双WAN的路由器，其实也只有3个口，2个WAN口一个LAN口而已。

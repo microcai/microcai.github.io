@@ -1,8 +1,7 @@
 ---
 title: avbot 里的回调
 tags: [asio,avbot]
-date: 2014-05-25
-slug: callbacks-on-avbot
+url: /2014/05/25/callbacks-on-avbot.html
 ---
 asio 这样的库，每次发起一个操作，就带一个回调．回调告诉你，神马时候操作完成了，完成的咋样．
 

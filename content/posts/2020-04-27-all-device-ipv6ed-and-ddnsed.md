@@ -1,8 +1,7 @@
 ---
 title: 为家里所有设备一次更新 ipv6 动态域名
 tags: [ipv6, ddns, dnspod]
-date: 2020-04-27
-slug: all-device-ipv6ed-and-ddnsed
+url: /2020/04/27/all-device-ipv6ed-and-ddnsed.html
 ---
 来了！ ipv6 真的来了！ 最近回一趟老家，发现老家的 ipv6 也可以用后， 家，公司，老家1，老家2 四个地方的 ipv6 就全部都能互通了。这样，就没有理由留着 ipv4 了。我甚至觉得搞个公网 ipv4 地址是多么可笑的一件事。
 

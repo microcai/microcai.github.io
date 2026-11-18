@@ -1,8 +1,7 @@
 ---
 title: 用iouring扩展asio
 tags: [c++, cpp, async, iouring, io_uring, asio]
-date: 2024-11-21
-slug: extending-asio
+url: /2024/11/21/extending-asio.html
 ---
 # 序
 

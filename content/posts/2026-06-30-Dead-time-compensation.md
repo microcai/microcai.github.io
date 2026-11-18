@@ -1,8 +1,7 @@
 ---
 title: 死区补偿和管压降补偿
 tags: [foc]
-date: 2026-06-30
-slug: Dead-time-compensation
+url: /2026/06/30/Dead-time-compensation.html
 ---
 死区补偿说的人很多，文章一大把。但是 igbt 的导通压降补偿似乎没什么人提。
 

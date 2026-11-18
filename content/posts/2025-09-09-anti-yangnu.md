@@ -1,8 +1,7 @@
 ---
 title: 中国人要反对洋奴哲学
 tags: [文化大革命]
-date: 2025-09-09
-slug: anti-yangnu
+url: /2025/09/09/anti-yangnu.html
 ---
 作者：张春桥。
 

@@ -1,8 +1,7 @@
 ---
 title: 美国拍不出短剧
 tags: [duanju, english]
-date: 2026-11-18
-slug: duanju-shortage-reason
+url: /2026/11/18/duanju-shortage-reason.html
 ---
 
 # 美国似乎拍不出短剧

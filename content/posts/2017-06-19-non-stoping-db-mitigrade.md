@@ -1,8 +1,7 @@
 ---
 title: 不停机迁移
 tags:   [database]
-date: 2017-06-19
-slug: non-stoping-db-mitigrade
+url: /2017/06/19/non-stoping-db-mitigrade.html
 ---
 设计一套系统的时候， 最初的数据库结构总是不能适应未来业务的发展变化。经常需要调整数据库的表结构以适应新的业务需求或调整逻辑结构。
 

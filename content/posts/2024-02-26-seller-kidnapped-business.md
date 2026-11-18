@@ -1,8 +1,7 @@
 ---
 title: 被销售绑架
 tags: [销售, 怪象]
-date: 2024-02-26
-slug: seller-kidnapped-business
+url: /2024/02/26/seller-kidnapped-business.html
 ---
 在芯片销售行业，有一个怪现象。买芯片的人是孙子。
 

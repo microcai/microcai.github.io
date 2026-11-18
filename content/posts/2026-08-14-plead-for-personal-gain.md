@@ -1,8 +1,7 @@
 ---
 title: 大臣求情是私利
 tags: [politics]
-date: 2026-08-14
-slug: plead-for-personal-gain
+url: /2026/08/14/plead-for-personal-gain.html
 ---
 古时候，皇帝经常有嚣张的儿子犯了罪。
 

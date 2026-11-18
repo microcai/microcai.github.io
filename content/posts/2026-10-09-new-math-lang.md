@@ -1,8 +1,7 @@
 ---
 title: 新数学语言倡议
 tags:   [math, language, proposal]
-date: 2026-10-09
-slug: new-math-lang
+url: /2026/10/09/new-math-lang.html
 ---
 
 写代码的写代码的人都知道，变量名要自解释：`customerLifetimeValue`、`retentionRate`、`discountFactor`。可一写公式，一切退化回 `L`、`r`、`d`。三页之后，`L` 从损失变成拉格朗日量，`r` 从利率变成半径，`d` 从折扣因子变成微分算子。读者只能靠上下文和自己的信仰活着。

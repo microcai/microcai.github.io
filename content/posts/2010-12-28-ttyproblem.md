@@ -1,8 +1,7 @@
 ---
 title: 内核TTY控制台的问题
 tags: [kernel]
-date: 2010-12-28
-slug: ttyproblem
+url: /2010/12/28/ttyproblem.html
 ---
 最近因为编写TTY控制台的UNICODE字体支持补丁，拜读了控制台的代码，诶，妈呀，这个是什么代码哟 ......
 

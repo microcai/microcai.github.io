@@ -1,8 +1,7 @@
 ---
 title: 自由市场思维毁了区块链
 tags: [blockchain, free-market]
-date: 2020-04-20
-slug: free-market-also-failed-blockchain
+url: /2020/04/20/free-market-also-failed-blockchain.html
 ---
 西方的自由市场思维很有诱惑力，然而实际上根本行不通。拿 99 碗饭 100 个人来说， 这饭要如何涨价呢？ 无论涨到多少，终会有一个人买不到然后饿死。
 

@@ -1,7 +1,6 @@
 ---
 title: NVIDIA 官方驱动支持 Optimus
-date: 2013-04-15
-slug: nvidia-optimus
+url: /2013/04/15/nvidia-optimus.html
 ---
 各位，鄙人去年手贱，买了台 Optimus 的笔记本。最开始的时候用的 Bumblebee，但是觉得每
 次用 optirun  非常的 egg pain。我想全局启用 NVIDIA 显卡（GT650M显卡买来不用浪费

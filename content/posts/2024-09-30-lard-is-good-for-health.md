@@ -1,8 +1,7 @@
 ---
 title: 猪油有利于减肥
 tags: [猪油, 植物油]
-date: 2024-09-30
-slug: lard-is-good-for-health
+url: /2024/09/30/lard-is-good-for-health.html
 ---
 # 为啥会肥胖
 

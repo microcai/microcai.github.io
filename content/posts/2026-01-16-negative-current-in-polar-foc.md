@@ -1,8 +1,7 @@
 ---
 title: 极坐标变换中的负电流
 tags: [foc, clarke,park,polar]
-date: 2026-01-16
-slug: negative-current-in-polar-foc
+url: /2026/01/16/negative-current-in-polar-foc.html
 ---
 三相电流进行采样后，采集到的电流是有正有负的。因为采集的是相电流，而且相电流是交流电，因此必然会出现有正有负的情况。
 

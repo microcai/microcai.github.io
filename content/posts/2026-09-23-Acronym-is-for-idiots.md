@@ -1,8 +1,7 @@
 ---
 title: 无能配用首字母缩写
 tags: [Acronyms]
-date: 2026-09-23
-slug: Acronym-is-for-idiots
+url: /2026/09/23/Acronym-is-for-idiots.html
 ---
 给新事物命名，从来都是一件吃力的事。它要求你把一个全新的东西揉碎了、看透了，抓住它最要紧的那几个核心特征，浓缩成一个别人一听就懂、一看就明的词。
 

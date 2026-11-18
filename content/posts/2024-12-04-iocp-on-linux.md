@@ -1,8 +1,7 @@
 ---
 title: IOCP 移植到Linux上
 tags: [c++, cpp, async, iouring, io_uring, IOCP]
-date: 2024-12-04
-slug: iocp-on-linux
+url: /2024/12/04/iocp-on-linux.html
 ---
 # 序
 

@@ -1,8 +1,7 @@
 ---
 title: 只有汉语能念出数学公式
 tags: [english, math, chinese]
-date: 2026-10-01
-slug: only-han-can-read-math
+url: /2026/10/01/only-han-can-read-math.html
 ---
 汉语和数学语言是同构的。
 

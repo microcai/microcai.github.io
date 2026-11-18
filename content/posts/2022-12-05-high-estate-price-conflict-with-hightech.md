@@ -1,8 +1,7 @@
 ---
 title: 高房价必然没有高科技
 tags:   [房价, 科技]
-date: 2022-12-05
-slug: high-estate-price-conflict-with-hightech
+url: /2022/12/05/high-estate-price-conflict-with-hightech.html
 ---
 国家要发展, 必然要有高科技. 科技是第一生产力.
 

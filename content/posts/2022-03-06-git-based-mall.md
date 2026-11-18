@@ -1,8 +1,7 @@
 ---
 title:  git 定义商城
 tags:   [git, mall, markdown, OOR]
-date: 2022-03-06
-slug: git-based-mall
+url: /2022/03/06/git-based-mall.html
 ---
 # 引
 

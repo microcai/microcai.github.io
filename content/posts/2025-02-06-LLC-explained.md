@@ -1,8 +1,7 @@
 ---
 title: LLC 的调频控制
 tags: [LLC, ACDC, DCDC, 开关电源, 谐振,变换器]
-date: 2025-02-06
-slug: LLC-explained
+url: /2025/02/06/LLC-explained.html
 ---
 # LLC 调压的的物理原理
 

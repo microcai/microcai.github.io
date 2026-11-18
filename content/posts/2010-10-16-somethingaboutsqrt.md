@@ -1,8 +1,7 @@
 ---
 title: 一个Sqrt函数再次引发的血案
 tags: [history]
-date: 2010-10-16
-slug: somethingaboutsqrt
+url: /2010/10/16/somethingaboutsqrt.html
 ---
 这些神人啊，开平方居然有这么快的算法！！！
 于是我决定看看 glibc 是怎么实现的！

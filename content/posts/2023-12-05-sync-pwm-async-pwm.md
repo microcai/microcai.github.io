@@ -1,8 +1,7 @@
 ---
 title: 制作变频器-第五部分
 tags: [变频器, 同步调制, 异步调制]
-date: 2023-12-05
-slug: sync-pwm-async-pwm
+url: /2023/12/05/sync-pwm-async-pwm.html
 ---
 # pwm 调制 正弦波
 

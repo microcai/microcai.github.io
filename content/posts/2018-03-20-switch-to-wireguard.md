@@ -1,8 +1,7 @@
 ---
 title: 换用wireguard
 tags: [VPN, wireguard, wg, network]
-date: 2018-03-20
-slug: switch-to-wireguard
+url: /2018/03/20/switch-to-wireguard.html
 ---
 之前把家里网络 [重新折腾](/2018/02/22/network-reworked.html) 了一下, 用的是 走socks5 代理的 tcp 协议 openvpn. socks5 代理由 shadowsocks 提供.
 

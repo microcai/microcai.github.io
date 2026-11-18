@@ -1,8 +1,7 @@
 ---
 title: 新型单相电机调速器
 tags: [单相电机, 调速]
-date: 2024-03-06
-slug: new-ac-motor-speed-controller
+url: /2024/03/06/new-ac-motor-speed-controller.html
 ---
 # 传统立扇调速方案
 

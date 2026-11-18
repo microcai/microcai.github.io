@@ -1,8 +1,7 @@
 ---
 title: 福特和福建的弹射技术对比
 tags: [ac, dc, motor, EMALS]
-date: 2025-01-15
-slug: ac-electromagnetic-launch
+url: /2025/01/15/ac-electromagnetic-launch.html
 ---
 电磁弹射，被加速的舰载机总重，30吨，即3万公斤；加速长度100米，加速时间2.2秒，舰载机末端速度，85米每秒；总耗电能38度；瞬间功率6万千瓦。
 

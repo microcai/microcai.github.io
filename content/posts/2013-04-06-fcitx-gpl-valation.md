@@ -1,7 +1,6 @@
 ---
 title: fcitx 违反了 GPL2 ? (更新, 已解决)
-date: 2013-04-06
-slug: fcitx-gpl-valation
+url: /2013/04/06/fcitx-gpl-valation.html
 ---
 fcitx 是 yuking 的作品。 一直以来都是以 GPL2 协议发布。
 

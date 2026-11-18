@@ -1,8 +1,7 @@
 ---
 title:  解放战争拖不得
 tags:   [wars]
-date: 2026-10-08
-slug: stupid-putting
+url: /2026/10/08/stupid-putting.html
 ---
 毛主席有两句话：**抗日战争急不得，解放战争拖不得。**
 

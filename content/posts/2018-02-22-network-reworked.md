@@ -1,8 +1,7 @@
 ---
 title: 网络重新配置
 tags:   [EdgeOS, home, network, VPN, shadowsocks]
-date: 2018-02-22
-slug: network-reworked
+url: /2018/02/22/network-reworked.html
 ---
 一直以来, 我用的都是基于 ss-redir 和 ipset + iptables 透明代理方式的科学上网. 但是 iptables 方式的上网, 其实还是不如 ChinaRoute 配合 VPN 来的爽. 因为只有 TCP 连接能被透明代理出去, UDP 和 ICMP 协议统统不能.
 

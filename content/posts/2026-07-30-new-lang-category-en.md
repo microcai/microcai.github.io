@@ -1,8 +1,7 @@
 ---
 title: A New Taxonomy of Language
 tags: [lang]
-date: 2026-07-30
-slug: new-lang-category-en
+url: /2026/07/30/new-lang-category-en.html
 ---
 The old classification of language families, built on assumptions of blood ties, geographic proximity, and human migration, is fundamentally flawed. As globalization deepens and linguistic research advances, this approach exposes a critical gap—it ignores the core mechanism of human language processing: the brain's acoustic decoding strategies.
 

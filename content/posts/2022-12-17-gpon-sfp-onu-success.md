@@ -1,8 +1,7 @@
 ---
 title: sfp 形态 gpon 光猫失败
 tags: [gpon,onu,sfp]
-date: 2022-12-17
-slug: gpon-sfp-onu-success
+url: /2022/12/17/gpon-sfp-onu-success.html
 ---
 多年前, 折腾过一次 [sfp 形态 gpon 光猫失败](/2019/07/30/gpon-sfp-onu-failed.html)
 

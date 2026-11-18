@@ -1,7 +1,6 @@
 ---
 title: 对未来编译器的意淫
-date: 2013-09-15
-slug: future-compiler
+url: /2013/09/15/future-compiler.html
 ---
 典型的 C++ 编译过程分 "预处理" "编译" "链接"
 

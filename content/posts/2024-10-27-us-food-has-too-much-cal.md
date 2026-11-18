@@ -1,8 +1,7 @@
 ---
 title: 西方饮食的超高热量
 tags: [减肥, 食物]
-date: 2024-10-27
-slug: us-food-has-too-much-cal
+url: /2024/10/27/us-food-has-too-much-cal.html
 ---
 西洋人做食物，最喜欢放的一种调料，叫“黄油”。没有黄油洋人就活不下去。
 

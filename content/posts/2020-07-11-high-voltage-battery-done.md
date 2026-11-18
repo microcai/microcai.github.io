@@ -1,8 +1,7 @@
 ---
 title: 高压钛酸锂电池组完成
 tags: [LTO, BMS]
-date: 2020-07-11
-slug: high-voltage-battery-done
+url: /2020/07/11/high-voltage-battery-done.html
 ---
 大部分交流设备，其实都有一个前置的全桥整流器，把交流输入转换为直流，然后内部再根据需要进行各种变换获得需要的电能。
 

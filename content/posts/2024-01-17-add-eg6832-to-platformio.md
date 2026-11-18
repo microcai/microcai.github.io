@@ -1,8 +1,7 @@
 ---
 title: 让 PlatformIO 支持 EG6832
 tags: [PIO, PlatformIO, EG6832, EGmicro]
-date: 2024-01-17
-slug: add-eg6832-to-platformio
+url: /2024/01/17/add-eg6832-to-platformio.html
 ---
 近来做变频器，也研究了不少mcu。让我的代码移植到了 ESP32, ESP32S3, ESP32C3, RP2040, STM32F405, AT32F415, AT32F421。
 这些 mcu 都有一个共同点： platformio 支持。其中 ESP32, ESP32S3, ESP32C3, RP2040, STM32F405 受 platform 官方支持，而

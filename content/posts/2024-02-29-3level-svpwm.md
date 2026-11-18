@@ -1,8 +1,7 @@
 ---
 title: 三电平 SVPWM
 tags: [SVPWM, 三电平]
-date: 2024-02-29
-slug: 3level-svpwm
+url: /2024/02/29/3level-svpwm.html
 ---
 炸机了。
 

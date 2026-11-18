@@ -1,8 +1,7 @@
 ---
 title: 类型萃取技术：函数签名当模板参数
 tags: [c++, cpp, function]
-date: 2024-11-01
-slug: function-signature-as-template-parameter
+url: /2024/11/01/function-signature-as-template-parameter.html
 ---
 # 序
 

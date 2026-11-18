@@ -1,7 +1,6 @@
 ---
 title: BIOS 是如何访问在内存还没有的时候检测并初始化内存的
-date: 2011-05-08
-slug: howbiosdetectmemory
+url: /2011/05/08/howbiosdetectmemory.html
 ---
 首先必须明确的一点是， BIOS 运行初期，CPU 其实是不能访问内存的。 
 

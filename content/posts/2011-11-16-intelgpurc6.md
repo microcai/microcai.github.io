@@ -1,7 +1,6 @@
 ---
 title: 善待笔记本，启用intel集显的节能模式
-date: 2011-11-16
-slug: intelgpurc6
+url: /2011/11/16/intelgpurc6.html
 ---
 在 XP 下用的时候，用计量插座，空闲功耗大概在 13W ~ 14W 之间。 
 

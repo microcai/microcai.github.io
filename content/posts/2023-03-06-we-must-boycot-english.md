@@ -1,8 +1,7 @@
 ---
 title: 谁在害怕英语主科地位消失
 tags:   [殖民统治]
-date: 2023-03-06
-slug: we-must-boycot-english
+url: /2023/03/06/we-must-boycot-english.html
 ---
 每隔几年, 就有代表提议取消英语主科地位. 每次都无功而返.
 

@@ -1,8 +1,7 @@
 ---
 title: 自回归才是核心架构革新
 tags: [AI, self-recursive, llm, attention]
-date: 2026-11-18
-slug: self-recursive-is-all-you-need
+url: /2026/11/18/self-recursive-is-all-you-need.html
 ---
 
 从 ChatGPT 横空出世以来，已经过去四年了。

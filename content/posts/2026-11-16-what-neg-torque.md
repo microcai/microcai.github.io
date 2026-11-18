@@ -1,8 +1,7 @@
 ---
 title: 神密的负扭矩
 tags: [control, foc]
-date: 2026-11-16
-slug: what-neg-torque
+url: /2026/11/16/what-neg-torque.html
 ---
 
 注：本文所有公式都会省略一个固定的常量。这些常量是使用国际单位制的时候为了校准结果而存在的。但是本文的公式没有默认单位制。

@@ -1,7 +1,6 @@
 ---
 title: i7 拯救了 Gentoo
-date: 2011-11-11
-slug: i7savedgentoo
+url: /2011/11/11/i7savedgentoo.html
 ---
 好多年以前，我开始了 Linux 之旅。 
 

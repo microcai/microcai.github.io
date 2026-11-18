@@ -1,8 +1,7 @@
 ---
 title:  武器很贵
 tags:   [资本主义 法制]
-date: 2022-04-01
-slug: weapon-is-costy
+url: /2022/04/01/weapon-is-costy.html
 ---
 俄罗斯和乌克兰打了一个多月了.
 

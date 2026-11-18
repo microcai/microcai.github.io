@@ -1,7 +1,6 @@
 ---
 title: 定期发布 Release 不适合现代 Linux Distro
-date: 2011-07-02
-slug: rollingreleaseisbetter
+url: /2011/07/02/rollingreleaseisbetter.html
 ---
 我想说，定期发布 Release 这种模式已经过时了！ 
 

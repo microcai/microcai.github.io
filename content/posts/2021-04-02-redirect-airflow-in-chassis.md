@@ -1,8 +1,7 @@
 ---
 title: 为cpu废热导风
 tags: [散热, 风道]
-date: 2021-04-02
-slug: redirect-airflow-in-chassis
+url: /2021/04/02/redirect-airflow-in-chassis.html
 ---
 两年前，我组装第一台 NAS 的时候，对 NAS 的要求就是低功耗。倒不是因为我没钱，花不起电费。而是低功耗 = 低散热需求 = 低噪音。
 

@@ -1,8 +1,7 @@
 ---
 title:  面向公知治国
 tags:   [朱由检, 习近平]
-date: 2023-01-26
-slug: gongzhi-oriented-governance
+url: /2023/01/26/gongzhi-oriented-governance.html
 ---
 古时候, 有一个皇帝, 他对于如何治理国家没有主见. 于是他就很喜欢听公知的话.
 

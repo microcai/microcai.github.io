@@ -1,8 +1,7 @@
 ---
 title: avbot 4.2 新功能解释和实现
 tags: [avbot]
-date: 2013-04-29
-slug: avbot-new-feature-autojoke
+url: /2013/04/29/avbot-new-feature-autojoke.html
 ---
 # 新功能 - 讲笑话
 

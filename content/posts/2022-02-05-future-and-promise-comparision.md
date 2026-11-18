@@ -1,8 +1,7 @@
 ---
 title: Future 和 Promise 的区别
 tags: [promise, future, c++]
-date: 2022-02-05
-slug: future-and-promise-comparision
+url: /2022/02/05/future-and-promise-comparision.html
 ---
 promise 和 yield 的区别是什么？
 

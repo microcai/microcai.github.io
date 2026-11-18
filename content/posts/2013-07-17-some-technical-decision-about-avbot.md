@@ -1,8 +1,7 @@
 ---
 title: avbot 的一些技术决定
 tags: [asio, avbot]
-date: 2013-07-17
-slug: some-technical-decision-about-avbot
+url: /2013/07/17/some-technical-decision-about-avbot.html
 ---
 avbot 早已实现最初的目标 : 提供一个机器把 IRC/XMPP和 QQ群联合起来. 让不使用QQ的人和只使用QQ的人都恩嗯畅快的交流.
 

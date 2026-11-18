@@ -1,8 +1,7 @@
 ---
 title: 电机和电车的一点想法
 tags:   [电机]
-date: 2023-02-28
-slug: thoughts-on-motor-and-ev
+url: /2023/02/28/thoughts-on-motor-and-ev.html
 ---
 除了有刷电机外, 无电刷的电机, 驱动起来是一门学问.
 

@@ -1,8 +1,7 @@
 ---
 title: ASIO 与协程
 tags: [asio]
-date: 2013-04-22
-slug: asio-statemachine
+url: /2013/04/22/asio-statemachine.html
 ---
 前段时间看了 ASIO 爸爸关于ASIO的一个演讲. ASIO 爸爸说, ASIO 的设计理念就是作为一个 toolkit 而不是一个框架. ASIO并不强迫你使用某种编程模型. 它只是提供一系列的函数和类帮你更容易的编程.
 

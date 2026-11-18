@@ -1,8 +1,7 @@
 ---
 title: 买不到好笔记本
 tags: [notebook]
-date: 2020-04-07
-slug: missing-good-notebook
+url: /2020/04/07/missing-good-notebook.html
 ---
 笔记本市场市场竞争非常激烈，从业者都说本子难卖。然而我准备更新我用了4年的老本子的时候，却发现无本可买。
 

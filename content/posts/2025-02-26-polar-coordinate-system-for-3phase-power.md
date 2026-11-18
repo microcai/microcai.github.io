@@ -1,8 +1,7 @@
 ---
 title: 极坐标在三相电力系统中的计算优势
 tags: [三相电, svpwm]
-date: 2025-02-26
-slug: polar-coordinate-system-for-3phase-power
+url: /2025/02/26/polar-coordinate-system-for-3phase-power.html
 ---
 在三相电力系统里，我们有三个相位差 120° 的火线。于是，也就有了三个相位差120°的电压和电流矢量。
 

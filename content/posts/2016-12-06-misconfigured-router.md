@@ -1,8 +1,7 @@
 ---
 title: 错误配置的路由器
 tags: [network]
-date: 2016-12-06
-slug: misconfigured-router
+url: /2016/12/06/misconfigured-router.html
 ---
 企业专线宽带通常会分配多个固定IP，一般是 4 个。也有的是 8 个。如何使用这多个IP地址也是一门学问。
 

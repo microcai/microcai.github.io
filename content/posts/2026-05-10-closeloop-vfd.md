@@ -1,8 +1,7 @@
 ---
 title: 异步电机控制
 tags: [c++]
-date: 2026-05-10
-slug: closeloop-vfd
+url: /2026/05/10/closeloop-vfd.html
 ---
 # 超越开环
 

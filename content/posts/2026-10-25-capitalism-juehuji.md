@@ -1,8 +1,7 @@
 ---
 title: "资本主义绝户计论：税基转移与人口再生产的制度危机"
 tags:   [capitalism, tax, population, socialsecurity]
-date: 2026-10-25
-slug: capitalism-juehuji
+url: /2026/10/25/capitalism-juehuji.html
 ---
 ## 摘要
 

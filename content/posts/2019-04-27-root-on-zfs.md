@@ -1,8 +1,7 @@
 ---
 title: 根分区 ZFS 化
 tags: [network, 10G, NAS，NFS, diskless]
-date: 2019-04-27
-slug: root-on-zfs
+url: /2019/04/27/root-on-zfs.html
 ---
 自从用 freenas 接触到了 ZFS, 我就爱上了 ZFS , 变得愈发不可收拾.  50买了2个 320G 的二手盘放公司玩 raidz. 
 

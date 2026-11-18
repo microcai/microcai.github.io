@@ -1,8 +1,7 @@
 ---
 title: 基于 ucontext + iocp4linux 的超简协程库
 tags: [c++, cpp, async, IOCP, proactor, ucontext]
-date: 2024-12-15
-slug: ucontext-based-uasync
+url: /2024/12/15/ucontext-based-uasync.html
 ---
 虽然说，使用 异步最佳的实践是使用协程。
 

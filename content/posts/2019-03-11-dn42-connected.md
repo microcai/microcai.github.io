@@ -1,8 +1,7 @@
 ---
 title: 入DN42坑
 tags: [network, ospf，bgp, DN42, ASN]
-date: 2019-03-11
-slug: dn42-connected
+url: /2019/03/11/dn42-connected.html
 ---
 近来把 家和公司三处地方的网络（2个家，乡下老家嘛）通过 tunnel 手段连接到了一起， 三个地方的 LAN 分配不同的私网网段，因此配置好路由表后，三处内网的机器就可以互相访问了。
 

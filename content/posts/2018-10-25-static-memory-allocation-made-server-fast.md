@@ -1,8 +1,7 @@
 ---
 title: 高并发服务器的静态内存分配策略
 tags: [c100k, asio, boost, net, cpp]
-date: 2018-10-25
-slug: static-memory-allocation-made-server-fast
+url: /2018/10/25/static-memory-allocation-made-server-fast.html
 ---
 asio 的 async_accept 函数在高并发的时候，会发生遗漏 accept 的情况。根本原因在于，async_accept 回调的时候，已经 监听的socket已经没有执行 accept 操作了。
 解决的办法就是投递多个 async_accept. asio 的 async_\* 系列 函数通常只能投递一次，多次投递会发生未定义行为。async_accept 是为数不多的例外。

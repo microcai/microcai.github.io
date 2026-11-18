@@ -1,8 +1,7 @@
 ---
 title: FlyBuck的限制
 tags: [DCDC, 开关电源, Buck, FlyBuck]
-date: 2024-02-25
-slug: flybuck-limitation
+url: /2024/02/25/flybuck-limitation.html
 ---
 在 [这篇](/2024/02/21/power-on-pcb.html) 文章里，我夸奖了 flybuck 拓扑结构。
 

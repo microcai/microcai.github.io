@@ -1,8 +1,7 @@
 ---
 title: Why ubuntu sucks and everyone should not use it
 tags: [os]
-date: 2013-03-08
-slug: killubuntu
+url: /2013/03/08/killubuntu.html
 ---
 这篇文章早就应该发了，但是我太自私，只管自己躲在Gentoo的树阴下乘凉，不为那些在ubuntu的刀山祸害里挣扎的人提供援助。
 所以，我觉得为他们提供无偿的援助——告诉他们，ubuntu很烂很烂。

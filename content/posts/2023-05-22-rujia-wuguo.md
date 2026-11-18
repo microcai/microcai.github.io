@@ -1,8 +1,7 @@
 ---
 title: 罢黜百家, 自绝天下
 tags:   [百家]
-date: 2023-05-22
-slug: rujia-wuguo
+url: /2023/05/22/rujia-wuguo.html
 ---
 春秋战国时期, 中华大地上是百家争鸣.
 何谓百家?

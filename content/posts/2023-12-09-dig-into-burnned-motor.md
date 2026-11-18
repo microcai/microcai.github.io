@@ -1,8 +1,7 @@
 ---
 title: 制作变频器-第七部分
 tags: [变频器]
-date: 2023-12-09
-slug: dig-into-burnned-motor
+url: /2023/12/09/dig-into-burnned-motor.html
 ---
 # 从第一次烧变频器说起
 

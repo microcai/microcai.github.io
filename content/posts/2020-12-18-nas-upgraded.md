@@ -1,8 +1,7 @@
 ---
 title: 升级了NAS机器
 tags: [zfs, nas, 5600X, pcie, bifurcation, sas, expander]
-date: 2020-12-18
-slug: nas-upgraded
+url: /2020/12/18/nas-upgraded.html
 ---
 上次折腾NAS, 最后搞了8个8T的盘阵列。但是，我愈发的不满意 C3558 的性能。准备替换掉它。但是又觉得C3558花费巨大，没用回本实在不甘心。
 

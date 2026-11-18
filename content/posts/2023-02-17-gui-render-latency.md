@@ -1,8 +1,7 @@
 ---
 title: GUI 渲染延迟
 tags:   [wayland, kwin, plasma, mutter]
-date: 2023-02-17
-slug: gui-render-latency
+url: /2023/02/17/gui-render-latency.html
 ---
 鼠标点击窗口标题栏, 然后快速拖动. 如果窗口和鼠标紧紧贴到一起, 那么恭喜你, 你的OS并没有GUI渲染延迟问题.
 但是, 经过实验后, 各位想必都会发现, 往往是鼠标指针先到达, 然后窗口才会跟过去. 窗口的移动似乎总是延后于鼠标指针.

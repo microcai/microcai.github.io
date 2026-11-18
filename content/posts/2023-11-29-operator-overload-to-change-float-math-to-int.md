@@ -1,8 +1,7 @@
 ---
 title: 制作变频器-第二部分
 tags: [变频器, SVPWM, PWM, 运算符重载, 定点数, 浮点数]
-date: 2023-11-29
-slug: operator-overload-to-change-float-math-to-int
+url: /2023/11/29/operator-overload-to-change-float-math-to-int.html
 ---
 # 引
 

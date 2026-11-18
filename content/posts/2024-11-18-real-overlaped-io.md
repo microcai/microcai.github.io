@@ -1,8 +1,7 @@
 ---
 title: 真正的重叠IO
 tags: [c++, cpp, async, overlaped]
-date: 2024-11-18
-slug: real-overlaped-io
+url: /2024/11/18/real-overlaped-io.html
 ---
 不知有没有人想过，为何微软将windows 的异步API称为“重叠IO”而不是异步IO。
 

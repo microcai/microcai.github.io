@@ -1,8 +1,7 @@
 ---
 title: 无盘PC
 tags: [network, 10G, NAS，NFS, diskless]
-date: 2019-04-26
-slug: go-diskless
+url: /2019/04/26/go-diskless.html
 ---
 自从上了万兆，把PC上的硬盘拆到nas上，让PC变成无盘的计划就开始执行了。真正的无盘需要 PXE，然而，同时也意味着现有的 NVMe SSD 成了摆设，因为上文提到的，我的 nas 因为主板关系， pcie 通道不足，无法插 M.2 了。所以现有的 ssd 还是继续在主板上服役。M2 只是一个非常小的接口， ssd 插上主板后和主板融为一体了，所以，姑且就算是主板自带的存储好了，如果只有 nvme 那也可以算无盘。
 

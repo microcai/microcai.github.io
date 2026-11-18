@@ -1,8 +1,7 @@
 ---
 title: 直流 UPS 功能的电源
 tags: [UPS, PCB, FlyBack]
-date: 2025-04-24
-slug: ups-flyback
+url: /2025/04/24/ups-flyback.html
 ---
 # 恒流恒压模式和电池的充电原理
 

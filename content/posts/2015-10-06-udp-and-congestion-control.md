@@ -1,8 +1,7 @@
 ---
 title: UDP and congestion control
 tags: [network, TCP, UDP]
-date: 2015-10-06
-slug: udp-and-congestion-control
+url: /2015/10/06/udp-and-congestion-control.html
 ---
 TCP is good, good for nearly everything. It's a general purpose abstraction for networking applications. But TCP is bad for one thing: it's general. If you have some special need, setsockopt(2) can help you. But really, it dosen't help much.
 

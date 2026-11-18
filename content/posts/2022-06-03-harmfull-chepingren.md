@@ -1,8 +1,7 @@
 ---
 title: 不恰饭的车评人危害性更大
 tags:   [38号，叶问]
-date: 2022-06-03
-slug: harmfull-chepingren
+url: /2022/06/03/harmfull-chepingren.html
 ---
 端午节前，汽车界最大的瓜，就是叶问大战38号。
 

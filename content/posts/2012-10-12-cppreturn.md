@@ -1,8 +1,7 @@
 ---
 title: C++ 王者归来
 tags: [c++]
-date: 2012-10-12
-slug: cppreturn
+url: /2012/10/12/cppreturn.html
 ---
 曾几何时，学会了C语言。安装了VC6这个神叉IDE。 
 

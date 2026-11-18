@@ -1,8 +1,7 @@
 ---
 title: Immutable, RCU and Transnational Container
 tags:   [Immutable,RCU,Transaction]
-date: 2018-01-27
-slug: immutable-rcu-and-transactional-container
+url: /2018/01/27/immutable-rcu-and-transactional-container.html
 ---
 在编写并发程序的时候，经常要面对共享数据结构的保护问题。
 虽然 C++ 提供的 RAII 实现的各种 guard lock 模式，早就让“忘记解锁” 导致的死锁成为历史。但是，锁带来的性能损耗依然是我们不得不面对的问题。

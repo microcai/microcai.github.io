@@ -1,8 +1,7 @@
 ---
 title: 无栈协程
 tags: [asio]
-date: 2013-03-17
-slug: stackless-coroutine
+url: /2013/03/17/stackless-coroutine.html
 ---
 在开始之前，先来看一段代码　
 

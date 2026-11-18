@@ -1,8 +1,7 @@
 ---
 title: sfp 形态 gpon 光猫失败
 tags: [gpon,onu,sfp]
-date: 2019-07-30
-slug: gpon-sfp-onu-failed
+url: /2019/07/30/gpon-sfp-onu-failed.html
 ---
 路由器上有一个 sfp 口,  有 sfp 模块形式的 gpon 光猫, 如果能用的话, 机柜里就少一个设备, 还少占用一个插座...少接条网线.....
 

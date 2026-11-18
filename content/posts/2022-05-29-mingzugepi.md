@@ -1,8 +1,7 @@
 ---
 title: 民族? 屁!
 tags:   [民族]
-date: 2022-05-29
-slug: mingzugepi
+url: /2022/05/29/mingzugepi.html
 ---
 由乌克兰和俄罗斯火併想到了一个故事.
 

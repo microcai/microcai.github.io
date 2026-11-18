@@ -1,8 +1,7 @@
 ---
 title: 从模板的模板论程序员的美学
 tags: [template, c++]
-date: 2024-10-19
-slug: template-template
+url: /2024/10/19/template-template.html
 ---
 在编写 [µcoro](https://github.com/avplayer/ucoro) 的时候，曾经对一个模板类的成员函数犯难了。那就是等待器三件套之一的 await_suspend 函数。
 

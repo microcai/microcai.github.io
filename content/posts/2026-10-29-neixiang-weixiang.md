@@ -1,8 +1,7 @@
 ---
 title: 从内外相聊古代皇权制度问题
 tags:   [history, politics]
-date: 2026-10-29
-slug: neixiang-weixiang
+url: /2026/10/29/neixiang-weixiang.html
 ---
 权臣不得善终的问题困扰了中国古代一千多年。
 朱元璋会因为胡惟庸请军官吃饭而认为他谋反。

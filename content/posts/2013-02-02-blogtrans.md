@@ -1,7 +1,6 @@
 ---
 title: 博客迁移到 github pages
-date: 2013-02-02
-slug: blogtrans
+url: /2013/02/02/blogtrans.html
 ---
 越来越觉得花钱买一个 VPS 是个太浪费钱的事情了，而且也没那么多精力去维护服务器，于是将博客迁移到 github 就成了上上选择。
 

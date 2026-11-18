@@ -1,8 +1,7 @@
 ---
 title: 折腾了一下GPG和智能卡
 tags: [crypto]
-date: 2014-02-15
-slug: smartcard
+url: /2014/02/15/smartcard.html
 ---
 GPG支持使用智能卡设备存储密钥。
 使用文件系统来携带密钥（ 不管是存到 家目录里还是放到U盘里携带）的弊端有很多

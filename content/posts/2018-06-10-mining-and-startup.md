@@ -1,8 +1,7 @@
 ---
 title: 挖矿与创新
 tags: [bitcoin]
-date: 2018-06-10
-slug: mining-and-startup
+url: /2018/06/10/mining-and-startup.html
 ---
 所谓挖矿，就是寻找一个随机数，是的区块头部和随机数结合后的 sha256 数值小于一个特定的目标数字。
 

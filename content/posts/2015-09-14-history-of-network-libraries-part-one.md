@@ -1,8 +1,7 @@
 ---
 title: 那些年我们追过的网络库(PartI)
 tags: [network, asio]
-date: 2015-09-14
-slug: history-of-network-libraries-part-one
+url: /2015/09/14/history-of-network-libraries-part-one.html
 ---
 #为什么要用 C++ 编写服务端程序？
 如果说答案是性能，那么肯定有人会满不在乎。觉得性能不够的话， 只要加机器就可以了。

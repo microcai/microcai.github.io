@@ -1,8 +1,7 @@
 ---
 title: 科技树完备性优先于成本
 tags: [economics, technology-tree]
-date: 2026-10-02
-slug: system-cost-not-single-cost
+url: /2026/10/02/system-cost-not-single-cost.html
 ---
 # 从空X的成本开始想到的
 

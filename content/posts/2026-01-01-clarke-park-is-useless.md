@@ -1,8 +1,7 @@
 ---
 title: Clarke-park 变换毫无意义
 tags: [foc, clarke,park]
-date: 2026-01-01
-slug: clarke-park-is-useless
+url: /2026/01/01/clarke-park-is-useless.html
 ---
 电机领域有个很神奇的现象：人云亦云，不会思考。
 

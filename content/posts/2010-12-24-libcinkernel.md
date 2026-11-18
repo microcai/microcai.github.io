@@ -1,8 +1,7 @@
 ---
 title: 内核要集成glibc么
 tags: [kernel]
-date: 2010-12-24
-slug: libcinkernel
+url: /2010/12/24/libcinkernel.html
 ---
 往往内核添加了一个功能， glibc 要花很久才会用上。本来linux 那边为这个功能是否进入内核已经吵半天了，glibc
 这边又要为是否使用这个内核新特性再次吵架半天 (glibc 不是 Linux 专有的，还得考虑 BSD (虽然人家也不用 glibc)

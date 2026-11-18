@@ -1,8 +1,7 @@
 ---
 title:  异构容器
 tags:   [qemu, systemd, systemd-nspawn, container, qemu-user]
-date: 2022-04-26
-slug: hybrid-container
+url: /2022/04/26/hybrid-container.html
 ---
 # 路由器 引起的
 

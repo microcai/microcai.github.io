@@ -1,7 +1,6 @@
 ---
 title: python是个渣语言
-date: 2012-12-25
-slug: whypythonbad
+url: /2012/12/25/whypythonbad.html
 ---
 一直以来我都表达 python 是个糟糕语言的观点，但是没有深入的解释。
 

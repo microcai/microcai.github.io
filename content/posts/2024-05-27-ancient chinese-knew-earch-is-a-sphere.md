@@ -1,8 +1,7 @@
 ---
 title: 中国古人的天地宇宙观
 tags: [天圆地方, 浑天说]
-date: 2024-05-27
-slug: ancient chinese-knew-earch-is-a-sphere
+url: /2024/05/27/ancient-chinese-knew-earch-is-a-sphere.html
 ---
 在学习世界历史的时候，我知道麦哲伦16世纪完成了环球航行。于是证明了地球是个球。地圆说终于获得实捶证据。从此天圆地方再无市场。
 

@@ -1,8 +1,7 @@
 ---
 title: GC是错误的内存管理模式
 tags: [c++, memory]
-date: 2013-07-27
-slug: gc-is-wrong-way-of-doing-memory-managment
+url: /2013/07/27/gc-is-wrong-way-of-doing-memory-managment.html
 ---
 只要写程序,  就免不了要和各种资源打交道, 其中最频繁的莫过于内存了.
 

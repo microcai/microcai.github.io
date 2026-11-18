@@ -1,8 +1,7 @@
 ---
 title: 统一
 tags: [分久必合]
-date: 2021-08-13
-slug: what-can-we-do-to-liberty-tw
+url: /2021/08/13/what-can-we-do-to-liberty-tw.html
 ---
 ## 我们分裂太久了
 

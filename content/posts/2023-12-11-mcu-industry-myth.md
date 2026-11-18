@@ -1,8 +1,7 @@
 ---
 title: 单片机的行业怪病
 tags: [单片机, 摩尔定律]
-date: 2023-12-11
-slug: mcu-industry-myth
+url: /2023/12/11/mcu-industry-myth.html
 ---
 # 从单片机的存储空间说起
 

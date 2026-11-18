@@ -1,8 +1,7 @@
 ---
 title: 可变模板参数包迭代
 tags: [c++, cpp, for, template, variadic]
-date: 2024-11-13
-slug: range-for-on-parameter-pack
+url: /2024/11/13/range-for-on-parameter-pack.html
 ---
 # 序
 

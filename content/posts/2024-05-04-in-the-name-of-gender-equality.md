@@ -1,8 +1,7 @@
 ---
 title: 现代婚姻制度错在哪？
 tags: [婚姻, 男女平等, 捞女]
-date: 2024-05-04
-slug: in-the-name-of-gender-equality
+url: /2024/05/04/in-the-name-of-gender-equality.html
 ---
 古代婚姻制度的基础是家族联姻。现代婚姻制度的基础是“人人平等”。
 

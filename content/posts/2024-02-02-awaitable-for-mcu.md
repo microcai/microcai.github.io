@@ -1,8 +1,7 @@
 ---
 title: 单片机也能支持 co_await 协程啦
 tags: [co_await, mcu]
-date: 2024-02-02
-slug: awaitable-for-mcu
+url: /2024/02/02/awaitable-for-mcu.html
 ---
 # 序
 

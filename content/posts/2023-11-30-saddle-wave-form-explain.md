@@ -1,8 +1,7 @@
 ---
 title: 制作变频器-第三部分
 tags: [变频器, SVPWM, PWM, 马鞍波]
-date: 2023-11-30
-slug: saddle-wave-form-explain
+url: /2023/11/30/saddle-wave-form-explain.html
 ---
 # 轮子上的三条辐条
 

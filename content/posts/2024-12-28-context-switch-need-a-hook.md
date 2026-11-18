@@ -1,8 +1,7 @@
 ---
 title: 协程切换为什么需要 一个 hook_function 参数.
 tags: [c++, cpp, asm, context-switch, coroutine]
-date: 2024-12-28
-slug: context-switch-need-a-hook
+url: /2024/12/28/context-switch-need-a-hook.html
 ---
 # 前言
 

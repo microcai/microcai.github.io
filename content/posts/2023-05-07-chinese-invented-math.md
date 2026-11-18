@@ -1,8 +1,7 @@
 ---
 title: 中国人发明了数学
 tags:   [数学]
-date: 2023-05-07
-slug: chinese-invented-math
+url: /2023/05/07/chinese-invented-math.html
 ---
 很多人学习数学的时候很好奇, 为何全世界的数学都是十进制的. 然后就有谣言说, 是因为人有十指. 所以全世界的人都发明了十进制的数学.
 

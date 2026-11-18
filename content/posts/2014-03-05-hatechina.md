@@ -1,7 +1,6 @@
 ---
 title: it is hopeless in china
-date: 2014-03-05
-slug: hatechina
+url: /2014/03/05/hatechina.html
 ---
 I just Hate CHINA !
 

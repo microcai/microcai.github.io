@@ -1,8 +1,7 @@
 ---
 title: 自我意识和物质
 tags: [physics]
-date: 2015-08-16
-slug: consciousness-and-matter
+url: /2015/08/16/consciousness-and-matter.html
 ---
 现代的科学认为物质是不生不灭的. 至少在宇宙的寿命内是这样. 物质的诞生意味着宇宙的开端, 物质的消失意味着宇宙的灭亡.
 在宇宙中, 意识并没有特殊的地位. 它不过是地球40亿年进化史的一个副产品.

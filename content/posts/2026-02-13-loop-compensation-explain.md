@@ -1,8 +1,7 @@
 ---
 title: 搞懂环路补偿
 tags: [环路补偿]
-date: 2026-02-13
-slug: loop-compensation-explain
+url: /2026/02/13/loop-compensation-explain.html
 ---
 经常设计模拟电路的朋友会发现，运放的输出端通常需要串入一个补偿网络到反向输入端。
 

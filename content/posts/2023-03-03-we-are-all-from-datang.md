@@ -1,8 +1,7 @@
 ---
 title: 都是唐人
 tags:   [辽,金,元,清]
-date: 2023-03-03
-slug: we-are-all-from-datang
+url: /2023/03/03/we-are-all-from-datang.html
 ---
 秦始皇统一了天下, 从此大家都是秦人. 刘邦建立汉朝后, 大家都是汉人.
 

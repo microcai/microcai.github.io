@@ -1,8 +1,7 @@
 ---
 title: 纯真数据库下载或自动更新实现
 tags: [c++]
-date: 2014-05-11
-slug: qqwry_dat_download
+url: /2014/05/11/qqwry_dat_download.html
 ---
 用过珊瑚虫的童鞋都知道, 有个叫 "纯真数据库" 的东西, 可以查询 ip 地址对应的物理地址.
 

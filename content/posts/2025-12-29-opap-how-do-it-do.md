@@ -1,8 +1,7 @@
 ---
 title: 运算放大器运算了什么
 tags: [运算放大器, 闭环控制]
-date: 2025-12-29
-slug: opap-how-do-it-do
+url: /2025/12/29/opap-how-do-it-do.html
 ---
 # 什么是运放
 

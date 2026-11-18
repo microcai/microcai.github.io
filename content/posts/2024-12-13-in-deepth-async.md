@@ -1,8 +1,7 @@
 ---
 title: 深入理解异步IO
 tags: [c++, cpp, async, iouring, io_uring, IOCP]
-date: 2024-12-13
-slug: in-deepth-async
+url: /2024/12/13/in-deepth-async.html
 ---
 # 前言
 

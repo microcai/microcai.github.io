@@ -1,8 +1,7 @@
 ---
 title:  Wayland 已经可用
 tags:   [wayland, kwin, plasma]
-date: 2023-02-15
-slug: wayland-usable-now
+url: /2023/02/15/wayland-usable-now.html
 ---
 2023 年情人节, KDE 终于发布了 5 系列的最后一个版本: 等离子 5.27
 

@@ -1,8 +1,7 @@
 ---
 title: 重叠IO（proactor）是最理想的IO模型
 tags: [c++, cpp, async, overlaped, proactor, reactor]
-date: 2024-11-19
-slug: proactor-is-better-than-reactor
+url: /2024/11/19/proactor-is-better-than-reactor.html
 ---
 reactor 和 proactor ， 这种毫无联系的英文专用名词，很容易把人弄晕。
 

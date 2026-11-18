@@ -1,8 +1,7 @@
 ---
 title: 入手了一个 rock pi 4b
 tags: [arm, aarch64, archlinux, pi, rockpi]
-date: 2020-06-13
-slug: bought-rockpi4
+url: /2020/06/13/bought-rockpi4.html
 ---
 闲来无事，又打起了ARM的主意。Rpi3 的性能实在受不太了。毕竟只有 100M 网络。内存也就1GB。想干点啥都不行。寻思着弄个性能好点跟的上时代的 arm 板子玩玩。
 

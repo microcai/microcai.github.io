@@ -1,8 +1,7 @@
 ---
 title: 点评 腾讯 的 协程库 libco
 tags: [c++, cpp, coroutine, libco]
-date: 2024-12-17
-slug: dig-into-libco
+url: /2024/12/17/dig-into-libco.html
 ---
 # 序
 

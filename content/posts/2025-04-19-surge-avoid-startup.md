@@ -1,8 +1,7 @@
 ---
 title: 防启动浪涌电流设计
 tags: [relay, surge, PCB]
-date: 2025-04-19
-slug: surge-avoid-startup
+url: /2025/04/19/surge-avoid-startup.html
 ---
 # 启动浪涌
 

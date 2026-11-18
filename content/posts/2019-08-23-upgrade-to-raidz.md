@@ -1,8 +1,7 @@
 ---
 title: 升级到4盘 raidz
 tags: [zfs, raidz]
-date: 2019-08-23
-slug: upgrade-to-raidz
+url: /2019/08/23/upgrade-to-raidz.html
 ---
 上次折腾NAS, 使用了2个8T的盘建的 raid1. 速度不太满意. raid0 当然怕挂一个盘数据就没了, 索性就再买2个8T的, 组建4盘位raid5. 
 

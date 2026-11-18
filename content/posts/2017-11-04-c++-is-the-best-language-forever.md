@@ -1,8 +1,7 @@
 ---
 title: C++ 是最好的编程语言
 tags:   [c++, wars]
-date: 2017-11-04
-slug: c++-is-the-best-language-forever
+url: /2017/11/04/c-is-the-best-language-forever.html
 aliases:
   - /2017/11/04/c++-is-the-best-language-forever.html
 ---

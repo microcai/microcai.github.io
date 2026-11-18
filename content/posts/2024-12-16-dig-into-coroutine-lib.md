@@ -1,8 +1,7 @@
 ---
 title: 点评 云风 的 C库 coroutine
 tags: [c++, cpp, coroutine, ucontext]
-date: 2024-12-16
-slug: dig-into-coroutine-lib
+url: /2024/12/16/dig-into-coroutine-lib.html
 ---
 # 序
 

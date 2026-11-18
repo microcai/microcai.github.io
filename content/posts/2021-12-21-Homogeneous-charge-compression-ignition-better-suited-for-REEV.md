@@ -1,8 +1,7 @@
 ---
 title:  压燃发动机更适合做増程器
 tags:   [REEV, HCCI]
-date: 2021-12-21
-slug: Homogeneous-charge-compression-ignition-better-suited-for-REEV
+url: /2021/12/21/Homogeneous-charge-compression-ignition-better-suited-for-REEV.html
 ---
 # 压燃的缺点
 

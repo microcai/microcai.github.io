@@ -1,8 +1,7 @@
 ---
 title: 变频器制作-第11部分 pwm模式用对了吗？
 tags: [变频器, 死区时间, TIM]
-date: 2024-02-08
-slug: pwm-mode-misuse
+url: /2024/02/08/pwm-mode-misuse.html
 ---
 # 话说高级定时器
 

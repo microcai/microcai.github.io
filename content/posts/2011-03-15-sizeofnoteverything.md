@@ -1,7 +1,6 @@
 ---
 title: Size is not everything
-date: 2011-03-15
-slug: sizeofnoteverything
+url: /2011/03/15/sizeofnoteverything.html
 ---
 我们买笔记本的时候，往往笔记本只标示硬盘容量，却往往不标示他所使用的硬盘的牌子和速度。
 

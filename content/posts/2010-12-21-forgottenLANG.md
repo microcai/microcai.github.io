@@ -1,8 +1,7 @@
 ---
 title: 遗忘的语言
 tags: [history]
-date: 2010-12-21
-slug: forgottenLANG
+url: /2010/12/21/forgottenLANG.html
 ---
 WEB , 没错，我指的就是 WEB . 但是不是那个用 浏览器堆积起来的 WEB , 而是大师高爷爷随 TeX 推出的 WEB 编程语言。
 

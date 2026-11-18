@@ -1,8 +1,7 @@
 ---
 title: 从0开始写上下文切换
 tags: [c++, cpp, asm, context-switch, coroutine]
-date: 2024-12-26
-slug: context-switch-explained
+url: /2024/12/26/context-switch-explained.html
 ---
 # 有栈协程的核心是执行上下文。执行上下文的核心是栈。
 

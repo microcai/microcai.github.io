@@ -1,8 +1,7 @@
 ---
 title: 如何造发动机
 tags: [热机]
-date: 2021-06-17
-slug: to-build-engines-part1
+url: /2021/06/17/to-build-engines-part1.html
 ---
 == 热机品种
 

@@ -1,8 +1,7 @@
 ---
 title: 制作变频器-第四部分
 tags: [变频器, 功率因素]
-date: 2023-12-01
-slug: max-power-factor-track
+url: /2023/12/01/max-power-factor-track.html
 ---
 # 感应电机的开环控制
 

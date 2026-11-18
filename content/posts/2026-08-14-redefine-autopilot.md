@@ -1,8 +1,7 @@
 ---
 title: 重新定义自动驾驶等级
 tags: [car]
-date: 2026-08-14
-slug: redefine-autopilot
+url: /2026/08/14/redefine-autopilot.html
 ---
 最近看修仙动画片，发现主角修行功法的时候，对功法修炼的掌握程度，使用的不是数字 lv1 lv2 这种表示，而是使用一系列的四字成语。
 

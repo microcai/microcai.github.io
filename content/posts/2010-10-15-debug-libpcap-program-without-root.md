@@ -1,7 +1,6 @@
 ---
 title: 如何避免使用 root 权限调式 libpcap 程序
-date: 2010-10-15
-slug: debug-libpcap-program-without-root
+url: /2010/10/15/debug-libpcap-program-without-root.html
 ---
 工作原因，经常用 libpcap 写程序。
 

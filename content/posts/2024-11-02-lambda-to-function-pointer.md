@@ -1,8 +1,7 @@
 ---
 title: 把闭包变成函数指针—— trampoline 原理解析
 tags: [c++, cpp, trampoline]
-date: 2024-11-02
-slug: lambda-to-function-pointer
+url: /2024/11/02/lambda-to-function-pointer.html
 ---
 # 序
 

@@ -1,7 +1,6 @@
 ---
 title: 从 RedFlag 到 Gentoo, 多少年，一瞬间
-date: 2011-07-20
-slug: fromredflagtogentoo
+url: /2011/07/20/fromredflagtogentoo.html
 ---
 很久很久以前，在我还认为米国人生活在水生火热之中的时候，我认识了 Linux , 于是在买了电脑前就去亚马逊买了 Fedora 8 的DVD ... 
 

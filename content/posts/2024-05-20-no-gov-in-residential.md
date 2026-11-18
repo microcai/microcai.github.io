@@ -1,8 +1,7 @@
 ---
 title: 物业就是现代版的皇权不下乡
 tags: [皇权不下乡, 基层治理]
-date: 2024-05-20
-slug: no-gov-in-residential
+url: /2024/05/20/no-gov-in-residential.html
 ---
 # 皇权不下乡
 

@@ -1,8 +1,7 @@
 ---
 title: 变频器制作-第十部分 6pwm和死区时间
 tags: [变频器, 6pwm, 3pwm, 死区时间]
-date: 2024-02-06
-slug: deadtime-important
+url: /2024/02/06/deadtime-important.html
 ---
 # 3pwm vs 6pwm
 

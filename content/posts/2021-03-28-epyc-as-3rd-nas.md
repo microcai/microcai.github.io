@@ -1,8 +1,7 @@
 ---
 title: epyc deployed
 tags: [NAS, EPYC]
-date: 2021-03-28
-slug: epyc-as-3rd-nas
+url: /2021/03/28/epyc-as-3rd-nas.html
 ---
 去年的 [这篇文章](/2020/12/18/nas-upgraded.html) 里我受够了嵌入式 ATOM 处理器羸弱的性能而斥巨资购买了 锐龙 5600X 作为新的NAS机器的处理器。然而好景不长，这个新NAS才服役不到4个月，就被我[嫌弃了](/2021-03-07-pcie-shortage-problem.html)。在[这篇文章](/2021/03/07/pcie-shortage-problem.html) 的结尾，我提到了 *EPYC 的精髓在单路* 这句话。
 这竟是我抛弃第二台NAS的导火索。

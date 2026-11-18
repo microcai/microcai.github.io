@@ -1,8 +1,7 @@
 ---
 title: 无传感器感应电机驱动
 tags: [异步电机, 无感]
-date: 2025-12-13
-slug: sensorless-induction-motor
+url: /2025/12/13/sensorless-induction-motor.html
 ---
 # 前言
 

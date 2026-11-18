@@ -1,8 +1,7 @@
 ---
 title:  更高采样率，更低成本
 tags : [audio]
-date: 2014-10-11
-slug: higher-sample-rate-cheaper-device
+url: /2014/10/11/higher-sample-rate-cheaper-device.html
 ---
 在继续本文之前，容我提出一个摩尔定律的推论： 离摩尔定律越近，发展越快，成本越低；反之，离摩尔定律越远，发展就越缓慢，成本也难以下降。
 

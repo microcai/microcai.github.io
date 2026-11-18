@@ -1,8 +1,7 @@
 ---
 title: 编译期构造只读容器
 tags: [c++]
-date: 2026-04-22
-slug: compile-time-container
+url: /2026/04/22/compile-time-container.html
 ---
 我在设计变频器的红外遥控处理的时候，定义了一个 map 容器。
 这个容器很简单，就是一个 int 对 int 的映射。

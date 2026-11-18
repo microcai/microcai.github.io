@@ -1,8 +1,7 @@
 ---
 title: 用本机 clang 进行交叉编译
 tags: [clang, cross-compile, linux]
-date: 2024-11-16
-slug: cross-compile-by-clang
+url: /2024/11/16/cross-compile-by-clang.html
 ---
 你在 A 平台上编译一份代码，编译出来的结果，在 A 平台无法运行，只能在 B 平台运行。这个就叫交叉编译。
 

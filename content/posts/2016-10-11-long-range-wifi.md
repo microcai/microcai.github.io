@@ -1,8 +1,7 @@
 ---
 title: 远程共享宽带
 tags: [network]
-date: 2016-10-11
-slug: long-range-wifi
+url: /2016/10/11/long-range-wifi.html
 ---
 最近姐姐搬迁到了新家。在我家屋顶能直接看到她的新家。所谓目视可达。我就开始思考，是不是可以无线直连，然后共享网络呢。
 

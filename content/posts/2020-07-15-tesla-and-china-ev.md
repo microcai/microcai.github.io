@@ -1,8 +1,7 @@
 ---
 title: 国产汽车战略秒棋-tesla上海工厂
 tags: [EV, tesla]
-date: 2020-07-15
-slug: tesla-and-china-ev
+url: /2020/07/15/tesla-and-china-ev.html
 ---
 汽车这个产业也有上百年的历史了，要想在这个行业崛起，难度非常大。我们国家选择了弯道超车，就是压宝电动车。
 

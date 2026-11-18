@@ -1,8 +1,7 @@
 ---
 title: 3950X 再次拯救 Gentoo
 tags: [AMD, 3950X, Gentoo]
-date: 2019-12-27
-slug: 3950x-save-gentoo-again
+url: /2019/12/27/3950x-save-gentoo-again.html
 ---
 多年前, 我抛弃了 AMD, 从 athlon 64 x2 升级到了 Sandy Bridge 的 Xeon E3-1230. 初代 E3 神U. 写了一篇文章, 说 i7 拯救了 Gentoo .   *虽然 E3 从名字上来说不是 i7 就是了, 不过后来我把 1230 升级到了 i7-4790.* 
 

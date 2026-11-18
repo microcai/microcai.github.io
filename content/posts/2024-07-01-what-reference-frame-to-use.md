@@ -1,8 +1,7 @@
 ---
 title: 航天应用下参考系的选取
 tags: [惯性参考系, 火箭, 地心-陀螺仪参考系]
-date: 2024-07-01
-slug: what-reference-frame-to-use
+url: /2024/07/01/what-reference-frame-to-use.html
 ---
 这俩月，航天的话题比较热。吸引了我的全部注意力。
 

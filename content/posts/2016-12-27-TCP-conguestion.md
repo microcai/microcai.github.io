@@ -1,7 +1,6 @@
 ---
 title: TCP拥塞控制
-date: 2016-12-27
-slug: TCP-conguestion
+url: /2016/12/27/TCP-conguestion.html
 ---
 BBR 为啥要对包的发送时机进行调度呢? 是为了防止缓存堆积.
 比如对方的接收速率是  1MB/s . 你的本地发送速率可以达到  1.1GB/s . 

@@ -1,8 +1,7 @@
 ---
 title: 增程式电车真香
 tags: [增程, 电动车]
-date: 2021-11-12
-slug: bought-new-car
+url: /2021/11/12/bought-new-car.html
 ---
 # 唐DM不香了
 

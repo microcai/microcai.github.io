@@ -1,8 +1,7 @@
 ---
 title: 变频器原理和设计指导
 tags: [VVVF, PCB]
-date: 2025-04-19
-slug: vvvf-explained
+url: /2025/04/19/vvvf-explained.html
 ---
 # 从 Buck 降压电路说起
 

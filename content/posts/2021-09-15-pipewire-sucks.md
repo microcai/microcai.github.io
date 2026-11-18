@@ -1,8 +1,7 @@
 ---
 title: pipewire 不行
 tags: [pipewire, pulseaudio]
-date: 2021-09-15
-slug: pipewire-sucks
+url: /2021/09/15/pipewire-sucks.html
 ---
 # 一切都是为了混音
 

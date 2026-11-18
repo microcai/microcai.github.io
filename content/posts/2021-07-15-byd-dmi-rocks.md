@@ -1,8 +1,7 @@
 ---
 title: 推荐一款神车
 tags: [神车]
-date: 2021-07-15
-slug: byd-dmi-rocks
+url: /2021/07/15/byd-dmi-rocks.html
 ---
 <div class="pre">
 其实我算是后知后觉了，不过还是要推荐一把，毕竟比我后知后觉的人还多着。

@@ -1,8 +1,7 @@
 ---
 title: 电机类型优劣对比
 tags: [电机]
-date: 2025-09-30
-slug: motor-type-compare
+url: /2025/09/30/motor-type-compare.html
 ---
 不同电机的优劣对比整理归纳。
 

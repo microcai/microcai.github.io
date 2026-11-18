@@ -1,8 +1,7 @@
 ---
 title: µcoro 介绍
 tags: [coroutine, µcoro, c++20, cpp]
-date: 2024-10-04
-slug: deep-into-cpp20-coroutine
+url: /2024/10/04/deep-into-cpp20-coroutine.html
 ---
 # 什么是 µcoro (ucoro) [![actions workflow](https://github.com/avplayer/ucoro/actions/workflows/ci.yml/badge.svg)](https://github.com/avplayer/ucoro/actions)
 

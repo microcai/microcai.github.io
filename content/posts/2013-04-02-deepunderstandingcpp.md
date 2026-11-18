@@ -1,8 +1,7 @@
 ---
 title: 深入理解C++
 tags: [c++]
-date: 2013-04-02
-slug: deepunderstandingcpp
+url: /2013/04/02/deepunderstandingcpp.html
 ---
 说一下我为何回归 C++ 了吧 : 简单: 生命有限。
 

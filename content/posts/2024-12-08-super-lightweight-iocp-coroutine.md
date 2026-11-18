@@ -1,8 +1,7 @@
 ---
 title: 超轻量级 IOCP 协程库
 tags: [c++, cpp, async, iouring, io_uring, IOCP]
-date: 2024-12-08
-slug: super-lightweight-iocp-coroutine
+url: /2024/12/08/super-lightweight-iocp-coroutine.html
 ---
 在 [上一篇](/2024/12/04/iocp-on-linux.html) 文章里，我提出了 [iocp4linux](https://github.com/microcai/iocp) 。
 

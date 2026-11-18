@@ -1,8 +1,7 @@
 ---
 title: 不要 new 一个 char 数组当缓冲区
 tags: [c++, cpp, new, malloc]
-date: 2024-11-16
-slug: do-not-new-a-buffer
+url: /2024/11/16/do-not-new-a-buffer.html
 ---
 性能调优是一个有魔力的工作。最近研究到了 ```std::pmr::```, 就想着看能否有些老代码能改进改进，提高下性能。
 

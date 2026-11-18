@@ -1,8 +1,7 @@
 ---
 title: 汽油机为何如此设计
 tags: [为何如此设计, 汽油发动机]
-date: 2023-09-14
-slug: why-this-way-1
+url: /2023/09/14/why-this-way-1.html
 ---
 # 冲程
 

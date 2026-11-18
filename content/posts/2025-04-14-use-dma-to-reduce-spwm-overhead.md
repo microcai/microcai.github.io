@@ -1,8 +1,7 @@
 ---
 title: DMA 大幅降低 SVPWM/SPWM 调制的 CPU 占用
 tags: [DMA, SPWM, SVPWM, FOC, VVVF]
-date: 2025-04-14
-slug: use-dma-to-reduce-spwm-overhead
+url: /2025/04/14/use-dma-to-reduce-spwm-overhead.html
 ---
 # S(V)PWM 和 DMA
 

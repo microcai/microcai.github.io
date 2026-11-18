@@ -1,8 +1,7 @@
 ---
 title: 标准库 sin 之错
 tags: [C, 标准库]
-date: 2023-12-19
-slug: why-sin-is-wrong
+url: /2023/12/19/why-sin-is-wrong.html
 ---
 # 标准库 sin()
 

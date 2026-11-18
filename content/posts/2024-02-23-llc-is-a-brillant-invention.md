@@ -1,8 +1,7 @@
 ---
 title: LLC 真的是天才发明
 tags: [LLC, ACDC, DCDC, 开关电源, 谐振,变换器]
-date: 2024-02-23
-slug: llc-is-a-brillant-invention
+url: /2024/02/23/llc-is-a-brillant-invention.html
 ---
 # 开关电源
 

@@ -1,8 +1,7 @@
 ---
 title:  Yaoi-city-here-I-come
 tags: [ ]
-date: 2016-12-27
-slug: Yaoi-city-here-I-come
+url: /2016/12/27/Yaoi-city-here-I-come.html
 ---
 腐都我来啦!
 

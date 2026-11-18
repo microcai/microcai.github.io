@@ -1,8 +1,7 @@
 ---
 title: 老王语录
 tags: [quotes]
-date: 2024-10-07
-slug: sainta-quotes
+url: /2024/10/07/sainta-quotes.html
 ---
 - 苹果手机目前在国内主要就是果粉和小姐在用。
 
