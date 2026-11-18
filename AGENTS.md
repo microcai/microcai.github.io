@@ -1,4 +1,4 @@
-- 本仓库的作者 DR，他是一个非常博学的人。但是本职工作是一个程序员。
+- 本仓库的作者 𝓓𝓡，他是一个非常博学的人。但是本职工作是一个程序员。
 - 这个仓库是基于 Hugo 框架的个人博客，由 GitHub Actions 构建后部署到 GitHub Pages。
 - 站点配置在 hugo.toml，主题是 themes/PaperMod（git submodule），本地构建用 `hugo`，产物在 public/。
 - 本仓库的域名是 microcai.github.io（CNAME 另绑 microcai.org）。
@@ -6,6 +6,8 @@
 - 文章 URL 由文件名决定：`2026-11-18-foo-bar.md` → `/2026/11/18/foo-bar.html`。`slug` 由文件名去掉日期前缀自动得到，`date` 从文件名解析，front matter 里这两个都不用写；需要自定义 URL 时才显式写 `slug`。
 - 2026-11-18 及以前的老文章在 front matter 里用 `url:` 钉死了 Jekyll 时代的地址（如 `/2026/10/31/a-new-sensorless-foc-algo.html`）。这些 `url` 不能改，改了老链接就断；它们与文件名不对应，不能按文件名推测地址。
 - 文件名里的日期必须是零填充的 `YYYY-MM-DD`：写成 `2019-03-1-xxx.md` 会解析失败，slug 和 date 都会坏掉。
+- 文件名里不要用点号表示版本：`avbot-4.5.md` 派生出的 slug 是 `avbot-4`，第一个点之后的内容会被当成扩展名丢掉。版本号写成 `avbot-4-5`。
+- 文件名里的字母会被转成小写：`2026-11-19-CaseTest.md` → `/2026/11/19/casetest.html`。确实需要保留大小写时，显式写 `slug` 或 `url`。
 - 文章中引用的图片放在 static/images 目录下，正文用 /images/xxx 引用。
 - 公式在构建时被渲染成 MathML（transform.ToMath）：行内写 `$...$`，块级只能写 `$$...$$`。
 - 浏览器不会给 MathML 自动折行，长公式要自己用 `\begin{aligned}` + `\\` 在逗号/加号处断行（一屏放不下的期望宽度约 60 个汉字）。
