@@ -21,4 +21,79 @@
   .footnotes ol { padding-left: 1.4em; }
   .footnotes li { margin: 0.45em 0; }
   .footnote-backref { text-decoration: none; }
+
+  /* ===== 首页两栏布局 ===== */
+  .home-layout {
+    display: flex;
+    gap: var(--gap, 1.5rem);
+    align-items: flex-start;
+  }
+  .home-sidebar {
+    flex: 0 0 140px;       /* 侧栏固定 140px */
+    position: sticky;
+    top: var(--header-height, 64px);
+  }
+  .home-content {
+    flex: 1;
+    min-width: 0;          /* 防止内容撑破 flex */
+  }
+
+  /* 年份导航：竖排列表 */
+  .year-nav-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 0.5rem;
+    color: var(--secondary);
+  }
+  .year-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .year-nav-list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .year-nav-list li a:hover {
+    background: var(--entry);
+  }
+  .year-nav-year { font-weight: 500; }
+  .year-nav-count {
+    font-size: 0.72rem;
+    color: var(--secondary);
+    opacity: 0.7;
+  }
+
+  /* 响应式：窄屏侧栏移到上方，变横排 */
+  @media (max-width: 768px) {
+    .home-layout { flex-direction: column; }
+    .home-sidebar {
+      flex: none;
+      position: static;
+    }
+    .year-nav-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+    .year-nav-list li a {
+      padding: 0.2rem 0.6rem;
+      font-size: 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+  }
 </style>

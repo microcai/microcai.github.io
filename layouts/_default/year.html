@@ -1,0 +1,115 @@
+{{- define "main" }}
+
+<header class="page-header">
+  <h1>
+    {{ .Title }}
+    {{- if (.Param "ShowRssButtonInSectionTermList") }}
+    {{- $rss := (.OutputFormats.Get "rss") }}
+    {{- with $rss }}
+    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+    {{- end }}
+    {{- end }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description }}
+  </div>
+  {{- end }}
+</header>
+
+{{- $year := .Title }}
+{{- $allPages := where site.RegularPages "Type" "posts" }}
+{{- $yearGroup := slice }}
+{{- range $allPages.GroupByDate "2006" }}
+  {{ if eq .Key $year }}
+    {{- $yearGroup = .Pages }}
+  {{ end }}
+{{- end }}
+{{- $count := len $yearGroup }}
+
+{{- if eq $count 0 }}
+<p>这一年还没有文章。</p>
+{{- else }}
+
+{{- $months := slice "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月" }}
+{{- range $yearGroup.GroupByDate "2006-01" }}
+{{- $monthStr := index (split .Key "-") 1 }}
+{{- $monthNum := int (replaceRE "^0+" "" $monthStr) }}
+{{- $monthName := index $months (sub $monthNum 1) }}
+<div class="archive-month">
+  <h3 class="archive-month-header" id="{{ $year }}-{{ $monthName }}">
+    <a class="archive-header-link" href="#{{ $year }}-{{ $monthName }}">
+      {{- $monthName -}}
+    </a>
+    <sup class="archive-count">&nbsp;{{ len .Pages }}</sup>
+  </h3>
+  <div class="archive-posts">
+    {{- range .Pages }}
+    {{- if eq .Kind "page" }}
+    <div class="archive-entry">
+      <h3 class="archive-entry-title entry-hint-parent">
+        {{- .Title | markdownify }}
+        {{- if .Draft }}
+        <span class="entry-hint" title="Draft">
+          <svg xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 -960 960 960" fill="currentColor">
+            <path
+              d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+          </svg>
+        </span>
+        {{- end }}
+      </h3>
+      <div class="archive-meta">
+        {{- partial "post_meta.html" . -}}
+      </div>
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </div>
+    {{- end }}
+    {{- end }}
+  </div>
+</div>
+{{- end }}
+
+{{- end }}
+
+{{/* 上一年 / 下一年 导航 */}}
+{{- $curYear := int .Title }}
+{{- $yearSections := slice }}
+{{- range site.Sections }}
+  {{ if gt (len (findRE `^\d{4}$` .Name)) 0 }}
+    {{- $yearSections = $yearSections | append . }}
+  {{ end }}
+{{- end }}
+{{- $yearSections = sort $yearSections "Name" "desc" }}
+{{- $prevPage := "" }}
+{{- $nextPage := "" }}
+{{- range $i, $s := $yearSections }}
+  {{ if eq (int $s.Name) $curYear }}
+    {{ if gt $i 0 }}{{ $prevPage = index $yearSections (sub $i 1) }}{{ end }}
+    {{ if lt $i (sub (len $yearSections) 1) }}{{ $nextPage = index $yearSections (add $i 1) }}{{ end }}
+  {{ end }}
+{{- end }}
+{{- if or $prevPage $nextPage }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- with $prevPage }}
+    <a class="prev" href="{{ .RelPermalink | absURL }}">
+      «&nbsp;{{ .Name }}
+    </a>
+    {{- end }}
+    {{- with $nextPage }}
+    <a class="next" href="{{ .RelPermalink | absURL }}">
+      {{ .Name }}&nbsp;»
+    </a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+
+{{- end }}{{/* end main */}}

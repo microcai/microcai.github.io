@@ -27,6 +27,18 @@ jobs:
           hugo-version: latest
           extended: true
 
+      # 自动为每个有文章的年份生成 content/{YYYY}/_index.md
+      # 这样 /2026/、/2027/ 这类 URL 就能自动工作，不需要手动维护
+      - run: |
+          mkdir -p content
+          years=$(ls content/posts/*.md 2>/dev/null | grep -oP '\d{4}' | sort -u)
+          for year in $years; do
+            mkdir -p "content/$year"
+            if [ ! -f "content/$year/_index.md" ]; then
+              printf -- '---\ntitle: %s\nlayout: year\n---\n' "$year" > "content/$year/_index.md"
+            fi
+          done
+
       # 公式在构建期由 transform.ToMath 渲染成 MathML，不需要 node
       - run: hugo
 

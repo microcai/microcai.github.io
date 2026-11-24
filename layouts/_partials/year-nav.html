@@ -1,0 +1,22 @@
+{{/* 年份导航 partial：列出所有有内容的年份，降序 */}}
+{{- $allPosts := where site.RegularPages "Type" "posts" }}
+{{- $yearGroups := $allPosts.GroupByDate "2006" }}
+{{- if gt (len $yearGroups) 0 }}
+<nav class="year-nav">
+  <h3 class="year-nav-title">按年份</h3>
+  <ul class="year-nav-list">
+    {{- range $yearGroups }}
+    {{- $yearName := .Key }}
+    {{- $yearPage := site.GetPage $yearName }}
+    {{- if $yearPage }}
+    <li>
+      <a href="{{ $yearPage.RelPermalink }}" title="{{ len .Pages }} 篇文章">
+        <span class="year-nav-year">{{ $yearName }}</span>
+        <span class="year-nav-count">{{ len .Pages }}</span>
+      </a>
+    </li>
+    {{- end }}
+    {{- end }}
+  </ul>
+</nav>
+{{- end }}
