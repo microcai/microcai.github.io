@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 420" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect x="0" y="0" width="940" height="420" fill="#ffffff"/>
+
+  <!-- 三相比较线（窗口边界，参考） -->
+  <line x1="90" y1="110" x2="838" y2="110" stroke="#9aa5b1" stroke-width="1.2"/>
+  <line x1="90" y1="170" x2="838" y2="170" stroke="#9aa5b1" stroke-width="1.2"/>
+  <line x1="90" y1="230" x2="838" y2="230" stroke="#9aa5b1" stroke-width="1.2"/>
+  <text x="845" y="114" font-size="12" fill="#666666">比较值U</text>
+  <text x="845" y="174" font-size="12" fill="#666666">比较值V</text>
+  <text x="845" y="234" font-size="12" fill="#666666">比较值W</text>
+
+  <!-- 三角载波 -->
+  <polyline points="90,60 460,300 830,60" fill="none" stroke="#333333" stroke-width="2"/>
+  <text x="90" y="50" font-size="13" fill="#333333" text-anchor="middle">ARR</text>
+  <text x="830" y="50" font-size="13" fill="#333333" text-anchor="middle">ARR</text>
+
+  <!-- CCR4 阶梯：半周一个值 -->
+  <g fill="none" stroke="#1a5fb4" stroke-width="2.5">
+    <polyline points="90,140 460,140 460,200 830,200 830,140 872,140"/>
+  </g>
+  <text x="150" y="132" font-size="12" fill="#1a5fb4" text-anchor="middle">采样点B（下坡枪）</text>
+  <text x="560" y="220" font-size="12" fill="#1a5fb4" text-anchor="middle">采样点A（上坡枪）</text>
+
+  <!-- 锁存生效标注 -->
+  <text x="468" y="164" font-size="11" fill="#666666">谷底锁存：A 生效</text>
+  <text x="824" y="164" font-size="11" fill="#666666" text-anchor="end">峰值锁存：B 生效</text>
+
+  <!-- 中断写入标注 -->
+  <text x="98" y="80" font-size="11" fill="#1a5fb4">峰值中断：写 A</text>
+  <text x="460" y="322" font-size="11" fill="#1a5fb4" text-anchor="middle">谷底中断：写 B</text>
+
+  <!-- 比较事件点 -->
+  <circle cx="213" cy="140" r="4" fill="#d94040"/>
+  <circle cx="614" cy="200" r="4" fill="#d94040"/>
+
+  <!-- ADC 触发线：两个上升沿 -->
+  <line x1="90" y1="350" x2="872" y2="350" stroke="#bbbbbb" stroke-width="1"/>
+  <text x="92" y="344" font-size="10" fill="#999999">ADC 触发线（TIM1 CH4）</text>
+  <g stroke="#d94040" stroke-width="3">
+    <line x1="213" y1="350" x2="213" y2="328"/>
+    <line x1="614" y1="350" x2="614" y2="328"/>
+  </g>
+  <text x="213" y="370" font-size="12" fill="#d94040" text-anchor="middle">触发①：读 −相电流U</text>
+  <text x="614" y="370" font-size="12" fill="#d94040" text-anchor="middle">触发②：读 相电流W</text>
+
+  <!-- 图例 -->
+  <text x="470" y="398" font-size="12" fill="#666666" text-anchor="middle">同一只比较器，一周期两个值；同一根触发线，一周期两个上升沿。</text>
+</svg>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 560" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect x="0" y="0" width="940" height="560" fill="#ffffff"/>
+
+  <!-- 谷底参考线 -->
+  <g stroke="#dddddd" stroke-width="1" stroke-dasharray="4,4">
+    <line x1="470" y1="50" x2="470" y2="250"/>
+    <line x1="470" y1="290" x2="470" y2="490"/>
+  </g>
+
+  <!-- ============ 上：原始 ============ -->
+  <text x="140" y="42" font-size="13" fill="#b3261e">原始：两个采样窗口太窄 ✗</text>
+
+  <text x="112" y="84" font-size="12" fill="#666666" text-anchor="end">U 相上管</text>
+  <text x="112" y="144" font-size="12" fill="#666666" text-anchor="end">V 相上管</text>
+  <text x="112" y="204" font-size="12" fill="#666666" text-anchor="end">W 相上管</text>
+
+  <g fill="none" stroke="#333333" stroke-width="2">
+    <polyline points="120,100 320,100 320,60 620,60 620,100 820,100"/>
+    <polyline points="120,160 345,160 345,120 595,120 595,160 820,160"/>
+    <polyline points="120,220 370,220 370,180 570,180 570,220 820,220"/>
+  </g>
+
+  <!-- 窗口条 -->
+  <line x1="120" y1="245" x2="820" y2="245" stroke="#cccccc" stroke-width="1"/>
+  <line x1="320" y1="245" x2="345" y2="245" stroke="#d94040" stroke-width="4"/>
+  <line x1="570" y1="245" x2="595" y2="245" stroke="#d94040" stroke-width="4"/>
+  <text x="332" y="238" font-size="10" fill="#666666" text-anchor="middle">100</text>
+  <text x="582" y="238" font-size="10" fill="#666666" text-anchor="middle">110</text>
+
+  <!-- ============ 下：移相后 ============ -->
+  <text x="140" y="282" font-size="13" fill="#1a7f37">移相后：V 相滑动 δ，窗口撑宽 ✓</text>
+
+  <text x="112" y="324" font-size="12" fill="#666666" text-anchor="end">U 相上管</text>
+  <text x="112" y="384" font-size="12" fill="#1a5fb4" text-anchor="end">V 相上管</text>
+  <text x="112" y="444" font-size="12" fill="#666666" text-anchor="end">W 相上管</text>
+
+  <g fill="none" stroke-width="2">
+    <polyline points="120,340 320,340 320,300 620,300 620,340 820,340" stroke="#333333"/>
+    <polyline points="120,400 365,400 365,360 615,360 615,400 820,400" stroke="#1a5fb4"/>
+    <polyline points="120,460 370,460 370,420 570,420 570,460 820,460" stroke="#333333"/>
+  </g>
+
+  <!-- 原边沿虚影 + δ 箭头 -->
+  <g stroke="#1a5fb4" stroke-width="1" stroke-dasharray="3,3">
+    <line x1="345" y1="352" x2="345" y2="408"/>
+    <line x1="595" y1="352" x2="595" y2="408"/>
+  </g>
+  <g stroke="#1a5fb4" stroke-width="1.5">
+    <line x1="345" y1="380" x2="363" y2="380"/>
+    <polyline points="358,376 363,380 358,384" fill="none"/>
+    <line x1="595" y1="380" x2="613" y2="380"/>
+    <polyline points="608,376 613,380 608,384" fill="none"/>
+  </g>
+  <text x="354" y="371" font-size="11" fill="#1a5fb4" text-anchor="middle">δ</text>
+  <text x="604" y="371" font-size="11" fill="#1a5fb4" text-anchor="middle">δ</text>
+
+  <!-- 窗口条 -->
+  <line x1="120" y1="485" x2="820" y2="485" stroke="#cccccc" stroke-width="1"/>
+  <line x1="320" y1="485" x2="365" y2="485" stroke="#1a7f37" stroke-width="4"/>
+  <line x1="570" y1="485" x2="615" y2="485" stroke="#1a7f37" stroke-width="4"/>
+  <text x="342" y="478" font-size="10" fill="#666666" text-anchor="middle">100</text>
+  <text x="592" y="478" font-size="10" fill="#666666" text-anchor="middle">110</text>
+
+  <!-- 谷底标注 -->
+  <text x="470" y="505" font-size="10" fill="#999999" text-anchor="middle">谷底（计数 0，上管全开）；两端为峰值（上管全关）</text>
+
+  <!-- 图例 -->
+  <text x="470" y="530" font-size="12" fill="#666666" text-anchor="middle">移相 = 脉宽不变、位置平移：伏秒积不变。两个采样窗口（100 读 −相电流U，110 读 相电流W）各撑宽 δ，代价是两个用不上的窗口等量缩短。</text>
+</svg>

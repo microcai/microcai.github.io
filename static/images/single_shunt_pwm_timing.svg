@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 450" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <!-- 背景 -->
+  <rect x="0" y="0" width="940" height="450" fill="#ffffff"/>
+
+  <!-- 一个 PWM 周期 -->
+  <line x1="90" y1="28" x2="830" y2="28" stroke="#999999" stroke-width="1.5"/>
+  <polyline points="98,24 90,28 98,32" fill="none" stroke="#999999" stroke-width="1.5"/>
+  <polyline points="822,24 830,28 822,32" fill="none" stroke="#999999" stroke-width="1.5"/>
+  <text x="460" y="20" font-size="13" fill="#666666" text-anchor="middle">一个 PWM 周期</text>
+
+  <!-- 三角载波（计数器）：ARR → 0 → ARR -->
+  <polyline points="90,60 460,300 830,60" fill="none" stroke="#333333" stroke-width="2"/>
+  <text x="90" y="50" font-size="14" fill="#333333" text-anchor="middle">ARR</text>
+  <text x="830" y="50" font-size="14" fill="#333333" text-anchor="middle">ARR</text>
+  <text x="460" y="318" font-size="14" fill="#333333" text-anchor="middle">0</text>
+
+  <!-- 三条占空比比较线 -->
+  <line x1="90" y1="110" x2="838" y2="110" stroke="#9aa5b1" stroke-width="1.5"/>
+  <line x1="90" y1="170" x2="838" y2="170" stroke="#9aa5b1" stroke-width="1.5"/>
+  <line x1="90" y1="230" x2="838" y2="230" stroke="#9aa5b1" stroke-width="1.5"/>
+  <text x="845" y="114" font-size="13" fill="#666666">占空比 U</text>
+  <text x="845" y="174" font-size="13" fill="#666666">占空比 V</text>
+  <text x="845" y="234" font-size="13" fill="#666666">占空比 W</text>
+
+  <!-- 交点 -->
+  <circle cx="167" cy="110" r="3" fill="#333333"/>
+  <circle cx="260" cy="170" r="3" fill="#333333"/>
+  <circle cx="352" cy="230" r="3" fill="#333333"/>
+  <circle cx="568" cy="230" r="3" fill="#333333"/>
+  <circle cx="660" cy="170" r="3" fill="#333333"/>
+  <circle cx="753" cy="110" r="3" fill="#333333"/>
+
+  <!-- 交点到状态带的虚线 -->
+  <g stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4,3">
+    <line x1="167" y1="110" x2="167" y2="330"/>
+    <line x1="260" y1="170" x2="260" y2="330"/>
+    <line x1="352" y1="230" x2="352" y2="330"/>
+    <line x1="568" y1="230" x2="568" y2="330"/>
+    <line x1="660" y1="170" x2="660" y2="330"/>
+    <line x1="753" y1="110" x2="753" y2="330"/>
+  </g>
+
+  <!-- 开关状态带 -->
+  <rect x="90" y="330" width="740" height="34" fill="#f2f4f7" stroke="#333333" stroke-width="1.5"/>
+  <g stroke="#333333" stroke-width="1">
+    <line x1="167" y1="330" x2="167" y2="364"/>
+    <line x1="260" y1="330" x2="260" y2="364"/>
+    <line x1="352" y1="330" x2="352" y2="364"/>
+    <line x1="568" y1="330" x2="568" y2="364"/>
+    <line x1="660" y1="330" x2="660" y2="364"/>
+    <line x1="753" y1="330" x2="753" y2="364"/>
+  </g>
+  <g font-size="15" fill="#222222" text-anchor="middle">
+    <text x="128" y="352">000</text>
+    <text x="213" y="352">100</text>
+    <text x="306" y="352">110</text>
+    <text x="460" y="352">111</text>
+    <text x="614" y="352">110</text>
+    <text x="706" y="352">100</text>
+    <text x="791" y="352">000</text>
+  </g>
+
+  <!-- 采样点标注 -->
+  <circle cx="213" cy="330" r="3.5" fill="#d94040"/>
+  <circle cx="306" cy="330" r="3.5" fill="#d94040"/>
+  <line x1="213" y1="334" x2="213" y2="374" stroke="#d94040" stroke-width="1.2"/>
+  <line x1="306" y1="334" x2="340" y2="398" stroke="#d94040" stroke-width="1.2"/>
+  <text x="213" y="390" font-size="13" fill="#d94040" text-anchor="middle">采样，读到 −相电流U</text>
+  <text x="345" y="415" font-size="13" fill="#d94040" text-anchor="middle">采样，读到 相电流W</text>
+
+  <!-- 零矢量标注 -->
+  <text x="460" y="385" font-size="12" fill="#888888" text-anchor="middle">零矢量，电阻上是 0</text>
+
+  <!-- 图例 -->
+  <text x="90" y="438" font-size="12" fill="#666666">上管状态按 U V W 排列，1 = 上管导通；高电平有效矢量对应母线电阻上的电流见正文表格。</text>
+</svg>
