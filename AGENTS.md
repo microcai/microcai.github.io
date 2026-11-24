@@ -2,6 +2,7 @@
 - 这个仓库是基于 Hugo 框架的个人博客，由 GitHub Actions 构建后部署到 GitHub Pages。
 - 站点配置在 hugo.toml，主题是 themes/PaperMod（git submodule），本地构建用 `hugo`，产物在 public/。
 - 本仓库的域名是 microcai.github.io（CNAME 另绑 microcai.org）。
+- 测试的时候运行 hugo server 一定要加 --baseURL http://localhost:1313/ 否则测试的时候里面的文章连接都会跑去 microcai.org 导致测试的时候 404 —— 因为测试的时候新文章还没有推送过去。
 - 文章放 content/posts 目录下, 按文件名  年-月-日-标题.md 格式命名。
 - 文章 URL 由文件名决定：`2026-11-18-foo-bar.md` → `/2026/11/18/foo-bar.html`。`slug` 由文件名去掉日期前缀自动得到，`date` 从文件名解析，front matter 里这两个都不用写；需要自定义 URL 时才显式写 `slug`。
 - 2026-11-18 及以前的老文章在 front matter 里用 `url:` 钉死了 Jekyll 时代的地址（如 `/2026/10/31/a-new-sensorless-foc-algo.html`）。这些 `url` 不能改，改了老链接就断；它们与文件名不对应，不能按文件名推测地址。
@@ -15,3 +16,5 @@
 - 引用文献用 Goldmark 脚注：正文写 `[^1]`，文末写 `[^1]: 文献信息`，渲染成可点击的上标编号。
 - 行内出现非公式的 `$`（如路径变量）请用反引号包起来，否则会被当成公式。
 - 写文章的时候，公式请使用 content/posts/2026-10-09-new-math-lang.md 倡议的规范。
+- 文章开头不要直接摆公式和表格：先用设问、日常叙事建立动机和物理直觉，公式/表格留到直觉铺垫之后再作为结论出现（作者明确改稿反馈）
+- 认知要循序渐进：写文章的时候，随着章节推进绘制一系列递进认知的示意图，意味着前文的示意图/简化模型会被后来被更精确的版本取代。这意味着不要回头修改或删除旧图；旧图保留原样作为认知台阶。
